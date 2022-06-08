@@ -1,7 +1,7 @@
 package model;
 
-import model.Pixel;
+import model.Pixel.RGBPixel;
 
 public interface PixelLambda {
-  Pixel run(Pixel p);
+  RGBPixel run(RGBPixel p);
 }

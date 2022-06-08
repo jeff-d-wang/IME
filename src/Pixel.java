@@ -5,11 +5,29 @@ public class Pixel {
   private int r;
   private int g;
   private int b;
+  private final static int max = 225;
+  private final static int min = 0;
 
+  // altercation[x][y] = new pixel(new values)
   public Pixel(int r, int g, int b) {
-    this.r = r;
-    this.g = g;
-    this.b = b;
+    this.r = clamp(r);
+    this.g = clamp(g);
+    this.b = clamp(b);
+  }
+
+  /**
+   * Clamps color values to their respective max and min possible values.
+   * @param color  Color value to be evaluated
+   * @return clamped color value
+   */
+  private int clamp(int color) {
+    if (color > max) {
+      return max;
+    } else if (color < min) {
+      return min;
+    } else {
+      return color;
+    }
   }
 
   /**

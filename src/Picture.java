@@ -1,9 +1,14 @@
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
+
 /**
  * Represents a picture with its pixels.
  */
 public class Picture {
   private Pixel[][] pixels;
   private Picture altercation;
+  private static final int maxValue = 255;
 
   public Picture(int width, int height) {
     pixels = new Pixel[width][height];
@@ -11,11 +16,11 @@ public class Picture {
   }
 
   public int getWidth() {
-    return pixels.length;
+    return pixels[0].length;
   }
 
   public int getHeight() {
-    return pixels[0].length;
+    return pixels.length;
   }
 
   public Pixel getPixel(int x, int y) {
@@ -27,11 +32,11 @@ public class Picture {
   }
 
   /**
-   * Grayscale this picture according to a given component specifying its type.
-   * @param component   Type of grayscale to be applied
-   * @return a grayscale picture
+   * Greyscale this picture according to a given component specifying its type.
+   * @param component   Type of greyscale to be applied
+   * @return a greyscale picture
    */
-  public Picture grayscale(String component) {
+  public Picture greyscale(String component) {
     PixelLambda componentLambda = null;
 
     switch (component) {
@@ -53,6 +58,8 @@ public class Picture {
       case "luma":
         componentLambda = (p) -> new Pixel(p.getLuma(), p.getLuma(), p.getLuma());
         break;
+      default:
+        throw new IllegalArgumentException("Invalid greyscale component.");
     }
 
     applyLambda(componentLambda);
@@ -65,10 +72,74 @@ public class Picture {
    * @param lambda   Lambda function to be applied on a pixel
    */
   private void applyLambda(PixelLambda lambda){
-    for (int r = 0; r < pixels.length; r++) {
-      for (int c = 0; c < pixels[r].length; c++) {
+    for (int r = 0; r < getHeight(); r++) {
+      for (int c = 0; c < getWidth(); c++) {
         altercation.setPixel(r, c, lambda.run(this.getPixel(r, c)));
       }
+    }
+  }
+
+  /**
+   * Flips this image in a given String direction.
+   * @param direction   Direction the picture is to be flipped in
+   * @return a flipped picture
+   */
+  public Picture flip(String direction) {
+    if (direction.equals("horizontal")) {
+      for (int r = 0; r < this.getHeight(); r++) {
+        for (int c = 0; c < this.getWidth(); c++) {
+          altercation.setPixel(Math.abs((r + 1) - getHeight()), c, pixels[r][c]);
+        }
+      }
+    } else if (direction.equals("vertical")) {
+      for (int r = 0; r < this.getHeight(); r++) {
+        for (int c = 0; c < this.getWidth(); c++) {
+          altercation.setPixel(r, Math.abs((c + 1) - getWidth()), pixels[r][c]);
+        }
+      }
+    } else {
+      throw new IllegalStateException("Invalid flip transformation");
+    }
+
+    return altercation;
+  }
+
+  /**
+   * Brighten the picture by a given increment.
+   * @param n   Number increment to change brightness by
+   * @return brighten image
+   */
+  public Picture brighten(int n) {
+    PixelLambda componentLambda
+            = (p) -> new Pixel(p.getR() + n, p.getG() + n, p.getB() + n);
+    applyLambda(componentLambda);
+    return altercation;
+  }
+
+  /**
+   * Converts this picture into a PPM file.
+   * @param filePath   Path of the ppm file to be written on.
+   */
+  public void toPPM(String filePath) {
+    try {
+      PrintWriter os = new PrintWriter(filePath);
+
+      // header
+      os.println("P3");
+      os.println(this.getHeight() + " " + this.getWidth());
+      os.println(maxValue);
+
+      for (int r = 0; r < getHeight(); r++) {
+        for (int c = 0; c < getWidth(); c++) {
+          os.println(getPixel(r, c).getR() + " "
+                  + getPixel(r, c).getG() + " "
+                  + getPixel(r, c).getB());
+        }
+      }
+
+      os.close();
+    } catch (Exception e) {
+      System.out.println(e.toString());
     }
   }
 }

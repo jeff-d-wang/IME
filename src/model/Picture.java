@@ -1,5 +1,5 @@
-import java.io.File;
-import java.io.IOException;
+package model;
+
 import java.io.PrintWriter;
 
 /**

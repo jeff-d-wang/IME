@@ -1,3 +1,5 @@
+package model;
+
 /**
  * Represents a pixel with its RGB values.
  */

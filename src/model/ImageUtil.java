@@ -19,14 +19,13 @@ public class ImageUtil {
    *
    * @param filename the path of the file.
    */
-  public static Picture readPicture(String filename) {
+  public static Picture readPicture(String filename) throws IOException {
     Scanner sc;
 
     try {
       sc = new Scanner(new FileInputStream(filename));
     } catch (FileNotFoundException e) {
-      System.out.println("File " + filename + " not found!");
-      return null;
+      throw new IOException("File " + filename + " not found.");
     }
     StringBuilder builder = new StringBuilder();
     // read the file line by line, and populate a string. This will throw away any comment lines
@@ -44,7 +43,7 @@ public class ImageUtil {
 
     token = sc.next();
     if (!token.equals("P3")) {
-      System.out.println("Invalid PPM file: plain RAW file should begin with P3");
+      throw new IOException("Invalid PPM file: plain RAW file should begin with P3");
     }
     int width = sc.nextInt();
     int height = sc.nextInt();

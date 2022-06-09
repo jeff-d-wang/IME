@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b9e1cc3-9647-4400-a190-c02fe329a94f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/controller/PictureController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/PictureControllerImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME/ImageUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/model/Picture.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/model/Picture.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.Koala.ppm.icloud" beforeDir="false" afterPath="$PROJECT_DIR$/src/Koala.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ImageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ImageUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Picture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Picture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/PictureController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/PictureController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ImageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ImageUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +15,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>

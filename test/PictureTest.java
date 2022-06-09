@@ -49,7 +49,7 @@ public class PictureTest {
 
     System.out.println(pic1);
 
-    koala = ImageUtil.readPicture("Koala.ppm");
+    // koala = ImageUtil.readPicture("Koala.ppm");
   }
 
   @Test

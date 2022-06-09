@@ -2,21 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b9e1cc3-9647-4400-a190-c02fe329a94f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/model/APicture.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/IPicture.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/Pixel/APixel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/Pixel/IPixel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/Pixel/RGBPixel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/PixelTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME/ImageUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME/ImageUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME/Koala.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME/Koala.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME/controller/PictureController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME/controller/PictureController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME/model/APicture.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME/model/APicture.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME/model/IPicture.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME/model/IPicture.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/model/ImageUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/model/ImageUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/model/Picture.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/model/Picture.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/model/PixelLambda.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/model/PixelLambda.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/ImageProcessing/PictureTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/ImageProcessing/PictureTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Koala.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Picture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Picture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/PixelLambda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/PixelLambda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IME.iml" beforeDir="false" afterPath="$PROJECT_DIR$/IME.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/ImageProcessing/PictureTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ImageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ImageUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Picture.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pixel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PixelLambda.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/test/PictureTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/PictureTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,13 +50,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/model" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="model" />
       <recent name="model.Pixel" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PictureTest">
+  <component name="RunManager" selected="JUnit.PixelTest (1)">
     <configuration name="ImageUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="model.ImageUtil" />
       <module name="ImageProcessing" />
@@ -78,6 +76,15 @@
       <module name="ImageProcessing" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="PictureTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PixelTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="IME" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PixelTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -104,6 +111,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PixelTest (1)" />
         <item itemvalue="JUnit.PictureTest" />
         <item itemvalue="Application.ImageUtil" />
         <item itemvalue="JUnit.PixelTest.testConstructor" />

@@ -1,17 +1,18 @@
 package controller;
 
-import java.awt.*;
 import java.io.IOException;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Scanner;
 
 import model.ImageUtil;
-import model.Picture;
+import model.Picture.IPicture;
+import model.Picture.PPMPicture;
+import model.Picture.RGBPicture;
 
 public class PictureControllerImpl implements PictureController {
   private final Readable rd;
-  private Map<String, Picture> pictures;
+  private Map<String, IPicture> pictures;
   private Map<String, Runnable> runnables;
   private String[] script;
   private String[] command;
@@ -22,6 +23,11 @@ public class PictureControllerImpl implements PictureController {
     this.runnables = new HashMap<>();
     this.script = new String[4];
     this.command = new String[2];
+    this.runnables.put("load", new Load());
+    this.runnables.put("save", new Save());
+    this.runnables.put("greyscale", new Greyscale());
+    this.runnables.put("flip", new Flip());
+    this.runnables.put("brighten", new Brighten());
   }
 
   @Override
@@ -74,7 +80,13 @@ public class PictureControllerImpl implements PictureController {
    */
   private class Save implements Runnable {
     public void run() {
-
+      try {
+        ImageUtil.writePPM((PPMPicture) pictures.get(script[2]), script[1]);
+      } catch (IOException e) {
+        e.printStackTrace();
+      } catch (ClassCastException e) {
+        System.out.println("Could not detect given picture.");
+      }
     }
   }
 

@@ -1,8 +1,9 @@
 import org.junit.Before;
 import org.junit.Test;
 
-import model.Picture;
+import model.Picture.PPMPicture;
 import model.Pixel.RGBPixel;
+import model.Pixel.RGBPixelImpl;
 
 import static org.junit.Assert.assertEquals;
 
@@ -10,13 +11,13 @@ import static org.junit.Assert.assertEquals;
  * This is the testing class for picture.
  */
 public class PictureTest {
-  Picture pic1;
-  Picture pic2;
+  PPMPicture pic1;
+  PPMPicture pic2;
 
   @Before
   public void setUp(){
-    pic1 = new Picture(3, 4);
-    pic2 = new Picture (5, 6);
+    pic1 = new PPMPicture("P3", 3, 4);
+    pic2 = new PPMPicture("P3", 5, 6);
   }
 
   @Test
@@ -41,10 +42,10 @@ public class PictureTest {
 
   @Test
   public void testSetPixel() {
-    pic1.setPixel(0, 0, new RGBPixel(0, 0, 0));
+    pic1.setPixel(0, 0, new RGBPixelImpl(0, 0, 0));
     assertEquals(pic1.getPixel(0, 0), new RGBPixel(0, 0, 0));
 
-    pic2.setPixel(0, 0, new RGBPixel(255, 255, 255));
+    pic2.setPixel(0, 0, new RGBPixelImpl(255, 255, 255));
     assertEquals(pic2.getPixel(0, 0), new RGBPixel(255, 255, 255));
     assertEquals(pic2.getPixel(0, 0).getR(), 255);
     assertEquals(pic2.getPixel(0, 0).getG(), 255);

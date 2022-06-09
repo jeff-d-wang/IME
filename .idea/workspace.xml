@@ -2,10 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b9e1cc3-9647-4400-a190-c02fe329a94f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/controller/PictureControllerImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/Lambda/IPixelLambda.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/Lambda/RGBPixelLambda.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/Picture/IPicture.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/Picture/RGBPicture.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/Pixel/RGBPixelImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/PictureController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/PictureController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/PictureControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/PictureControllerImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/ImageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ImageUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Picture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Picture/PPMPicture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Pixel/APixel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Pixel/IPixel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Pixel/IPixel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Pixel/RGBPixel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Pixel/RGBPixel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/PixelLambda.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/PictureTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/PictureTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,13 +58,13 @@
       <recent name="model.Pixel" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ImageUtil">
+  <component name="RunManager" selected="Application.model.ImageUtil">
     <configuration name="ImageUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="model.ImageUtil" />
       <module name="ImageProcessing" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="model.*" />
+          <option name="PATTERN" value="model.Picture.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -105,7 +115,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ImageUtil" />
+        <item itemvalue="Application.model.ImageUtil" />
         <item itemvalue="JUnit.PictureTest" />
         <item itemvalue="JUnit.PixelTest.testConstructor" />
         <item itemvalue="JUnit.PixelTest" />

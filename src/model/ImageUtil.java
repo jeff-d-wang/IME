@@ -1,11 +1,16 @@
 package model;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
 import java.io.FileInputStream;
 
+import model.Picture.IPicture;
+import model.Picture.PPMPicture;
+import model.Picture.RGBPicture;
 import model.Pixel.RGBPixel;
+import model.Pixel.RGBPixelImpl;
 
 
 /**
@@ -19,7 +24,7 @@ public class ImageUtil {
    *
    * @param filename the path of the file.
    */
-  public static Picture readPicture(String filename) throws IOException {
+  public static IPicture readPicture(String filename) throws IOException {
     Scanner sc;
 
     try {
@@ -39,28 +44,43 @@ public class ImageUtil {
     // now set up the scanner to read from the string we just built
     sc = new Scanner(builder.toString());
 
-    String token;
-
-    token = sc.next();
+    String token = sc.next();
     if (!token.equals("P3")) {
       throw new IOException("Invalid PPM file: plain RAW file should begin with P3");
     }
     int width = sc.nextInt();
     int height = sc.nextInt();
     int maxValue = sc.nextInt();
-    Picture picture = new Picture(width, height);
-    picture.setMaxValue(maxValue);
+    IPicture picture = new PPMPicture(token, width, height);
 
     for (int i = 0; i < width; i++) {
       for (int j = 0; j < height; j++) {
         int r = sc.nextInt();
         int g = sc.nextInt();
         int b = sc.nextInt();
-        picture.setPixel(i, j, new RGBPixel(r, g, b));
+        picture.setPixel(i, j, new RGBPixelImpl(r, g, b));
       }
     }
 
     return picture;
+  }
+
+  public static void writePPM(PPMPicture picture, String filename) throws IOException {
+    PrintWriter out = new PrintWriter(filename);
+
+    out.println(picture.getToken());
+    out.println(picture.getWidth() + " " + picture.getHeight());
+    out.println(picture.getMaxValue());
+
+    for (int i = 0; i < picture.getWidth(); i++) {
+      for (int j = 0; j < picture.getHeight(); j++) {
+        RGBPixel pixel = picture.getPixel(i, j);
+        int r = pixel.getR();
+        int g = pixel.getG();
+        int b = pixel.getB();
+        out.println(r + " " + g + " " + b);
+      }
+    }
   }
 
   //demo main
@@ -73,7 +93,7 @@ public class ImageUtil {
       filename = "src/Koala.ppm";
     }
 
-    Picture koala = ImageUtil.readPicture(filename);
+    IPicture koala = ImageUtil.readPicture(filename);
 
     System.out.println(koala.getWidth() + ", " + koala.getHeight());
   }

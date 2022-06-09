@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b9e1cc3-9647-4400-a190-c02fe329a94f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/model/Pixel/RGBPixel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/PictureController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageProcessing.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ImageProcessing.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME/Koala.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ImageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ImageUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Koala.ppm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IME/ImageUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/model/Picture.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/model/Picture.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.Koala.ppm.icloud" beforeDir="false" afterPath="$PROJECT_DIR$/src/Koala.ppm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ImageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ImageUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Picture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Picture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Pixel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/PixelLambda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/PixelLambda.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +19,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -31,6 +30,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2AHEtW8L7apZgcdOjlYLecGtcza" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -49,7 +51,20 @@
       <recent name="model.Pixel" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PictureTest">
+  <component name="RunManager" selected="Application.ImageUtil">
+    <configuration name="ImageUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="model.ImageUtil" />
+      <module name="ImageProcessing" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PictureTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ImageProcessing" />
       <option name="PACKAGE_NAME" value="" />
@@ -78,8 +93,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="ImageProcessing" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="ImageProcessing" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ImageUtil" />
         <item itemvalue="JUnit.PictureTest" />
         <item itemvalue="JUnit.PixelTest.testConstructor" />
         <item itemvalue="JUnit.PixelTest" />

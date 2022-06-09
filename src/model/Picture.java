@@ -9,7 +9,7 @@ import model.Pixel.RGBPixel;
  */
 public class Picture {
   private RGBPixel[][] pixels;
-  private static final int maxValue = 255;
+  private static int maxValue;
 
   public Picture(int width, int height) {
     pixels = new RGBPixel[width][height];
@@ -29,6 +29,10 @@ public class Picture {
 
   public void setPixel(int x, int y, RGBPixel p) throws IllegalArgumentException {
     pixels[x][y] = new RGBPixel(p.getR(), p.getG(), p.getB());
+  }
+
+  public void setMaxValue(int maxValue) {
+    this.maxValue = maxValue;
   }
 
   /**

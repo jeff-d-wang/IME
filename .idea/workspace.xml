@@ -2,24 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b9e1cc3-9647-4400-a190-c02fe329a94f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/IME.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/Picture/IPictureModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/Picture/PictureModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/PictureControllerImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/PictureModelTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/PictureTextViewTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Brighten.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Brighten.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Flip.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Flip.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Greyscale.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Greyscale.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Load.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Load.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Save.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Save.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/model/ImageUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/model/ImageUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/model/Picture/IPicture.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/model/Picture/IPicture.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/model/Picture/PPMPicture.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/model/Picture/PPMPicture.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/model/Picture/RGBPicture.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/model/Picture/RGBPicture.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-darken-by-10.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-darken-by-10.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-horizontal.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-horizontal.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-luma-greyscale.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-luma-greyscale.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-value-greyscale.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-value-greyscale.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-vertical.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-vertical.ppm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/model/Pixel/RGBPixel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/model/Pixel/RGBPixel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/view/PictureTextView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/view/PictureTextView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/ImageProcessing/ImageUtilTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/ImageProcessing/ImageUtilTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/ImageProcessing/PPMPictureTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/ImageProcessing/PPMPictureTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/PictureController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/PictureController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/PictureControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/PictureControllerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ImageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ImageUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Picture/IPicture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Picture/IPicture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Picture/PPMPicture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Picture/PPMPicture.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Picture/RGBPicture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Picture/RGBPicture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-darken-by-10.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-darken-by-10.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-horizontal.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-horizontal.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-luma-greyscale.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-luma-greyscale.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-value-greyscale.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-value-greyscale.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-vertical.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-vertical.ppm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/PictureTextView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PictureTextView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/ImageUtilTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/ImageUtilTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/PPMPictureTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/PPMPictureTest.java" afterDir="false" />
     </list>
     <list id="a44a8c42-b415-4698-9223-3589db87da46" name="Changes by ruimingli" comment="">
-      <change beforePath="$PROJECT_DIR$/test/PPMPictureTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/PPMPictureTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ImageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ImageUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Pixel/RGBPixel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Pixel/RGBPixel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/ImageUtilTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/ImageUtilTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +48,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -38,16 +57,19 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/test/PPMPictureTest.java">
+    <file path="$PROJECT_DIR$/test/ImageUtilTest.java">
       <ranges>
-        <range start1="7" end1="7" start2="7" end2="8" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
-        <range start1="26" end1="26" start2="27" end2="35" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
-        <range start1="57" end1="58" start2="66" end2="67" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
-        <range start1="59" end1="64" start2="68" end2="68" changelist="a44a8c42-b415-4698-9223-3589db87da46" />
-        <range start1="66" end1="66" start2="70" end2="95" changelist="a44a8c42-b415-4698-9223-3589db87da46" />
-        <range start1="82" end1="83" start2="111" end2="112" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
-        <range start1="84" end1="89" start2="113" end2="113" changelist="a44a8c42-b415-4698-9223-3589db87da46" />
-        <range start1="90" end1="90" start2="114" end2="216" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="11" end1="11" start2="11" end2="14" changelist="a44a8c42-b415-4698-9223-3589db87da46" />
+        <range start1="25" end1="26" start2="28" end2="30" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="42" end1="42" start2="46" end2="96" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/model/ImageUtil.java">
+      <ranges>
+        <range start1="3" end1="4" start2="3" end2="3" changelist="a44a8c42-b415-4698-9223-3589db87da46" />
+        <range start1="10" end1="12" start2="9" end2="9" changelist="a44a8c42-b415-4698-9223-3589db87da46" />
+        <range start1="28" end1="28" start2="25" end2="29" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="68" end1="84" start2="69" end2="92" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
       </ranges>
     </file>
   </component>
@@ -62,15 +84,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="Downloaded.Files.Path.Enabled" value="false" />
-    <property name="Repository.Attach.Annotations" value="false" />
-    <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="Repository.Attach.Sources" value="false" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/pictures" />
@@ -79,77 +99,64 @@
       <recent name="model.Pixel" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PPMPictureTest.testGreyscale">
-    <configuration name="PPMPictureTest.testBrighten" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.PictureModelTest.testPutAndGetPicture">
+    <configuration name="PictureModelTest.testInvalidGetPicture" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ImageProcessing" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PPMPictureTest" />
-      <option name="METHOD_NAME" value="testBrighten" />
+      <option name="MAIN_CLASS_NAME" value="PictureModelTest" />
+      <option name="METHOD_NAME" value="testInvalidGetPicture" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PPMPictureTest.testFlip" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PictureModelTest.testPutAndGetPicture" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ImageProcessing" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PPMPictureTest" />
-      <option name="METHOD_NAME" value="testFlip" />
+      <option name="MAIN_CLASS_NAME" value="PictureModelTest" />
+      <option name="METHOD_NAME" value="testPutAndGetPicture" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PPMPictureTest.testGreyscale" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PictureTextViewTest.testConstructor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ImageProcessing" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PPMPictureTest" />
-      <option name="METHOD_NAME" value="testGreyscale" />
+      <option name="MAIN_CLASS_NAME" value="PictureTextViewTest" />
+      <option name="METHOD_NAME" value="testConstructor" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PPMPictureTest.testInvalidGetPixel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PictureTextViewTest.testConstructor2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ImageProcessing" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PPMPictureTest" />
-      <option name="METHOD_NAME" value="testInvalidGetPixel" />
+      <option name="MAIN_CLASS_NAME" value="PictureTextViewTest" />
+      <option name="METHOD_NAME" value="testConstructor2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PPMPictureTest.testSetPixel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PictureTextViewTest.testConstructor3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ImageProcessing" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PPMPictureTest" />
-      <option name="METHOD_NAME" value="testSetPixel" />
+      <option name="MAIN_CLASS_NAME" value="PictureTextViewTest" />
+      <option name="METHOD_NAME" value="testConstructor3" />
       <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="ImageProcessing" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="ImageProcessing" />
-      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PPMPictureTest.testGreyscale" />
-        <item itemvalue="JUnit.PPMPictureTest.testFlip" />
-        <item itemvalue="JUnit.PPMPictureTest.testBrighten" />
-        <item itemvalue="JUnit.PPMPictureTest.testSetPixel" />
-        <item itemvalue="JUnit.PPMPictureTest.testInvalidGetPixel" />
+        <item itemvalue="JUnit.PictureTextViewTest.testConstructor3" />
+        <item itemvalue="JUnit.PictureTextViewTest.testConstructor" />
+        <item itemvalue="JUnit.PictureTextViewTest.testConstructor2" />
+        <item itemvalue="JUnit.PictureModelTest.testPutAndGetPicture" />
+        <item itemvalue="JUnit.PictureModelTest.testInvalidGetPicture" />
       </list>
     </recent_temporary>
   </component>
@@ -162,6 +169,8 @@
       <option name="presentableId" value="Default" />
       <updated>1654658327452</updated>
       <workItem from="1654658329638" duration="7201000" />
+      <workItem from="1654892991634" duration="552000" />
+      <workItem from="1654893611095" duration="550000" />
     </task>
     <servers />
   </component>

@@ -1,15 +1,12 @@
 package model;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
 import java.io.FileInputStream;
 
 import model.Picture.IPicture;
 import model.Picture.PPMPicture;
-import model.Picture.RGBPicture;
-import model.Pixel.RGBPixel;
 import model.Pixel.RGBPixelImpl;
 
 
@@ -26,6 +23,10 @@ public class ImageUtil {
    * @throws IOException if it encounters an error accessing/reading the file
    */
   public static PPMPicture readPPM(String filename) throws IOException {
+    if (filename == null) {
+      throw new IOException("Null filename.");
+    }
+
     Scanner sc;
 
     try {
@@ -66,22 +67,29 @@ public class ImageUtil {
     return picture;
   }
 
-  public static void writePPM(PPMPicture picture, String filename) throws IOException {
-    PrintWriter out = new PrintWriter(filename);
-
-    out.println(picture.getToken());
-    out.println(picture.getWidth() + " " + picture.getHeight());
-    out.println(picture.getMaxValue());
-
-    for (int i = 0; i < picture.getWidth(); i++) {
-      for (int j = 0; j < picture.getHeight(); j++) {
-        RGBPixel pixel = picture.getPixel(i, j);
-        int r = pixel.getR();
-        int g = pixel.getG();
-        int b = pixel.getB();
-        out.println(r + " " + g + " " + b);
-      }
-    }
+  /**
+   * Write an image to a given file in the PPM format.
+   *
+   * @param filename the path of the file.
+   * @throws IOException if it encounters an error accessing/reading the file
+   */
+  public static void writeFile(IPicture picture, String filename) throws IOException {
+    picture.toFile(filename);
+    //    PrintWriter out = new PrintWriter(filename);
+    //
+    //    out.println(picture.getToken());
+    //    out.println(picture.getWidth() + " " + picture.getHeight());
+    //    out.println(picture.getMaxValue());
+    //
+    //    for (int i = 0; i < picture.getWidth(); i++) {
+    //      for (int j = 0; j < picture.getHeight(); j++) {
+    //        RGBPixel pixel = picture.getPixel(i, j);
+    //        int r = pixel.getR();
+    //        int g = pixel.getG();
+    //        int b = pixel.getB();
+    //        out.println(r + " " + g + " " + b);
+    //      }
+    //    }
   }
 
   //demo main

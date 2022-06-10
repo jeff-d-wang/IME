@@ -15,7 +15,7 @@ import static org.junit.Assert.assertEquals;
  * This is the testing class for picture.
  */
 public class PPMPictureTest {
-  PPMPicture smallImage;
+  private PPMPicture smallImage;
 
   @Before
   public void setUp() {
@@ -32,6 +32,16 @@ public class PPMPictureTest {
         assertEquals(result.getPixel(r, c), expect.getPixel(r, c));
       }
     }
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testConstructor() {
+    PPMPicture pictureFail1 = new PPMPicture("P3", -1, 1);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testConstructor2() {
+    PPMPicture pictureFail2 = new PPMPicture("P3", 1, -1);
   }
 
   @Test
@@ -149,30 +159,52 @@ public class PPMPictureTest {
       PPMPicture smallImageRedGreyscale = (PPMPicture) smallImage.greyscale("red");
       PPMPicture smallImageRedGreyscaleExpect = ImageUtil.readPPM("src/pictures/smallImage/smallImage-red-greyscale.ppm");
       assertCompare(smallImageRedGreyscale, smallImageRedGreyscaleExpect);
+      // save our results
+      smallImageRedGreyscale.toFile("src/pictures/smallImage/result/redGreyscale.ppm");
 
       PPMPicture smallImageGreenGreyscale = (PPMPicture) smallImage.greyscale("green");
       PPMPicture smallImageGreenGreyscaleExpect = ImageUtil.readPPM("src/pictures/smallImage/smallImage-green-greyscale.ppm");
       assertCompare(smallImageGreenGreyscale, smallImageGreenGreyscaleExpect);
+      // save our results
+      smallImageGreenGreyscale.toFile("src/pictures/smallImage/result/greenGreyscale.ppm");
 
       PPMPicture smallImageBlueGreyscale = (PPMPicture) smallImage.greyscale("blue");
       PPMPicture smallImageBlueGreyscaleExpect = ImageUtil.readPPM("src/pictures/smallImage/smallImage-blue-greyscale.ppm");
       assertCompare(smallImageBlueGreyscale, smallImageBlueGreyscaleExpect);
+      // save our results
+      smallImageBlueGreyscale.toFile("src/pictures/smallImage/result/blueGreyscale.ppm");
 
       PPMPicture smallImageValueGreyscale = (PPMPicture) smallImage.greyscale("value");
       PPMPicture smallImageValueGreyscaleExpect = ImageUtil.readPPM("src/pictures/smallImage/smallImage-value-greyscale.ppm");
       assertCompare(smallImageValueGreyscale, smallImageValueGreyscaleExpect);
+      // save our results
+      smallImageValueGreyscale.toFile("src/pictures/smallImage/result/valueGreyscale.ppm");
 
       PPMPicture smallImageIntensityGreyscale = (PPMPicture) smallImage.greyscale("intensity");
       PPMPicture smallImageIntensityGreyscaleExpect = ImageUtil.readPPM("src/pictures/smallImage/smallImage-intensity-greyscale.ppm");
       assertCompare(smallImageIntensityGreyscale, smallImageIntensityGreyscaleExpect);
+      // save our results
+      smallImageIntensityGreyscale.toFile("src/pictures/smallImage/result/intensityGreyscale.ppm");
 
       PPMPicture smallImageLumaGreyscale = (PPMPicture) smallImage.greyscale("luma");
       PPMPicture smallImageLumaGreyscaleExpect = ImageUtil.readPPM("src/pictures/smallImage/smallImage-luma-greyscale.ppm");
       assertCompare(smallImageLumaGreyscale, smallImageLumaGreyscaleExpect);
+      // save our results
+      smallImageLumaGreyscale.toFile("src/pictures/smallImage/result/lumaGreyscale.ppm");
 
     } catch (IOException e) {
       System.out.println(e.getMessage());
     }
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testInvalidGreyscale1() {
+    smallImage.greyscale("string");
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testInvalidGreyscale2() {
+    smallImage.greyscale(null);
   }
 
   @Test
@@ -181,6 +213,8 @@ public class PPMPictureTest {
       PPMPicture smallImageHorizontal = (PPMPicture) smallImage.flip("horizontal");
       PPMPicture smallImageHorizontalExpect = ImageUtil.readPPM("src/pictures/smallImage/smallImage-horizontal.ppm");
       assertCompare(smallImageHorizontal, smallImageHorizontalExpect);
+      // save our results
+      smallImageHorizontal.toFile("src/pictures/smallImage/result/horizontal.ppm");
 
       // flipping horizontally smallImage twice (should be original image)
       PPMPicture smallImageHorizontalAgain = (PPMPicture) smallImageHorizontal.flip("horizontal");
@@ -189,6 +223,8 @@ public class PPMPictureTest {
       PPMPicture smallImageVertical = (PPMPicture) smallImage.flip("vertical");
       PPMPicture smallImageVerticalExpect = ImageUtil.readPPM("src/pictures/smallImage/smallImage-vertical.ppm");
       assertCompare(smallImageVertical, smallImageVerticalExpect);
+      // save our results
+      smallImageVertical.toFile("src/pictures/smallImage/result/vertical.ppm");
 
       // flipping vertically smallImage twice (should be original image)
       PPMPicture smallImageVerticalAgain = (PPMPicture) smallImageVertical.flip("vertical");
@@ -199,19 +235,58 @@ public class PPMPictureTest {
     }
   }
 
+  @Test(expected = IllegalArgumentException.class)
+  public void testInvalidFlip1() {
+    smallImage.greyscale("string");
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testInvalidFlip2() {
+    smallImage.greyscale(null);
+  }
+
   @Test
   public void testBrighten() {
     try {
       PPMPicture smallImageBrighten = (PPMPicture) smallImage.brighten(10);
       PPMPicture smallImageBrightenExpect = ImageUtil.readPPM("src/pictures/smallImage/smallImage-brighten-by-10.ppm");
       assertCompare(smallImageBrighten, smallImageBrightenExpect);
+      // save our results
+      smallImageBrighten.toFile("src/pictures/smallImage/result/brighten-by-10.ppm");
 
       PPMPicture smallImageDarken = (PPMPicture) smallImage.brighten(-10);
       PPMPicture smallImageDarkenExpect = ImageUtil.readPPM("src/pictures/smallImage/smallImage-darken-by-10.ppm");
       assertCompare(smallImageDarken, smallImageDarkenExpect);
+      // save our results
+      smallImageDarken.toFile("src/pictures/smallImage/result/darken-by-10.ppm");
 
     } catch (IOException e) {
       System.out.println(e.getMessage());
     }
+  }
+
+  @Test
+  public void testToFile() {
+    try {
+      PPMPicture smallImageRedGreyscale = (PPMPicture) smallImage.greyscale("red");
+      smallImageRedGreyscale.toFile("src/pictures/smallImage/result/redGreyscale.ppm");
+
+      PPMPicture smallImageRedGreyscaleExpect = ImageUtil.readPPM("src/pictures/smallImage/smallImage-red-greyscale.ppm");
+      assertCompare(smallImageRedGreyscale, smallImageRedGreyscaleExpect);
+
+      // I'm testing for the fact that the file still stores data when the file is not a PPM file.
+      // It still opens to the picture on my mac computer so that's cool.
+      PPMPicture smallImageJPEG = smallImage;
+      smallImageJPEG.toFile("src/pictures/smallImage/result/notPPM.jpeg");
+
+    } catch (IOException e) {
+      System.out.println(e.getMessage());
+    }
+  }
+
+  @Test(expected = IOException.class)
+  public void testInvalidToFile() throws IOException {
+    PPMPicture smallImageHorizontal = (PPMPicture) smallImage.flip("horizontal");
+    smallImageHorizontal.toFile(null);
   }
 }

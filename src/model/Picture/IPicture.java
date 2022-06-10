@@ -40,16 +40,18 @@ public interface IPicture {
    *
    * @param component   Type of greyscale to be applied
    * @return a greyscale picture
+   * @throws IllegalArgumentException if given a null or invalid component
    */
-  public IPicture greyscale(String component);
+  public IPicture greyscale(String component) throws IllegalArgumentException;
 
   /**
    * Flips this image in a given String direction.
    *
    * @param direction Direction the picture is to be flipped in
    * @return a flipped picture
+   * @throws IllegalArgumentException if given a null or invalid direction
    */
-  public IPicture flip(String direction);
+  public IPicture flip(String direction) throws IllegalArgumentException;
 
   /**
    * Brighten the picture by a given increment.

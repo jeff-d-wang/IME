@@ -9,7 +9,7 @@ import java.util.Objects;
 This was made to branch similar code between a pixel with RGB values, one that also has an
 alpha component, and others that may feature other defining details.
  */
-public class RGBPixel implements IPixel {
+public abstract class RGBPixel implements IPixel {
   private int r;
   private int g;
   private int b;

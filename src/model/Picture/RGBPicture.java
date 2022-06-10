@@ -11,7 +11,10 @@ public abstract class RGBPicture implements IPicture {
 
   protected RGBPicture altercation;
 
-  public RGBPicture(int width, int height) {
+  public RGBPicture(int width, int height) throws IllegalArgumentException{
+    if (width < 0 || height < 0) {
+      throw new IllegalArgumentException("Invalid " + width + " and/or " + height + " dimensions.");
+    }
     pixels = new RGBPixel[height][width];
   }
 
@@ -61,21 +64,29 @@ public abstract class RGBPicture implements IPicture {
    */
   @Override
   public RGBPicture flip(String direction) throws IllegalArgumentException {
+    if (direction == null) {
+      throw new IllegalArgumentException("Null direction.");
+    }
+
     resetAltercation();
-    if (direction.equals("horizontal")) {
-      for (int c = 0; c < getWidth(); c++) {
-        for (int r = 0; r < getHeight(); r++) {
-          altercation.setPixel(Math.abs((r + 1) - getHeight()), c, pixels[r][c]);
-        }
-      }
-    } else if (direction.equals("vertical")) {
-      for (int r = 0; r < getHeight(); r++) {
+
+    switch (direction) {
+      case "horizontal":
         for (int c = 0; c < getWidth(); c++) {
-          altercation.setPixel(r, Math.abs((c + 1) - getWidth()), pixels[r][c]);
-        } 
-      }
-    } else {
-      throw new IllegalArgumentException("Invalid flip transformation");
+          for (int r = 0; r < getHeight(); r++) {
+            altercation.setPixel(Math.abs((r + 1) - getHeight()), c, pixels[r][c]);
+          }
+        }
+        break;
+      case "vertical":
+        for (int r = 0; r < getHeight(); r++) {
+          for (int c = 0; c < getWidth(); c++) {
+            altercation.setPixel(r, Math.abs((c + 1) - getWidth()), pixels[r][c]);
+          }
+        }
+        break;
+      default:
+        throw new IllegalArgumentException("Invalid flip transformation");
     }
 
     return altercation;

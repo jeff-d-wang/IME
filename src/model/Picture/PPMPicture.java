@@ -1,7 +1,11 @@
 package model.Picture;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+
+import javax.imageio.ImageIO;
 
 import model.Pixel.IPixel;
 import model.Pixel.RGBPixel;
@@ -19,7 +23,7 @@ public class PPMPicture extends RGBPicture {
     maxValue = 255;
   }
 
-  public PPMPicture(String token, int width, int height) {
+  public PPMPicture(String token, int width, int height) throws IllegalArgumentException {
     super(width, height);
     this.token = token;
   }
@@ -46,7 +50,11 @@ public class PPMPicture extends RGBPicture {
   }
 
   @Override
-  public RGBPicture greyscale(String component) {
+  public RGBPicture greyscale(String component) throws IllegalArgumentException {
+    if (component == null) {
+      throw new IllegalArgumentException("Null greyscale component.");
+    }
+
     RGBPixelLambda componentLambda = null;
 
     switch (component) {
@@ -89,20 +97,23 @@ public class PPMPicture extends RGBPicture {
 
   @Override
   public void toFile(String filename) throws IOException {
+    if (filename == null) {
+      throw new IOException("Null filename.");
+    }
+
     PrintWriter os = new PrintWriter(filename);
 
     // header
     os.println("P3");
-    os.println(this.getHeight() + " " + this.getWidth());
+    os.println(this.getWidth() + " " + this.getHeight());
     os.println(maxValue);
 
-    for (int i = 0; i < getWidth(); i++) {
-      for (int j = 0; j < getHeight(); j++) {
-        RGBPixel pixel = getPixel(i, j);
-        int r = pixel.getR();
-        int g = pixel.getG();
-        int b = pixel.getB();
-        os.println(r + " " + g + " " + b);
+    for (int r = 0; r < getHeight(); r++) {
+      for (int c = 0; c < getWidth(); c++) {
+        RGBPixel pixel = getPixel(r, c);
+        os.println(pixel.getR());
+        os.println(pixel.getG());
+        os.println(pixel.getB());
       }
     }
 

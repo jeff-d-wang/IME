@@ -3,11 +3,23 @@
   <component name="ChangeListManager">
     <list default="true" id="4b9e1cc3-9647-4400-a190-c02fe329a94f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/model/Picture/PPMPicture.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/model/Picture/PPMPicture.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/model/Picture/RGBPicture.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/model/Picture/RGBPicture.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-darken-by-10.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-darken-by-10.ppm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-horizontal.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-horizontal.ppm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-luma-greyscale.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-luma-greyscale.ppm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-value-greyscale.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-value-greyscale.ppm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-vertical.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-vertical.ppm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/ImageProcessing/PPMPictureTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/ImageProcessing/PPMPictureTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Picture/PPMPicture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Picture/PPMPicture.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Picture/RGBPicture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Picture/RGBPicture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-darken-by-10.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-darken-by-10.ppm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-horizontal.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-horizontal.ppm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-luma-greyscale.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-luma-greyscale.ppm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-value-greyscale.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-value-greyscale.ppm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-vertical.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-vertical.ppm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/PPMPictureTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/PPMPictureTest.java" afterDir="false" />
+    </list>
+    <list id="a44a8c42-b415-4698-9223-3589db87da46" name="Changes by ruimingli" comment="">
+      <change beforePath="$PROJECT_DIR$/test/PPMPictureTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/PPMPictureTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +36,20 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/test/PPMPictureTest.java">
+      <ranges>
+        <range start1="7" end1="7" start2="7" end2="8" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="26" end1="26" start2="27" end2="35" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="57" end1="58" start2="66" end2="67" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="59" end1="64" start2="68" end2="68" changelist="a44a8c42-b415-4698-9223-3589db87da46" />
+        <range start1="66" end1="66" start2="70" end2="95" changelist="a44a8c42-b415-4698-9223-3589db87da46" />
+        <range start1="82" end1="83" start2="111" end2="112" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="84" end1="89" start2="113" end2="113" changelist="a44a8c42-b415-4698-9223-3589db87da46" />
+        <range start1="90" end1="90" start2="114" end2="216" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -53,32 +79,32 @@
       <recent name="model.Pixel" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PPMPictureTest.testSetPixel">
-    <configuration name="PPMPictureTest.testGetHeight" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.PPMPictureTest.testGreyscale">
+    <configuration name="PPMPictureTest.testBrighten" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ImageProcessing" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="PPMPictureTest" />
-      <option name="METHOD_NAME" value="testGetHeight" />
+      <option name="METHOD_NAME" value="testBrighten" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PPMPictureTest.testGetPixel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PPMPictureTest.testFlip" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ImageProcessing" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="PPMPictureTest" />
-      <option name="METHOD_NAME" value="testGetPixel" />
+      <option name="METHOD_NAME" value="testFlip" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PPMPictureTest.testGetWidth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PPMPictureTest.testGreyscale" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ImageProcessing" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="PPMPictureTest" />
-      <option name="METHOD_NAME" value="testGetWidth" />
+      <option name="METHOD_NAME" value="testGreyscale" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -119,11 +145,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PPMPictureTest.testGreyscale" />
+        <item itemvalue="JUnit.PPMPictureTest.testFlip" />
+        <item itemvalue="JUnit.PPMPictureTest.testBrighten" />
         <item itemvalue="JUnit.PPMPictureTest.testSetPixel" />
         <item itemvalue="JUnit.PPMPictureTest.testInvalidGetPixel" />
-        <item itemvalue="JUnit.PPMPictureTest.testGetPixel" />
-        <item itemvalue="JUnit.PPMPictureTest.testGetHeight" />
-        <item itemvalue="JUnit.PPMPictureTest.testGetWidth" />
       </list>
     </recent_temporary>
   </component>

@@ -80,32 +80,4 @@ public abstract class RGBPicture implements IPicture {
 
     return altercation;
   }
-
-  @Override
-  public boolean equals(Object other) {
-    if (this == other) {
-      return true;
-    }
-
-    if (!(other instanceof RGBPicture)) {
-      return false;
-    } else {
-      RGBPicture that = (RGBPicture) (other);
-
-      for (int r = 0; r < getWidth(); r++) {
-        for (int c = 0; c < getHeight(); c++) {
-          if (getPixel(r, c) != that.getPixel(r, c)) {
-            return false;
-          }
-        }
-      }
-
-      return true;
-    }
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(pixels);
-  }
 }

@@ -1,8 +1,10 @@
 package model.Picture;
 
+import java.io.IOException;
 import java.io.PrintWriter;
 
 import model.Pixel.IPixel;
+import model.Pixel.RGBPixel;
 import model.Pixel.RGBPixelImpl;
 import model.Lambda.RGBPixelLambda;
 
@@ -36,8 +38,11 @@ public class PPMPicture extends RGBPicture {
   }
 
   @Override
-  public void setPixel(int x, int y, IPixel pixel) throws IllegalArgumentException {
-    pixels[x][y] = (RGBPixelImpl) pixel;
+  public void setPixel(int r, int c, IPixel pixel) throws IllegalArgumentException {
+    if (r < 0 || r >= getWidth() || c < 0 || c >= getHeight()) {
+      throw new IllegalArgumentException("Illegal (" + r + ", " + c + ") position.");
+    }
+    pixels[r][c] = (RGBPixelImpl) pixel;
   }
 
   @Override
@@ -83,26 +88,24 @@ public class PPMPicture extends RGBPicture {
   }
 
   @Override
-  public void toFile(String filename) {
-    try {
-      PrintWriter os = new PrintWriter(filename);
+  public void toFile(String filename) throws IOException {
+    PrintWriter os = new PrintWriter(filename);
 
-      // header
-      os.println("P3");
-      os.println(this.getHeight() + " " + this.getWidth());
-      os.println(maxValue);
+    // header
+    os.println("P3");
+    os.println(this.getHeight() + " " + this.getWidth());
+    os.println(maxValue);
 
-      for (int r = 0; r < getHeight(); r++) {
-        for (int c = 0; c < getWidth(); c++) {
-          os.println(getPixel(r, c).getR() + " "
-                  + getPixel(r, c).getG() + " "
-                  + getPixel(r, c).getB());
-        }
+    for (int i = 0; i < getWidth(); i++) {
+      for (int j = 0; j < getHeight(); j++) {
+        RGBPixel pixel = getPixel(i, j);
+        int r = pixel.getR();
+        int g = pixel.getG();
+        int b = pixel.getB();
+        os.println(r + " " + g + " " + b);
       }
-
-      os.close();
-    } catch (Exception e) {
-      e.printStackTrace();
     }
+
+    os.close();
   }
 }

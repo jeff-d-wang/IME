@@ -1,18 +1,44 @@
 package model.Picture;
 
+import java.io.IOException;
+
 import model.Pixel.IPixel;
 import model.Pixel.RGBPixel;
 
 public interface IPicture {
 
-  public IPixel getPixel(int x, int y);
+  /**
+   * Returns the width of this picture.
+   * @return the width of this picture
+   */
+  public int getWidth();
 
-  public void setPixel(int x, int y, IPixel pixel);
+  /**
+   * Returns the height of this picture.
+   * @return the height of this picture
+   */
+  public int getHeight();
+
+  /**
+   * Return the Pixel object at a given row and column value.
+   * @param r   Row value
+   * @param c   Column value
+   * @return the Pixel object at a given row and column value
+   */
+  public IPixel getPixel(int r, int c);
+
+  /**
+   * Set the Pixel object at a given row and column value a given Pixel object.
+   * @param r       Row value
+   * @param c       Column value
+   * @param pixel   Pixel object to be set
+   */
+  public void setPixel(int r, int c, IPixel pixel);
 
   /**
    * Greyscale this picture according to a given component specifying its type.
    *
-   * @param component Type of greyscale to be applied
+   * @param component   Type of greyscale to be applied
    * @return a greyscale picture
    */
   public IPicture greyscale(String component);
@@ -37,18 +63,7 @@ public interface IPicture {
    * Converts this picture into its respective file type.
    *
    * @param filename Path of the file to be written on.
+   * @throws IOException if it encounters an error accessing the file
    */
-  public void toFile(String filename);
-
-  /**
-   * Returns the width of this picture.
-   * @return the width of this picture
-   */
-  public int getWidth();
-
-  /**
-   * Returns the height of this picture.
-   * @return the height of this picture
-   */
-  public int getHeight();
+  public void toFile(String filename) throws IOException;
 }

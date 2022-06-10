@@ -20,11 +20,12 @@ import model.Pixel.RGBPixelImpl;
 public class ImageUtil {
 
   /**
-   * Read an image file in the PPM format and print the colors.
+   * Read an image file in the PPM format and return a representative Picture object.
    *
    * @param filename the path of the file.
+   * @throws IOException if it encounters an error accessing/reading the file
    */
-  public static IPicture readPicture(String filename) throws IOException {
+  public static PPMPicture readPPM(String filename) throws IOException {
     Scanner sc;
 
     try {
@@ -51,14 +52,14 @@ public class ImageUtil {
     int width = sc.nextInt();
     int height = sc.nextInt();
     int maxValue = sc.nextInt();
-    IPicture picture = new PPMPicture(token, width, height);
+    PPMPicture picture = new PPMPicture(token, width, height);
 
-    for (int i = 0; i < width; i++) {
-      for (int j = 0; j < height; j++) {
-        int r = sc.nextInt();
-        int g = sc.nextInt();
-        int b = sc.nextInt();
-        picture.setPixel(i, j, new RGBPixelImpl(r, g, b));
+    for (int r = 0; r < height; r++) {
+      for (int c = 0; c < width; c++) {
+        int red = sc.nextInt();
+        int green = sc.nextInt();
+        int blue = sc.nextInt();
+        picture.setPixel(r, c, new RGBPixelImpl(red, green, blue));
       }
     }
 
@@ -90,10 +91,10 @@ public class ImageUtil {
     if (args.length > 0) {
       filename = args[0];
     } else {
-      filename = "src/Koala.ppm";
+      filename = "src/pictures/Koala.ppm";
     }
 
-    IPicture koala = ImageUtil.readPicture(filename);
+    IPicture koala = ImageUtil.readPPM(filename);
 
     System.out.println(koala.getWidth() + ", " + koala.getHeight());
   }

@@ -99,21 +99,17 @@ public class RGBPixel implements IPixel {
   }
 
   /**
-   * Sets given RGB values to their respective variables.
+   * Sets given RGB values to their respective variables. It will clamp inputs to its min and max
+   * values.
    *
-   * @param r Red value (0-255)
-   * @param g Green value (0-255)
-   * @param b Blue value (0-255)
-   * @throws IllegalArgumentException if any of the values aren't between 0 and 255 (inclusive).
+   * @param r Red value [0-255]
+   * @param g Green value [0-255]
+   * @param b Blue value [0-255]
    */
   public void setRGB(int r, int g, int b) throws IllegalArgumentException {
-    if (r < 0 || r > 255 || g < 0 || g > 255 || b < 0 || b > 255) {
-      throw new IllegalArgumentException("Illegal rgb value(s) " + r + ", " + g + ", " + b);
-    }
-
-    this.r = r;
-    this.g = g;
-    this.b = b;
+    this.r = clamp(r);
+    this.g = clamp(g);
+    this.b = clamp(b);
   }
 
   @Override
@@ -132,21 +128,7 @@ public class RGBPixel implements IPixel {
   }
 
   @Override
-  public boolean equals(Object other) {
-    if (this == other) {
-      return true;
-    }
-
-    if (!(other instanceof IPixel)) {
-      return false;
-    } else {
-      RGBPixel that = (RGBPixel) (other);
-      return (this.r == that.r) && (this.g == that.g) && (this.b == that.b);
-    }
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(r, g, b);
+  public String toString() {
+    return "(" + getR() + ", " + getG() + ", " + getB() + ")";
   }
 }

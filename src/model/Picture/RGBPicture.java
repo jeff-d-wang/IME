@@ -7,10 +7,10 @@ import model.Lambda.RGBPixelLambda;
 public abstract class RGBPicture implements IPicture {
   protected RGBPixel[][] pixels;
 
-  RGBPicture altercation;
+  protected RGBPicture altercation;
 
   public RGBPicture(int width, int height) {
-    pixels = new RGBPixel[width][height];
+    pixels = new RGBPixel[height][width];
   }
 
   protected abstract void resetAltercation();
@@ -26,12 +26,15 @@ public abstract class RGBPicture implements IPicture {
   }
 
   @Override
-  public RGBPixel getPixel(int x, int y) {
-    return pixels[x][y];
+  public RGBPixel getPixel(int r, int c) throws IllegalArgumentException {
+    if (r < 0 || r >= getWidth() || c < 0 || c >= getHeight()) {
+      throw new IllegalArgumentException("Illegal (" + r + ", " + c + ") position.");
+    }
+    return pixels[r][c];
   }
 
   @Override
-  public abstract void setPixel(int x, int y, IPixel pixel) throws IllegalArgumentException;
+  public abstract void setPixel(int r, int c, IPixel pixel) throws IllegalArgumentException;
 
   /**
    * Applies the given lambda to all pixels of this picture and stores it in its altercation.
@@ -48,50 +51,31 @@ public abstract class RGBPicture implements IPicture {
   }
 
   /**
-   * Greyscale this picture according to a given component specifying its type.
-   *
-   * @param component Type of greyscale to be applied
-   * @return a greyscale picture
-   */
-  /*
-  This was made abstract to assign the altercation to the correct IPixel type. If we were to use a
-  different implementation of the IPixel then when another RGBPicture implementation uses (like an
-  alpha pixel), we would need to make sure the lambdas use the correct IPixel.
-   */
-  public abstract RGBPicture greyscale(String component);
-
-  /**
    * Flips this image in a given String direction.
    *
    * @param direction Direction the picture is to be flipped in
    * @return a flipped picture
+   * @throws IllegalArgumentException if the given direction is invalid
    */
-  public RGBPicture flip(String direction) {
+  @Override
+  public RGBPicture flip(String direction) throws IllegalArgumentException {
     resetAltercation();
     if (direction.equals("horizontal")) {
-      for (int r = 0; r < this.getHeight(); r++) {
-        for (int c = 0; c < this.getWidth(); c++) {
-          altercation.setPixel(Math.abs((r + 1) - getHeight()), c, pixels[r][c]);
+      for (int r = 0; r < this.getWidth(); r++) {
+        for (int c = 0; c < this.getHeight(); c++) {
+          altercation.setPixel(r, Math.abs((c + 1) - getHeight()), pixels[r][c]);
         }
       }
     } else if (direction.equals("vertical")) {
-      for (int r = 0; r < this.getHeight(); r++) {
-        for (int c = 0; c < this.getWidth(); c++) {
-          altercation.setPixel(r, Math.abs((c + 1) - getWidth()), pixels[r][c]);
-        }
+      for (int r = 0; r < this.getWidth(); r++) {
+        for (int c = 0; c < this.getHeight(); c++) {
+          altercation.setPixel(Math.abs((r + 1) - getWidth()), c, pixels[r][c]);
+        } 
       }
     } else {
-      throw new IllegalStateException("Invalid flip transformation");
+      throw new IllegalArgumentException("Invalid flip transformation");
     }
 
     return altercation;
   }
-
-  /**
-   * Brighten the picture by a given increment.
-   *
-   * @param increment Number increment to change brightness by
-   * @return brighten image
-   */
-  public abstract RGBPicture brighten(int increment);
 }

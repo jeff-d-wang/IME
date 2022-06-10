@@ -2,54 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b9e1cc3-9647-4400-a190-c02fe329a94f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/view/PictureTextView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/PictureView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/ImageUtilTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/PPMPictureTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/ImageUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/Koala.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/koala-blue-greyscale.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/koala-brighter-by-50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/koala-green-greyscale.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/koala-horizontal-vertical.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/koala-horizontal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/koala-intensity-greyscale.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/koala-luma-greyscale.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/koala-red-greyscale.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/koala-value-greyscale.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/koala-vertical-horizontal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/koala-vertical.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/model/ImageUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/model/ImageUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/model/Picture.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/model/Pixel/APixel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/model/Pixel/IPixel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/model/Pixel/IPixel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/model/Pixel/RGBPixel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/model/Pixel/RGBPixel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/model/PixelLambda.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/ImageProcessing/PictureTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/ImageProcessing/PixelTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Koala.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/src/pictures/Koala.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/colors.pbm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/PictureControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/PictureControllerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/koala-blue-greyscale.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/pictures/koala-blue-greyscale.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/koala-brighter-by-50.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/pictures/koala-brighter-by-50.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/koala-green-greyscale.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/pictures/koala-green-greyscale.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/koala-horizontal-vertical.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/pictures/koala-horizontal-vertical.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/koala-horizontal.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/pictures/koala-horizontal.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/koala-intensity-greyscale.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/pictures/koala-intensity-greyscale.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/koala-luma-greyscale.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/pictures/koala-luma-greyscale.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/koala-red-greyscale.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/pictures/koala-red-greyscale.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/koala-value-greyscale.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/pictures/koala-value-greyscale.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/koala-vertical-horizontal.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/pictures/koala-vertical-horizontal.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/koala-vertical.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/pictures/koala-vertical.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/ImageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ImageUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Picture/IPicture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Picture/IPicture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/model/Picture/PPMPicture.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/model/Picture/PPMPicture.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/model/Picture/RGBPicture.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/model/Picture/RGBPicture.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/ImageProcessing/PPMPictureTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/ImageProcessing/PPMPictureTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Picture/PPMPicture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Picture/PPMPicture.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Picture/RGBPicture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Picture/RGBPicture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Pixel/RGBPixel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Pixel/RGBPixel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Pixel/RGBPixelImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Pixel/RGBPixelImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/PictureTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/PixelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/RGBPixelImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +53,7 @@
       <recent name="model.Pixel" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PPMPictureTest.testInvalidSetPixel">
+  <component name="RunManager" selected="JUnit.PPMPictureTest.testSetPixel">
     <configuration name="PPMPictureTest.testGetHeight" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ImageProcessing" />
       <option name="PACKAGE_NAME" value="" />
@@ -116,21 +74,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PPMPictureTest.testInvalidGetPixel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PPMPictureTest.testGetWidth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ImageProcessing" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="PPMPictureTest" />
-      <option name="METHOD_NAME" value="testInvalidGetPixel" />
+      <option name="METHOD_NAME" value="testGetWidth" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PPMPictureTest.testInvalidSetPixel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PPMPictureTest.testInvalidGetPixel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ImageProcessing" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="PPMPictureTest" />
-      <option name="METHOD_NAME" value="testInvalidSetPixel" />
+      <option name="METHOD_NAME" value="testInvalidGetPixel" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -161,11 +119,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PPMPictureTest.testInvalidSetPixel" />
         <item itemvalue="JUnit.PPMPictureTest.testSetPixel" />
         <item itemvalue="JUnit.PPMPictureTest.testInvalidGetPixel" />
         <item itemvalue="JUnit.PPMPictureTest.testGetPixel" />
         <item itemvalue="JUnit.PPMPictureTest.testGetHeight" />
+        <item itemvalue="JUnit.PPMPictureTest.testGetWidth" />
       </list>
     </recent_temporary>
   </component>

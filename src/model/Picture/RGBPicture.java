@@ -1,5 +1,7 @@
 package model.Picture;
 
+import java.util.Objects;
+
 import model.Pixel.IPixel;
 import model.Pixel.RGBPixel;
 import model.Lambda.RGBPixelLambda;
@@ -16,18 +18,18 @@ public abstract class RGBPicture implements IPicture {
   protected abstract void resetAltercation();
 
   @Override
-  public int getWidth() {
+  public int getHeight() {
     return pixels.length;
   }
 
   @Override
-  public int getHeight() {
+  public int getWidth() {
     return pixels[0].length;
   }
 
   @Override
   public RGBPixel getPixel(int r, int c) throws IllegalArgumentException {
-    if (r < 0 || r >= getWidth() || c < 0 || c >= getHeight()) {
+    if (r < 0 || r >= getHeight() || c < 0 || c >= getWidth()) {
       throw new IllegalArgumentException("Illegal (" + r + ", " + c + ") position.");
     }
     return pixels[r][c];
@@ -61,15 +63,15 @@ public abstract class RGBPicture implements IPicture {
   public RGBPicture flip(String direction) throws IllegalArgumentException {
     resetAltercation();
     if (direction.equals("horizontal")) {
-      for (int r = 0; r < this.getWidth(); r++) {
-        for (int c = 0; c < this.getHeight(); c++) {
-          altercation.setPixel(r, Math.abs((c + 1) - getHeight()), pixels[r][c]);
+      for (int c = 0; c < getWidth(); c++) {
+        for (int r = 0; r < getHeight(); r++) {
+          altercation.setPixel(Math.abs((r + 1) - getHeight()), c, pixels[r][c]);
         }
       }
     } else if (direction.equals("vertical")) {
-      for (int r = 0; r < this.getWidth(); r++) {
-        for (int c = 0; c < this.getHeight(); c++) {
-          altercation.setPixel(Math.abs((r + 1) - getWidth()), c, pixels[r][c]);
+      for (int r = 0; r < getHeight(); r++) {
+        for (int c = 0; c < getWidth(); c++) {
+          altercation.setPixel(r, Math.abs((c + 1) - getWidth()), pixels[r][c]);
         } 
       }
     } else {
@@ -77,5 +79,33 @@ public abstract class RGBPicture implements IPicture {
     }
 
     return altercation;
+  }
+
+  @Override
+  public boolean equals(Object other) {
+    if (this == other) {
+      return true;
+    }
+
+    if (!(other instanceof RGBPicture)) {
+      return false;
+    } else {
+      RGBPicture that = (RGBPicture) (other);
+
+      for (int r = 0; r < getWidth(); r++) {
+        for (int c = 0; c < getHeight(); c++) {
+          if (getPixel(r, c) != that.getPixel(r, c)) {
+            return false;
+          }
+        }
+      }
+
+      return true;
+    }
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(pixels);
   }
 }

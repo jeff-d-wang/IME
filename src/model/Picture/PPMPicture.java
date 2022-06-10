@@ -39,7 +39,7 @@ public class PPMPicture extends RGBPicture {
 
   @Override
   public void setPixel(int r, int c, IPixel pixel) throws IllegalArgumentException {
-    if (r < 0 || r >= getWidth() || c < 0 || c >= getHeight()) {
+    if (r < 0 || r >= getHeight() || c < 0 || c >= getWidth()) {
       throw new IllegalArgumentException("Illegal (" + r + ", " + c + ") position.");
     }
     pixels[r][c] = (RGBPixelImpl) pixel;

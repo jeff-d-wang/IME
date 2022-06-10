@@ -2,26 +2,25 @@ import java.io.InputStreamReader;
 
 import controller.PictureController;
 import controller.PictureControllerImpl;
-import model.Picture.IPictureModel;
-import model.Picture.PictureModel;
+import model.picture.IPictureModel;
+import model.picture.PictureModel;
 import view.PictureTextView;
 import view.PictureView;
 
 /**
- * This is the main method for IME. This class can
+ * This is the main method class for IME and entry point to the program.
  */
 public class IME {
+  /**
+   * The main method and entry point to the IME program.
+   * @param args   Arguments
+   */
   public static void main(String[] args) {
     IPictureModel model = new PictureModel();
     PictureView view = new PictureTextView(model);
     Readable readable = new InputStreamReader(System.in);
-    PictureController controller;
-
-    if (args.length < 3 || args.length > 4) {
-      throw new IllegalStateException("Invalid command");
-    }
-
-    controller = new PictureControllerImpl(model, view, readable);
+    PictureController controller = new PictureControllerImpl(model, view, readable);
+    controller.run();
     /*
     Script that uses all the methods:
      load src/pictures/smallImage/smallImage.ppm smallImage

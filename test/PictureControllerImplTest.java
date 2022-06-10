@@ -9,9 +9,10 @@ import java.io.PrintStream;
 
 import controller.PictureController;
 import controller.PictureControllerImpl;
+import controller.PictureControllerImplMock;
 import model.ImageUtil;
-import model.Picture.PictureModel;
-import model.Picture.RGBPicture;
+import model.picture.PictureModel;
+import model.picture.RGBPicture;
 import view.PictureTextView;
 import view.PictureView;
 
@@ -34,22 +35,12 @@ public class PictureControllerImplTest {
     view = new PictureTextView(model);
   }
 
-  /**
-   *
-   * @param in
-   * @param out
-   */
   private void test(ByteArrayInputStream in, ByteArrayOutputStream out) {
     rd = new InputStreamReader(in);
     bytes = out;
     ap = new PrintStream(out);
   }
 
-  /**
-   *
-   * @param result
-   * @param expect
-   */
   private void assertCompare(RGBPicture result, RGBPicture expect) {
     for (int r = 0; r < result.getHeight(); r++) {
       for (int c = 0; c < result.getWidth(); c++) {
@@ -73,11 +64,25 @@ public class PictureControllerImplTest {
     PictureController controllerFail3 = new PictureControllerImpl(model, view, null);
   }
 
+  @Test
+  public void testInputs() throws IOException {
+    test(new ByteArrayInputStream(("load src/pictures/smallImage/smallImage.ppm "
+            + "smallImage").getBytes()), new ByteArrayOutputStream());
+    view = new PictureTextView(model, ap);
+    PictureController controllerMock = new PictureControllerImplMock(model, view, rd);
+    controllerMock.run();
+
+    assertEquals("load\n"
+            + "src/pictures/smallImage/smallImage.ppm\n"
+            + "smallImage\n"
+            + "load\n", bytes.toString());
+  }
+
   // all actual commands are tested with valid & invalid arguments in PPMPictureTest.java
   @Test
   public void testLoad() throws IOException {
-    test(new ByteArrayInputStream(("load src/pictures/smallImage/smallImage.ppm " +
-            "smallImage").getBytes()), new ByteArrayOutputStream());
+    test(new ByteArrayInputStream(("load src/pictures/smallImage/smallImage.ppm "
+            + "smallImage").getBytes()), new ByteArrayOutputStream());
     view = new PictureTextView(model, ap);
     controller = new PictureControllerImpl(model, view, rd);
     controller.run();
@@ -89,73 +94,93 @@ public class PictureControllerImplTest {
   // all actual commands are tested with valid & invalid arguments in PPMPictureTest.java
   @Test
   public void testSave() throws IOException {
-    test(new ByteArrayInputStream("load src/pictures/smallImage/smallImage.ppm smallImage \nsave smallImage src/pictures/smallImage/result/default.ppm".getBytes()), new ByteArrayOutputStream());
+    test(new ByteArrayInputStream(("load src/pictures/smallImage/smallImage.ppm smallImage "
+                    + "\nsave smallImage src/pictures/smallImage/result/default.ppm").getBytes()),
+            new ByteArrayOutputStream());
     view = new PictureTextView(model, ap);
     controller = new PictureControllerImpl(model, view, rd);
     controller.run();
 
-    assertCompare(ImageUtil.readPPM("src/pictures/smallImage/result/default.ppm"), ImageUtil.readPPM("src/pictures/smallImage/smallImage.ppm"));
+    assertCompare(ImageUtil.readPPM("src/pictures/smallImage/result/default.ppm"),
+            ImageUtil.readPPM("src/pictures/smallImage/smallImage.ppm"));
   }
 
   // all actual commands are tested with valid & invalid arguments in PPMPictureTest.java
   @Test
   public void testRedGreyscale() throws IOException {
-    test(new ByteArrayInputStream("load src/pictures/smallImage/smallImage.ppm smallImage \nred-component smallImage smallImageRedGreyscale".getBytes()), new ByteArrayOutputStream());
+    test(new ByteArrayInputStream(("load src/pictures/smallImage/smallImage.ppm "
+                    + "smallImage \nred-component smallImage smallImageRedGreyscale").getBytes()),
+            new ByteArrayOutputStream());
     view = new PictureTextView(model, ap);
     controller = new PictureControllerImpl(model, view, rd);
     controller.run();
 
-    assertCompare((RGBPicture) model.getPicture("smallImageRedGreyscale"), ImageUtil.readPPM("src/pictures/smallImage/smallImage-red-greyscale.ppm"));
+    assertCompare((RGBPicture) model.getPicture("smallImageRedGreyscale"),
+            ImageUtil.readPPM("src/pictures/smallImage/smallImage-red-greyscale.ppm"));
   }
 
   // all actual commands are tested with valid & invalid arguments in PPMPictureTest.java
   @Test
   public void testGreenGreyscale() throws IOException {
-    test(new ByteArrayInputStream("load src/pictures/smallImage/smallImage.ppm smallImage \ngreen-component smallImage smallImageGreenGreyscale".getBytes()), new ByteArrayOutputStream());
+    test(new ByteArrayInputStream(("load src/pictures/smallImage/smallImage.ppm smallImage "
+                    + "\ngreen-component smallImage smallImageGreenGreyscale").getBytes()),
+            new ByteArrayOutputStream());
     view = new PictureTextView(model, ap);
     controller = new PictureControllerImpl(model, view, rd);
     controller.run();
 
-    assertCompare((RGBPicture) model.getPicture("smallImageGreenGreyscale"), ImageUtil.readPPM("src/pictures/smallImage/smallImage-green-greyscale.ppm"));
+    assertCompare((RGBPicture) model.getPicture("smallImageGreenGreyscale"),
+            ImageUtil.readPPM("src/pictures/smallImage/smallImage-green-greyscale.ppm"));
   }
 
   // all actual commands are tested with valid & invalid arguments in PPMPictureTest.java
   @Test
   public void testBlueGreyscale() throws IOException {
-    test(new ByteArrayInputStream("load src/pictures/smallImage/smallImage.ppm smallImage \nblue-component smallImage smallImageBlueGreyscale".getBytes()), new ByteArrayOutputStream());
+    test(new ByteArrayInputStream(("load src/pictures/smallImage/smallImage.ppm "
+                    + "smallImage \nblue-component smallImage smallImageBlueGreyscale").getBytes()),
+            new ByteArrayOutputStream());
     view = new PictureTextView(model, ap);
     controller = new PictureControllerImpl(model, view, rd);
     controller.run();
 
-    assertCompare((RGBPicture) model.getPicture("smallImageBlueGreyscale"), ImageUtil.readPPM("src/pictures/smallImage/smallImage-blue-greyscale.ppm"));
+    assertCompare((RGBPicture) model.getPicture("smallImageBlueGreyscale"),
+            ImageUtil.readPPM("src/pictures/smallImage/smallImage-blue-greyscale.ppm"));
   }
 
   // all actual commands are tested with valid & invalid arguments in PPMPictureTest.java
   @Test
   public void testFlip() throws IOException {
-    test(new ByteArrayInputStream("load src/pictures/smallImage/smallImage.ppm smallImage \nvertical-flip smallImage smallImageVerticalFlip".getBytes()), new ByteArrayOutputStream());
+    test(new ByteArrayInputStream(("load src/pictures/smallImage/smallImage.ppm "
+                    + "smallImage \nvertical-flip smallImage smallImageVerticalFlip").getBytes()),
+            new ByteArrayOutputStream());
     view = new PictureTextView(model, ap);
     controller = new PictureControllerImpl(model, view, rd);
     controller.run();
 
-    assertCompare((RGBPicture) model.getPicture("smallImageVerticalFlip"), ImageUtil.readPPM("src/pictures/smallImage/smallImage-vertical.ppm"));
+    assertCompare((RGBPicture) model.getPicture("smallImageVerticalFlip"),
+            ImageUtil.readPPM("src/pictures/smallImage/smallImage-vertical.ppm"));
   }
 
 
   // all actual commands are tested with valid & invalid arguments in PPMPictureTest.java
   @Test
   public void testBrighten() throws IOException {
-    test(new ByteArrayInputStream("load src/pictures/smallImage/smallImage.ppm smallImage \nbrighten 10 smallImage smallImageBrighten10".getBytes()), new ByteArrayOutputStream());
+    test(new ByteArrayInputStream(("load src/pictures/smallImage/smallImage.ppm "
+                    + "smallImage \nbrighten 10 smallImage smallImageBrighten10").getBytes()),
+            new ByteArrayOutputStream());
     view = new PictureTextView(model, ap);
     controller = new PictureControllerImpl(model, view, rd);
     controller.run();
 
-    assertCompare((RGBPicture) model.getPicture("smallImageBrighten10"), ImageUtil.readPPM("src/pictures/smallImage/smallImage-brighten-by-10.ppm"));
+    assertCompare((RGBPicture) model.getPicture("smallImageBrighten10"),
+            ImageUtil.readPPM("src/pictures/smallImage/smallImage-brighten-by-10.ppm"));
   }
 
   @Test
   public void testInvalidBrighten1() {
-    test(new ByteArrayInputStream("load src/pictures/smallImage/smallImage.ppm smallImage \nbrighten string smallImage smallImageBrighten10".getBytes()), new ByteArrayOutputStream());
+    test(new ByteArrayInputStream(("load src/pictures/smallImage/smallImage.ppm smallImage "
+                    + "\nbrighten string smallImage smallImageBrighten10").getBytes()),
+            new ByteArrayOutputStream());
     view = new PictureTextView(model, ap);
     controller = new PictureControllerImpl(model, view, rd);
     controller.run();
@@ -168,7 +193,8 @@ public class PictureControllerImplTest {
 
   @Test
   public void testInvalidBrighten2() {
-    test(new ByteArrayInputStream("load src/pictures/smallImage/smallImage.ppm smallImage \nbrighten 10 smallImage".getBytes()), new ByteArrayOutputStream());
+    test(new ByteArrayInputStream(("load src/pictures/smallImage/smallImage.ppm smallImage " +
+            "\nbrighten 10 smallImage").getBytes()), new ByteArrayOutputStream());
     view = new PictureTextView(model, ap);
     controller = new PictureControllerImpl(model, view, rd);
     controller.run();
@@ -181,7 +207,9 @@ public class PictureControllerImplTest {
 
   @Test
   public void testInvalidBrighten3() {
-    test(new ByteArrayInputStream("load src/pictures/smallImage/smallImage.ppm smallImage \nbrighten 10 smallImage smallImageBrighten10 aFifthString".getBytes()), new ByteArrayOutputStream());
+    test(new ByteArrayInputStream(("load src/pictures/smallImage/smallImage.ppm smallImage "
+                    + "\nbrighten 10 smallImage smallImageBrighten10 aFifthString").getBytes()),
+            new ByteArrayOutputStream());
     view = new PictureTextView(model, ap);
     controller = new PictureControllerImpl(model, view, rd);
     controller.run();
@@ -192,9 +220,11 @@ public class PictureControllerImplTest {
     assertEquals("Invalid line input.", message);
   }
 
+  // Always listens to new commands after
   @Test
   public void testTooLittleInput() {
-    test(new ByteArrayInputStream("load src/pictures/smallImage/smallImage.ppm smallImage \nsave smallImage".getBytes()), new ByteArrayOutputStream());
+    test(new ByteArrayInputStream(("load src/pictures/smallImage/smallImage.ppm smallImage "
+            + "\nsave smallImage").getBytes()), new ByteArrayOutputStream());
     view = new PictureTextView(model, ap);
     controller = new PictureControllerImpl(model, view, rd);
     controller.run();
@@ -205,9 +235,12 @@ public class PictureControllerImplTest {
     assertEquals("Invalid line input.", message);
   }
 
+  // Always listens to new commands after
   @Test
   public void testTooMuchInput() {
-    test(new ByteArrayInputStream("load src/pictures/smallImage/smallImage.ppm smallImage \nsave smallImage src/pictures/smallImage/result/default.ppm aFourthString".getBytes()), new ByteArrayOutputStream());
+    test(new ByteArrayInputStream(("load src/pictures/smallImage/smallImage.ppm smallImage "
+            + "\nsave smallImage src/pictures/smallImage/result/default.ppm aFourthString")
+            .getBytes()), new ByteArrayOutputStream());
     view = new PictureTextView(model, ap);
     controller = new PictureControllerImpl(model, view, rd);
     controller.run();
@@ -218,9 +251,12 @@ public class PictureControllerImplTest {
     assertEquals("Invalid line input.", message);
   }
 
+  // Invalid functions or just random inputs should just tell the user that the function they were
+  // trying to use was invalid but that they're still listening for a new command.
   @Test
   public void testNonsenseCommand() {
-    test(new ByteArrayInputStream("nonsense smallImage smallImageNonsense".getBytes()), new ByteArrayOutputStream());
+    test(new ByteArrayInputStream("nonsense smallImage smallImageNonsense".getBytes()),
+            new ByteArrayOutputStream());
     view = new PictureTextView(model, ap);
     controller = new PictureControllerImpl(model, view, rd);
     controller.run();
@@ -247,9 +283,8 @@ public class PictureControllerImplTest {
   }
 
   /*
-  I DID NOT MAKE ANY MOCKS BECAUSE AFTER TESTING EACH COMMAND, WE ALSO ASSERTEQUALS A PICTURE
-  EQUIVALENT TO WHAT SHOULD HAPPEN. WE ALSO TEST ALL POSSIBLE INPUTS TO EACH FUNCTION IN A PICTURE
-  CLASS. THEREFORE, WE KNOW THAT WE ARE TRUTHFULLY SENDING THE INTENDED STRING TO THE MODEL, PICTURE
-  etc.
+  I DID NOT MAKE ANY MOCKS FOR EACH COMMAND BECAUSE WE ALSO ASSERTEQUALS A PICTURE EQUIVALENT TO
+  WHAT SHOULD HAPPEN. WE ALSO TEST ALL POSSIBLE INPUTS TO EACH FUNCTION IN A PICTURE CLASS.
+  THEREFORE, WE KNOW THAT WE ARE TRUTHFULLY SENDING THE INTENDED STRING TO THE MODEL, PICTURE, etc.
    */
 }

@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 import model.ImageUtil;
-import model.Picture.IPictureModel;
+import model.picture.IPictureModel;
 import view.PictureView;
 
 /**
@@ -55,7 +55,6 @@ public class PictureControllerImpl implements PictureController {
 
     while (sc.hasNextLine()) {
       String line = sc.nextLine();
-      System.out.println(line);
       script = line.split(" ", 4);
       script[0].toLowerCase();
       command = script[0].split("-", 2);
@@ -137,7 +136,6 @@ public class PictureControllerImpl implements PictureController {
     public void run() throws IllegalStateException {
 
       try {
-        System.out.println(command[0] + " greyscaling " + script[1] + " to " + script[2]);
         model.putPicture(script[2], model.getPicture(script[1]).greyscale(command[0]));
       } catch (Exception e) {
         try {
@@ -179,7 +177,6 @@ public class PictureControllerImpl implements PictureController {
       int increment = 0;
       try {
         increment = Integer.parseInt(script[1]);
-        System.out.println("Brightening " + script[2] + " by " + increment + " to " + script[3]);
         model.putPicture(script[3], model.getPicture(script[2]).brighten(increment));
       } catch (NumberFormatException e) {
         try {

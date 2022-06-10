@@ -2,8 +2,6 @@ package controller;
 
 import java.io.IOException;
 
-import model.Picture.IPicture;
-
 /**
  * Interface of a controller for the Picture class.
  */

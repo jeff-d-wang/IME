@@ -5,7 +5,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 
-import model.Picture.PictureModel;
+import model.picture.PictureModel;
 import view.PictureTextView;
 
 import static org.junit.Assert.assertEquals;

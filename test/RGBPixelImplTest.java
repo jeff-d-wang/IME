@@ -1,9 +1,8 @@
 import org.junit.Before;
 import org.junit.Test;
 
-import model.Pixel.IPixel;
-import model.Pixel.RGBPixel;
-import model.Pixel.RGBPixelImpl;
+import model.pixel.RGBPixel;
+import model.pixel.RGBPixelImpl;
 
 import static org.junit.Assert.assertEquals;
 

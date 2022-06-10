@@ -5,9 +5,9 @@ import java.util.Scanner;
 import java.io.FileNotFoundException;
 import java.io.FileInputStream;
 
-import model.Picture.IPicture;
-import model.Picture.PPMPicture;
-import model.Pixel.RGBPixelImpl;
+import model.picture.IPicture;
+import model.picture.PPMPicture;
+import model.pixel.RGBPixelImpl;
 
 
 /**
@@ -90,21 +90,6 @@ public class ImageUtil {
     //        out.println(r + " " + g + " " + b);
     //      }
     //    }
-  }
-
-  //demo main
-  public static void main(String[] args) throws IOException {
-    String filename;
-
-    if (args.length > 0) {
-      filename = args[0];
-    } else {
-      filename = "src/pictures/Koala.ppm";
-    }
-
-    IPicture koala = ImageUtil.readPPM(filename);
-
-    System.out.println(koala.getWidth() + ", " + koala.getHeight());
   }
 }
 

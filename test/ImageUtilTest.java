@@ -4,8 +4,8 @@ import org.junit.Test;
 import java.io.IOException;
 
 import model.ImageUtil;
-import model.Picture.PPMPicture;
-import model.Pixel.RGBPixelImpl;
+import model.picture.PPMPicture;
+import model.pixel.RGBPixelImpl;
 
 import static org.junit.Assert.assertEquals;
 
@@ -64,13 +64,16 @@ public class ImageUtilTest {
   public void testWriteFile() {
     try {
       PPMPicture smallImageRedGreyscale = (PPMPicture) smallImage.greyscale("red");
-      ImageUtil.writeFile(smallImageRedGreyscale, "src/pictures/smallImage/result/redGreyscale.ppm");
+      ImageUtil.writeFile(smallImageRedGreyscale, "src/pictures/smallImage/" +
+              "result/redGreyscale.ppm");
 
-      PPMPicture smallImageRedGreyscaleExpect = ImageUtil.readPPM("src/pictures/smallImage/smallImage-red-greyscale.ppm");
+      PPMPicture smallImageRedGreyscaleExpect = ImageUtil.readPPM("src/pictures/" +
+              "smallImage/smallImage-red-greyscale.ppm");
 
       for (int r = 0; r < smallImageRedGreyscale.getHeight(); r++) {
         for (int c = 0; c < smallImageRedGreyscale.getWidth(); c++) {
-          assertEquals(smallImageRedGreyscale.getPixel(r, c), smallImageRedGreyscaleExpect.getPixel(r, c));
+          assertEquals(smallImageRedGreyscale.getPixel(r, c),
+                  smallImageRedGreyscaleExpect.getPixel(r, c));
         }
       }
 

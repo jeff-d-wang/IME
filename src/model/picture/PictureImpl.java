@@ -1,9 +1,9 @@
 package model.picture;
 
 import model.filter.FilterImpl;
+import model.IPixelLambda;
 import model.pixel.IPixel;
 import model.pixel.PixelImpl;
-import model.lambda.RGBPixelLambda;
 import model.transformation.TransformationImpl;
 
 /**
@@ -65,7 +65,7 @@ public class PictureImpl implements IPicture {
    *
    * @param lambda Lambda function to be applied on a pixel
    */
-  protected void applyLambda(RGBPixelLambda lambda) {
+  protected void applyLambda(IPixelLambda lambda) {
     resetAlteration();
     for (int r = 0; r < getHeight(); r++) {
       for (int c = 0; c < getWidth(); c++) {
@@ -80,7 +80,7 @@ public class PictureImpl implements IPicture {
       throw new IllegalArgumentException("Null greyscale component.");
     }
 
-    RGBPixelLambda componentLambda = null;
+    IPixelLambda componentLambda = null;
 
     switch (component) {
       case "red":
@@ -144,7 +144,7 @@ public class PictureImpl implements IPicture {
   @Override
   public IPicture brighten(int increment) {
     resetAlteration();
-    RGBPixelLambda componentLambda
+    IPixelLambda componentLambda
             = (p) -> new PixelImpl(
                     p.getR() + increment, p.getG() + increment, p.getB() + increment);
     applyLambda(componentLambda);
@@ -188,29 +188,4 @@ public class PictureImpl implements IPicture {
             {0.272, 0.534, 0.131}};
     return new TransformationImpl().apply(this, sepiaMatrix);
   }
-
-//  @Override
-//  public void toFile(String filename) throws IOException {
-//    if (filename == null) {
-//      throw new IOException("Null filename.");
-//    }
-//
-//    PrintWriter os = new PrintWriter(filename);
-//
-//    // header
-//    os.println("P3");
-//    os.println(this.getWidth() + " " + this.getHeight());
-//    os.println(maxValue);
-//
-//    for (int r = 0; r < getHeight(); r++) {
-//      for (int c = 0; c < getWidth(); c++) {
-//        IPixel pixel = getPixel(r, c);
-//        os.println(pixel.getR());
-//        os.println(pixel.getG());
-//        os.println(pixel.getB());
-//      }
-//    }
-//
-//    os.close();
-//  }
 }

@@ -52,7 +52,8 @@ public interface IPicture {
   IPicture component(String component) throws IllegalArgumentException;
 
   /**
-   * Flips this image in a given String direction.
+   * Flips this image in a given String direction. The only directions supported thus far are
+   * horizontal and vertical. Strings other than it will not produce a picture.
    *
    * @param direction Direction the picture is to be flipped in
    * @return a flipped picture
@@ -95,5 +96,4 @@ public interface IPicture {
    * @return sepia image
    */
   IPicture sepia();
-
 }

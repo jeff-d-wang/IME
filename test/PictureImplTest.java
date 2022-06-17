@@ -318,8 +318,9 @@ public class PictureImplTest {
       // save our results
       ImageUtil.writeFile(smallPictureBlur, "src/pictures/smallImage/result/blur.ppm");
 
-      IPicture manhattanBlur = manhattan.blur();
-      ImageUtil.writeFile(manhattanBlur, "src/pictures/manhattan-blur.ppm");
+      // Test on manhattan works
+      // IPicture manhattanBlur = manhattan.blur();
+      // ImageUtil.writeFile(manhattanBlur, "src/pictures/manhattan-blur.ppm");
     } catch (IOException e) {
       System.out.println(e.getMessage());
     }
@@ -335,8 +336,9 @@ public class PictureImplTest {
       // save our results
       ImageUtil.writeFile(smallPictureSharpen, "src/pictures/smallImage/result/sharpen.ppm");
 
-      IPicture manhattanSharpen = manhattan.sharpen();
-      ImageUtil.writeFile(manhattanSharpen, "src/pictures/manhattan-sharpen.ppm");
+      // Test on manhattan works
+      // IPicture manhattanSharpen = manhattan.sharpen();
+      // ImageUtil.writeFile(manhattanSharpen, "src/pictures/manhattan-sharpen.ppm");
     } catch (IOException e) {
       System.out.println(e.getMessage());
     }
@@ -352,8 +354,9 @@ public class PictureImplTest {
       // save our results
       ImageUtil.writeFile(smallPictureGreyscale, "src/pictures/smallImage/result/greyscale.ppm");
 
-      IPicture manhattanGreyscale = manhattan.greyscale();
-      ImageUtil.writeFile(manhattanGreyscale, "src/pictures/manhattan-greyscale.ppm");
+      // Test on manhattan works
+      // IPicture manhattanGreyscale = manhattan.greyscale();
+      // ImageUtil.writeFile(manhattanGreyscale, "src/pictures/manhattan-greyscale.ppm");
     } catch (IOException e) {
       System.out.println(e.getMessage());
     }
@@ -369,8 +372,9 @@ public class PictureImplTest {
       // save our results
       ImageUtil.writeFile(smallPictureSepia, "src/pictures/smallImage/result/sepia.ppm");
 
-      IPicture manhattanSharpen = manhattan.sepia();
-      ImageUtil.writeFile(manhattanSharpen, "src/pictures/manhattan-sepia.ppm");
+      // Test on manhattan works
+      // IPicture manhattanSharpen = manhattan.sepia();
+      // ImageUtil.writeFile(manhattanSharpen, "src/pictures/manhattan-sepia.ppm");
     } catch (IOException e) {
       System.out.println(e.getMessage());
     }

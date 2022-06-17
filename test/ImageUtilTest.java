@@ -218,7 +218,7 @@ public class ImageUtilTest {
       PictureImpl smallImagePPMtoJPG
               = ImageUtil.readFile("src/pictures/smallImage/result/smallImagePPMto.jpg");
 
-      //compareImages(smallImagePPMtoJPG, smallImageJPG);
+      // compareImages(smallImagePPMtoJPG, smallImageJPG);
 
       // from PNG to JPG
       ImageUtil.writeFile(smallImagePNG, "src/pictures/smallImage/" +

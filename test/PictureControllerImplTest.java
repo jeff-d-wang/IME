@@ -206,6 +206,62 @@ public class PictureControllerImplTest {
     assertEquals("Invalid line input. Index 3 out of bounds for length 3", message);
   }
 
+  // all actual commands are tested with valid & invalid arguments in PictureImplTest.java
+  @Test
+  public void testBlur() throws IOException {
+    test(new ByteArrayInputStream(("load src/pictures/smallImage/smallImage.ppm smallImage " +
+                    "\nblur smallImage smallImageBlur").getBytes()),
+            new ByteArrayOutputStream());
+    view = new PictureTextView(model, ap);
+    controller = new PictureControllerImpl(model, view, rd);
+    controller.run();
+
+    assertCompare(model.getPicture("smallImageBlur"),
+            ImageUtil.readFile("src/pictures/smallImage/smallImage-blur.ppm"));
+  }
+
+  // all actual commands are tested with valid & invalid arguments in PictureImplTest.java
+  @Test
+  public void testSharpen() throws IOException {
+    test(new ByteArrayInputStream(("load src/pictures/smallImage/smallImage.ppm smallImage " +
+                    "\nsharpen smallImage smallImageSharpen").getBytes()),
+            new ByteArrayOutputStream());
+    view = new PictureTextView(model, ap);
+    controller = new PictureControllerImpl(model, view, rd);
+    controller.run();
+
+    assertCompare(model.getPicture("smallImageSharpen"),
+            ImageUtil.readFile("src/pictures/smallImage/smallImage-sharpen.ppm"));
+  }
+
+  // all actual commands are tested with valid & invalid arguments in PictureImplTest.java
+  @Test
+  public void testGreyscale() throws IOException {
+    test(new ByteArrayInputStream(("load src/pictures/smallImage/smallImage.ppm smallImage " +
+                    "\ngreyscale smallImage smallImageGreyscale").getBytes()),
+            new ByteArrayOutputStream());
+    view = new PictureTextView(model, ap);
+    controller = new PictureControllerImpl(model, view, rd);
+    controller.run();
+
+    assertCompare(model.getPicture("smallImageGreyscale"),
+            ImageUtil.readFile("src/pictures/smallImage/smallImage-greyscale.ppm"));
+  }
+
+  // all actual commands are tested with valid & invalid arguments in PictureImplTest.java
+  @Test
+  public void testSepia() throws IOException {
+    test(new ByteArrayInputStream(("load src/pictures/smallImage/smallImage.ppm smallImage " +
+                    "\nsepia smallImage smallImageSepia").getBytes()),
+            new ByteArrayOutputStream());
+    view = new PictureTextView(model, ap);
+    controller = new PictureControllerImpl(model, view, rd);
+    controller.run();
+
+    assertCompare(model.getPicture("smallImageSepia"),
+            ImageUtil.readFile("src/pictures/smallImage/smallImage-sepia.ppm"));
+  }
+
   // Always listens to new commands after
   @Test
   public void testTooLittleInput() {

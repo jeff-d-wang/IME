@@ -75,10 +75,12 @@ PixelImpl class public.
 - setRGB(int r, int g, int b) which sets given RGB values to their respective variables. It will
   clamp inputs to its min and max values.
 
-The same here goes with RGBPixel. We were thinking too far ahead into what it meant to represent an 
-pixel. Since IPixel was there to represent an eventual coming of Alpha values but we realized that 
-that was not needed and a pixel with rgb values was sufficient in our case. 
-thus, now we're able to reduce a lot of confusion around what interface/abstract type should this variable be etc. with just IPicture since now all of the subclasses will have RGB values
+The same here goes with RGBPixel. We were thinking too far ahead into what it meant to represent a 
+pixel. IPixel was there to represent an eventual coming of Alpha values but that was not needed and
+a pixel with rgb values was sufficient in our case. Thus, now we're able to reduce confusion around 
+what interface/abstract type should this variable be etc. with just IPicture and IPixel since now 
+all the subclasses will have RGB values. 
+
 The previous RGBPixelImpl class was renamed to PixelImpl class and the PixelImpl class implements 
 the IPixel interface. 
 
@@ -100,7 +102,7 @@ apply(IPicture picture, double[][] matrix) which applies the given filter onto a
 
 The TransformationImpl class implements the ITransformation interface. 
 
-Lambda package: 
+Lambda package: Nothing has been changed. 
 
 Controller:
 The constructor continues to take in a PictureModel model, PictureView view, 
@@ -110,10 +112,53 @@ This PictureControllerImpl class implemented run().
 The PictureControllerImpl class now contains new Runnable classes for the blur function, sharpen 
 function, greyscale function, sepia function, and a file function.
 
-View: 
+View: Nothing has been modified. 
 
-Main Method (IME): 
+Main Method (IME): Nothing has been modifed. 
 
+Picture Package: 
+It now contains these new files: 
+In the result package inside the smallImage package: 
+- blur.ppm 
+- sepia.ppm
+- sharpen.ppm
+- smallImageBMPto.bmp 
+- smallImageBMPto.jpg
+- smallImageBMPto.png
+- smallImageJPGto.bmp
+- smallImageJPGto.jpg
+- smallImageJPGto.png
+- smallImagePNGto.bmp 
+- smallImagePNGto.jpg
+- smallImagePNGto.png
+- smallImagePPMto.bmp
+- smallImagePPMto.jpg
+- smallImagePPMto.jpg
+- smallImagePPMto.png
+
+In the smallImage package: 
+- smallImage.bmp
+- smallImage.jpeg
+- smallImage.png 
+- smallImage-blur.ppm 
+- smallImage-greyscale.ppm 
+- smallImage-half-filter.ppm
+- smallImage-half-transform.ppm
+- smallImage-one-filter.ppm
+- smallImage-sepia.ppm
+- smallImage-sharpen.ppm
+- smallImage-zero-filter.ppm
+
+Inside of picture package: 
+- manhattan.png 
+- manhattan-blue.ppm 
+- manhattan-greyscale.ppm 
+- manhattan-sepia.ppm 
+- manhattan-sharpen.ppm
+
+Example Script Txt: 
+This file (example-script.txt) is a file that can be passed in as an input command when running 
+main. 
 
 OOD Assignment 4
 Updated: 6/10/22

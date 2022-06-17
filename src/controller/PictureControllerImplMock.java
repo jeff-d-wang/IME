@@ -37,6 +37,11 @@ public class PictureControllerImplMock implements PictureController {
 
   @Override
   public void run() throws IllegalStateException {
+    run(this.readable);
+  }
+
+  @Override
+  public void run(Readable readable) throws IllegalStateException {
     Scanner sc = new Scanner(readable);
 
     while (sc.hasNextLine()) {

@@ -1,5 +1,7 @@
 package controller;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.Map;
 import java.util.HashMap;
@@ -17,7 +19,7 @@ public class PictureControllerImpl implements PictureController {
   private IPictureModel model;
   private PictureView view;
   private final Readable readable;
-  private Map<String, Runnable> runnables;
+  private final Map<String, Runnable> runnables;
   private String[] script;
   private String[] command;
 
@@ -43,20 +45,43 @@ public class PictureControllerImpl implements PictureController {
     this.command = new String[2];
     this.runnables.put("load", new Load());
     this.runnables.put("save", new Save());
-    this.runnables.put("component", new Greyscale());
+    this.runnables.put("component", new Component());
     this.runnables.put("flip", new Flip());
     this.runnables.put("brighten", new Brighten());
+    this.runnables.put("blur", new Blur());
+    this.runnables.put("sharpen", new Sharpen());
+    this.runnables.put("greyscale", new Greyscale());
+    this.runnables.put("sepia", new Sepia());
+    this.runnables.put("file", new File());
+  }
+
+  /**
+   * Sends this controller's view to render a given message.
+   * @param message to be rendered.
+   * @throws IllegalStateException if the given message could not be rendered
+   */
+  private void message(String message) throws IllegalStateException {
+    try {
+      view.renderMessage(message);
+    } catch (IOException e) {
+      throw new IllegalStateException("Error: " + e.getMessage() + System.lineSeparator());
+    }
   }
 
   @Override
   public void run() throws IllegalStateException {
+    run(this.readable);
+  }
+
+  @Override
+  public void run(Readable readable) throws IllegalStateException {
     Scanner sc = new Scanner(readable);
     String function = "";
 
     while (sc.hasNextLine()) {
       String line = sc.nextLine();
       script = line.split(" ", 4);
-      script[0].toLowerCase();
+      script[0] = script[0].toLowerCase();
       command = script[0].split("-", 2);
 
       switch (command.length) {
@@ -70,23 +95,10 @@ public class PictureControllerImpl implements PictureController {
           break;
       }
 
-      // added in case we implement longer expressions
-      if (script.length != 3 || (function.equals("brighten") && script.length != 4)) {
-        try {
-          view.renderMessage("Invalid line input." + System.lineSeparator());
-        } catch (IOException e) {
-          throw new IllegalStateException("Error: " + e.getMessage() + System.lineSeparator());
-        }
-      }
-
       if (runnables.containsKey(function)) {
         runnables.get(function).run();
       } else {
-        try {
-          view.renderMessage("Invalid function." + System.lineSeparator());
-        } catch (IOException e) {
-          throw new IllegalStateException("Error: " + e.getMessage() + System.lineSeparator());
-        }
+        message("Invalid function." + System.lineSeparator());
       }
     }
   }
@@ -95,17 +107,17 @@ public class PictureControllerImpl implements PictureController {
    * Runnable class for the load function.
    */
   private class Load implements Runnable {
+
+    /**
+     * Run function for the Runnable Load class.
+     *
+     * @throws IllegalStateException if it could not properly render a message.
+     */
     public void run() throws IllegalStateException {
       try {
-        model.putPicture(script[2], ImageUtil.readPPM(script[1]));
+        model.putPicture(script[2], ImageUtil.readFile(script[1]));
       } catch (Exception e) {
-        try {
-          view.renderMessage("Could not execute function. "
-                  + e.getMessage()
-                  + System.lineSeparator());
-        } catch (IOException f) {
-          throw new IllegalStateException("Error: " + f.getMessage() + System.lineSeparator());
-        }
+        message("Could not execute function. " + e.getMessage() + System.lineSeparator());
       }
     }
   }
@@ -114,37 +126,37 @@ public class PictureControllerImpl implements PictureController {
    * Runnable class for the save function.
    */
   private class Save implements Runnable {
+
+    /**
+     * Run function for the Runnable Save class.
+     *
+     * @throws IllegalStateException if it could not properly render a message.
+     */
     public void run() throws IllegalStateException {
       try {
-        ImageUtil.writeFile(model.getPicture(script[1]), script[2]);
+        ImageUtil.writeFile(model.getPicture(script[2]), script[1]);
       } catch (Exception e) {
-        try {
-          view.renderMessage("Could not execute function. "
-                  + e.getMessage()
-                  + System.lineSeparator());
-        } catch (IOException f) {
-          throw new IllegalStateException("Error: " + f.getMessage() + System.lineSeparator());
-        }
+        message("Could not execute function. " + e.getMessage() + System.lineSeparator());
       }
     }
   }
 
   /**
-   * Runnable class for the greyscale function.
+   * Runnable class for the greyscale component function.
    */
-  private class Greyscale implements Runnable {
+  private class Component implements Runnable {
+
+    /**
+     * Run function for the Runnable Component class.
+     *
+     * @throws IllegalStateException if it could not properly render a message.
+     */
     public void run() throws IllegalStateException {
 
       try {
-        model.putPicture(script[2], model.getPicture(script[1]).greyscale(command[0]));
+        model.putPicture(script[2], model.getPicture(script[1]).component(command[0]));
       } catch (Exception e) {
-        try {
-          view.renderMessage("Could not execute function. "
-                  + e.getMessage()
-                  + System.lineSeparator());
-        } catch (IOException f) {
-          throw new IllegalStateException("Error: " + f.getMessage() + System.lineSeparator());
-        }
+        message("Could not execute function. " + e.getMessage() + System.lineSeparator());
       }
     }
   }
@@ -153,18 +165,18 @@ public class PictureControllerImpl implements PictureController {
    * Runnable class for the flip function.
    */
   private class Flip implements Runnable {
+
+    /**
+     * Run function for the Runnable Flip class.
+     *
+     * @throws IllegalStateException if it could not properly render a message.
+     */
     public void run() throws IllegalStateException {
 
       try {
         model.putPicture(script[2], model.getPicture(script[1]).flip(command[0]));
       } catch (Exception e) {
-        try {
-          view.renderMessage("Could not execute function. "
-                  + e.getMessage()
-                  + System.lineSeparator());
-        } catch (IOException f) {
-          throw new IllegalStateException("Error: " + f.getMessage() + System.lineSeparator());
-        }
+        message("Could not execute function. " + e.getMessage() + System.lineSeparator());
       }
     }
   }
@@ -173,35 +185,118 @@ public class PictureControllerImpl implements PictureController {
    * Runnable class for the brighten function.
    */
   private class Brighten implements Runnable {
+
+    /**
+     * Run function for the Runnable Brighten class.
+     *
+     * @throws IllegalStateException if it could not properly render a message.
+     */
     public void run() throws IllegalStateException {
       int increment = 0;
       try {
         increment = Integer.parseInt(script[1]);
         model.putPicture(script[3], model.getPicture(script[2]).brighten(increment));
       } catch (NumberFormatException e) {
-        try {
-          view.renderMessage("Invalid increment input. "
-                  + e.getMessage()
-                  + System.lineSeparator());
-        } catch (IOException f) {
-          throw new IllegalStateException("Error: " + f.getMessage() + System.lineSeparator());
-        }
+        message("Invalid increment input. " + e.getMessage() + System.lineSeparator());
       } catch (IndexOutOfBoundsException e) {
-        try {
-          view.renderMessage("Invalid line input. "
-                  + e.getMessage()
-                  + System.lineSeparator());
-        } catch (IOException f) {
-          throw new IllegalStateException("Error: " + f.getMessage() + System.lineSeparator());
-        }
+        message("Invalid line input. " + e.getMessage() + System.lineSeparator());
       } catch (Exception e) {
-        try {
-          view.renderMessage("Could not execute function. "
-                  + e.getMessage()
-                  + System.lineSeparator());
-        } catch (IOException f) {
-          throw new IllegalStateException("Error: " + f.getMessage() + System.lineSeparator());
-        }
+        message("Could not execute function. " + e.getMessage() + System.lineSeparator());
+      }
+    }
+  }
+
+  /**
+   * Runnable class for the blur function.
+   */
+  private class Blur implements Runnable {
+
+    /**
+     * Run function for the Runnable Blur class.
+     *
+     * @throws IllegalStateException if it could not properly render a message.
+     */
+    public void run() throws IllegalStateException {
+      try {
+        model.putPicture(script[2], model.getPicture(script[1]).blur());
+      } catch (Exception e) {
+        message("Could not execute function. " + e.getMessage() + System.lineSeparator());
+      }
+    }
+  }
+
+  /**
+   * Runnable class for the sharpen function.
+   */
+  private class Sharpen implements Runnable {
+
+    /**
+     * Run function for the Runnable Sharpen class.
+     *
+     * @throws IllegalStateException if it could not properly render a message.
+     */
+    public void run() throws IllegalStateException {
+      try {
+        model.putPicture(script[2], model.getPicture(script[1]).sharpen());
+      } catch (Exception e) {
+        message("Could not execute function. " + e.getMessage() + System.lineSeparator());
+      }
+    }
+  }
+
+  /**
+   * Runnable class for the greyscale function.
+   */
+  private class Greyscale implements Runnable {
+
+    /**
+     * Run function for the Runnable Greyscale class.
+     *
+     * @throws IllegalStateException if it could not properly render a message.
+     */
+    public void run() throws IllegalStateException {
+      try {
+        model.putPicture(script[2], model.getPicture(script[1]).greyscale());
+      } catch (Exception e) {
+        message("Could not execute function. " + e.getMessage() + System.lineSeparator());
+      }
+    }
+  }
+
+  /**
+   * Runnable class for the sepia function.
+   */
+  private class Sepia implements Runnable {
+
+    /**
+     * Run function for the Runnable Sepia class.
+     *
+     * @throws IllegalStateException if it could not properly render a message.
+     */
+    public void run() throws IllegalStateException {
+      try {
+        model.putPicture(script[2], model.getPicture(script[1]).sepia());
+      } catch (Exception e) {
+        message("Could not execute function. " + e.getMessage() + System.lineSeparator());
+      }
+    }
+  }
+
+  /**
+   * Runnable class for the file function.
+   */
+  private class File implements Runnable {
+
+    /**
+     * Run function for the Runnable File class.
+     *
+     * @throws IllegalStateException if it could not properly render a message.
+     */
+    public void run() throws IllegalStateException {
+      try {
+        PictureControllerImpl.this.run(new FileReader(script[1]));
+      } catch (Exception e) {
+        message("Could not execute function. " + e.getMessage() + System.lineSeparator());
       }
     }
   }

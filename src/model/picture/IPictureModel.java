@@ -12,7 +12,7 @@ public interface IPictureModel {
    * @param picture   Picture to be saved in pictures
    * @throws IllegalArgumentException if given a null name or picture.
    */
-  public void putPicture(String name, IPicture picture) throws IllegalArgumentException;
+  void putPicture(String name, IPicture picture) throws IllegalArgumentException;
 
   /**
    * Returns the picture value of a given key name.
@@ -20,5 +20,5 @@ public interface IPictureModel {
    * @return the picture value of a given key name
    * @throws IllegalArgumentException if the given name is null
    */
-  public IPicture getPicture(String name) throws IllegalArgumentException;
+  IPicture getPicture(String name) throws IllegalArgumentException;
 }

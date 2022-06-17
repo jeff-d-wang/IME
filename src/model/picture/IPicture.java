@@ -13,38 +13,43 @@ public interface IPicture {
    * Returns the width of this picture.
    * @return the width of this picture
    */
-  public int getWidth();
+  int getWidth();
 
   /**
    * Returns the height of this picture.
    * @return the height of this picture
    */
-  public int getHeight();
+  int getHeight();
 
   /**
    * Return the Pixel object at a given row and column value.
-   * @param r   Row value
-   * @param c   Column value
+   *
+   * @param r Row value
+   * @param c Column value
    * @return the Pixel object at a given row and column value
+   * @throws IllegalArgumentException if the given row and/or column value is less than 0 or greater
+   * than the height or width of the picture, respectively
    */
-  public IPixel getPixel(int r, int c);
+  IPixel getPixel(int r, int c) throws IllegalArgumentException;
 
   /**
    * Set the Pixel object at a given row and column value a given Pixel object.
    * @param r       Row value
    * @param c       Column value
    * @param pixel   Pixel object to be set
+   * @throws IllegalArgumentException if the given row and/or column value is less than 0 or greater
+   *    * than the height or width of the picture, respectively
    */
-  public void setPixel(int r, int c, IPixel pixel);
+  void setPixel(int r, int c, IPixel pixel) throws IllegalArgumentException;
 
   /**
    * Greyscale this picture according to a given component specifying its type.
    *
    * @param component   Type of greyscale to be applied
-   * @return a greyscale picture
+   * @return a greyscale component picture
    * @throws IllegalArgumentException if given a null or invalid component
    */
-  public IPicture greyscale(String component) throws IllegalArgumentException;
+  IPicture component(String component) throws IllegalArgumentException;
 
   /**
    * Flips this image in a given String direction.
@@ -53,7 +58,7 @@ public interface IPicture {
    * @return a flipped picture
    * @throws IllegalArgumentException if given a null or invalid direction
    */
-  public IPicture flip(String direction) throws IllegalArgumentException;
+  IPicture flip(String direction) throws IllegalArgumentException;
 
   /**
    * Brighten the picture by a given increment.
@@ -61,13 +66,34 @@ public interface IPicture {
    * @param increment Number increment to change brightness by
    * @return brighten image
    */
-  public IPicture brighten(int increment);
+  IPicture brighten(int increment);
 
   /**
-   * Converts this picture into its respective file type.
+   * Blur an image.
    *
-   * @param filename Path of the file to be written on.
-   * @throws IOException if it encounters an error accessing the file
+   * @return blurred image
    */
-  public void toFile(String filename) throws IOException;
+  IPicture blur();
+
+  /**
+   * Sharpen an image.
+   *
+   * @return sharpened image
+   */
+  IPicture sharpen();
+
+  /**
+   * Apply a greyscale transformation on an image.
+   *
+   * @return greyscale image
+   */
+  IPicture greyscale();
+
+  /**
+   * Apply a sepia transformation on an image.
+   *
+   * @return sepia image
+   */
+  IPicture sepia();
+
 }

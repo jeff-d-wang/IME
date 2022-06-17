@@ -1,3 +1,6 @@
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 
 import controller.PictureController;
@@ -13,14 +16,17 @@ import view.PictureView;
 public class IME {
   /**
    * The main method and entry point to the IME program.
-   * @param args   Arguments
+   *
+   * @param args Arguments
    */
   public static void main(String[] args) {
+    Readable readable = new InputStreamReader(System.in);
+
     IPictureModel model = new PictureModel();
     PictureView view = new PictureTextView(model);
-    Readable readable = new InputStreamReader(System.in);
     PictureController controller = new PictureControllerImpl(model, view, readable);
     controller.run();
+
     /*
     Script that uses all the methods:
      load src/pictures/smallImage/smallImage.ppm smallImage

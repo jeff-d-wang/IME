@@ -1,5 +1,120 @@
 # IME
 
+OOD Assignment 5
+Update: 6/17/22 
+
+Model: 
+In our model, it now contains a filter package, a lambda package, a picture package, a pixel 
+package, a transformation package, and the ImageUtil class. 
+
+ImageUtil class: 
+In the ImageUtil class, what was modified was the read and write methods can now read and write 
+to different image types such as png, bmp and jpg. It continues to support reading and writing 
+from file types of ppm. 
+
+Picture Package: 
+The picture package was modified, and it now contains a IPicture interface, a IPictureModel 
+interface, a PictureImpl class and a PictureModel class. 
+
+IPicture now represent an interface picture class with rgb values. 
+In the IPicture interface, the new methods are: 
+- blur() which blurs a given image
+- sharpen() which sharpens a given image
+- greyscale() which applies a greyscale transformation on an image
+- sepia() which applies a sepia transformation on an image.
+
+The previous greyscale(String component) method which greyscales the picture according to a given 
+component was renamed to component(String component) because a greyscale transformation 
+is different from a componenet transformation such as a red greyscale modification. 
+The toFile(String filename) method from earlier was removed because the write method in the 
+ImageUtil class can support this functionality. 
+
+The IPictureModel interface are representative of a collection of Pictures that are constantly 
+being added and retrieved by the controller. Each of those pictures handle functionality. This class
+replaces the previous PictureModel class we had in our A4 implementation. This class now has the 
+methods: putPicture(String name, IPicture picture) and getPicture(String name) which puts a given 
+picture value to a new key name in pictures and returns the picture value of a given key name, 
+respectively. 
+
+The previous abstract RGBPicture class was removed because the original implementation idea was to 
+create a new class for every type of picture (png, jpg, ppm, bmp) and override the toFile() method 
+for each class. However, the writeFile() method in ImageUtils supports this functionability and 
+hence, we removed the abstract RGBPicture class and just had PPMPicture implement IPicture. 
+
+The previous PPMPPicture class was renamed to PictureImpl and continues to implement IPicture. 
+Since the abstract RGBPicture class was removed, setPixel() is no longer an abstract method. 
+So PictureImpl is now what a default picture with RGB values and functions to support it.
+The flaw with the last design was that we were thinking too far and deep into what it meant to be 
+a picture and assumed that pixels could also be measured in values other than rgb. 
+Thus, operations that relied on RGB values needed to be in different sublclasses, creating layers 
+of unnecessary abstractions if we were to somehow face HEX values in the future, we could just 
+convert them into RGB values or just add more values by extending the PictureImpl class. 
+
+The PictureModel class implements the IPictureModel interface. Nothing has been modified in this 
+class.
+
+Pixel Package: 
+The pixel package contains a IPixel interface and a PixelImpl class. The abstract RGBPixel class was
+removed because the original implementation idea was that there would be more than one type of 
+pixels that would need to be supported such as RGB pixel and a ARGB pixel. However, since there 
+is only one type of pixel, the abstract RGBPixel class was removed and its methods were placed 
+inside the IPixel interface. So the IPixel interface now contains the methods:
+- getR() which returns the red int value of this pixel
+- getG() which returns the green value of this pixel
+- getB() which returns the blue value of this pixel
+- getValue() which returns the maximum int value of the three components of this pixel
+- getIntensity() which returns an average int value of the three components of this pixel
+- getLuma() which returns the luma int value of this pixel 
+- toMatrix() which returns the 3x1 matrix equivalent to this pixel's rgb values.
+
+The following methods were removed because these methods essentially make the private fields of the 
+PixelImpl class public. 
+- setR(int r) which sets the red value of this pixel
+- setG(int g) which sets the green value of this pixel
+- setB(int b) which sets the blue value of this pixel 
+- setRGB(int r, int g, int b) which sets given RGB values to their respective variables. It will
+  clamp inputs to its min and max values.
+
+The same here goes with RGBPixel. We were thinking too far ahead into what it meant to represent an 
+pixel. Since IPixel was there to represent an eventual coming of Alpha values but we realized that 
+that was not needed and a pixel with rgb values was sufficient in our case. 
+thus, now we're able to reduce a lot of confusion around what interface/abstract type should this variable be etc. with just IPicture since now all of the subclasses will have RGB values
+The previous RGBPixelImpl class was renamed to PixelImpl class and the PixelImpl class implements 
+the IPixel interface. 
+
+Filter package: 
+The filter package contains a IFilter interface and a FilterImpl class. The IFilter interface
+represents a filter for a picture. It functions by applying a filter onto a kernel
+of the same size, achieving an ultimate value for the pixel at the center of the kernel, then
+assigns it its final RGB values. It contains the method apply(IPicture picture, double[][] filter)
+which applies the given filter onto a given picture.
+
+The FilterImpl class implements the IFilter interface. 
+
+Transformation package:
+The transformation package contains a ITransformation interface and a TransformationImpl class.
+The ITransformation interface represents a transformation for a picture. It functions by 
+multiplying a matrix to a 1x3 matrix of rgb values for a pixel, achieving an ultimate value for 
+the pixel, then assigns it its final RGB values. It contains the method 
+apply(IPicture picture, double[][] matrix) which applies the given filter onto a given picture.
+
+The TransformationImpl class implements the ITransformation interface. 
+
+Lambda package: 
+
+Controller:
+The constructor continues to take in a PictureModel model, PictureView view, 
+Readable readable and puts into the variable runnables by calling the Runnable class for the 
+load function, save function, greyscale function, flip function, and brighten function. 
+This PictureControllerImpl class implemented run().
+The PictureControllerImpl class now contains new Runnable classes for the blur function, sharpen 
+function, greyscale function, sepia function, and a file function.
+
+View: 
+
+Main Method (IME): 
+
+
 OOD Assignment 4
 Updated: 6/10/22
 
@@ -8,7 +123,7 @@ The model package contains a Lambda package, a Picture package, a Pixel package,
 class.
 
 Within the Picture package, it contains a IPicture Interface, a PPMPicture class, an abstract
-RGBPicture class, and a Picture Model class.
+RGBPicture class, and a PictureModel class.
 The interface IPicture contains the methods that every picture object should have:
 
 - getWidth() which returns an integer that is the width of this picture
@@ -152,7 +267,7 @@ The pictures package contains:
 - smallImage-vertical.ppm
 - smallImage-vertical-horizontal.ppm
 - smallImageP6.pbm
-The images in smallImage package is my own photograph created using GIMP, and I am
+The images in smallImage package is my own photograph created using GIMP, and I (RuiMing Li) am
 authorizing it to be used in this project. The smallImage.ppm is the original image.
 Pictures with names such as smallImage-blue-greyscale means that the original image was
 greyscaled by blue. Pictures with names such as smallImage-horizontal-vertical.ppm means that the

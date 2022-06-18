@@ -7,157 +7,57 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b9e1cc3-9647-4400-a190-c02fe329a94f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/ImageProcessing_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/USEME.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/IMEClassDiagram.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/test-script.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/submission.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IME_Class_Diagram.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/IME_Class_Diagram.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-script.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/example-script.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/model/Lambda/IPixelLambda.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/model/Picture/PictureImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/model/Picture/PictureImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/manhattan-blur.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/manhattan-greyscale.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/manhattan-sepia.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/manhattan-sharpen.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/manhattan.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/result/blueComponent.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/result/blur.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/result/brighten-by-10.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/result/darken-by-10.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/result/default.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/result/greenComponent.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/result/greyscale.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/result/horizontal-vertical.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/result/horizontal.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/result/intensityComponent.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/result/lumaComponent.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/result/notPPM.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/result/redComponent.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/result/sepia.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/result/sharpen.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/result/smallImageBMPto.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/result/smallImageBMPto.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/result/smallImageBMPto.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/result/smallImageJPGto.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/result/smallImageJPGto.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/result/smallImageJPGto.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/result/smallImagePNGto.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/result/smallImagePNGto.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/result/smallImagePNGto.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/result/smallImagePPMto.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/result/smallImagePPMto.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/result/smallImagePPMto.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/result/valueComponent.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/result/vertical-horizontal.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/result/vertical.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-blue-component.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-blue-grayscale.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-blur.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-brighten-by-10.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-brighten-by-30.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-brighter-by-10.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-darken-by-10.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-green-component.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-green-grayscale.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-greyscale.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-half-filter.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-half-transform.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-horizontal-vertical.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-horizontal.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-intensity-component.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-intensity-grayscale.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-luma-component.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-luma-grayscale.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-one-filter.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-red-component.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-red-grayscale.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-sepia.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-sharpen.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-value-component.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-value-grayscale.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-vertical-horizontal.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-vertical.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage-zero-filter.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImage.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/pictures/smallImage/smallImageP6.pbm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/ImageProcessing/FilterImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/ImageProcessing/FilterImplTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/ImageProcessing/ImageUtilTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/ImageProcessing/ImageUtilTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Archive.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/IME.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/IME.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Blur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Blur.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Brighten.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Brighten.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Component.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Component.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$File.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$File.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Flip.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Flip.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Greyscale.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Greyscale.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Sepia.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Sepia.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Sharpen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Sharpen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/ImageProcessing/PictureControllerImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/ImageProcessing/PictureControllerImplTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/ImageProcessing/PictureImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/ImageProcessing/PictureImplTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/ImageProcessing/PictureModelTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/ImageProcessing/PictureModelTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/ImageProcessing/TransformationImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/ImageProcessing/TransformationImplTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/IME_Class_Diagram.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/example-script.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/example-script.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/smallImage/smallImage-blue-component.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-blue-component.ppm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/smallImage/smallImage-blue-grayscale.ppm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/smallImage/smallImage-blur.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-blur.ppm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/smallImage/smallImage-green-component.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-green-component.ppm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/smallImage/smallImage-green-grayscale.ppm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/smallImage/smallImage-intensity-component.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-intensity-component.ppm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/smallImage/smallImage-intensity-grayscale.ppm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/smallImage/smallImage-luma-component.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-luma-component.ppm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/smallImage/smallImage-luma-grayscale.ppm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/smallImage/smallImage-red-component.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-red-component.ppm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/smallImage/smallImage-red-grayscale.ppm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/smallImage/smallImage-value-component.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-value-component.ppm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/smallImage/smallImage-value-grayscale.ppm" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/IME.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IME.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/IPixelLambda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/IPixelLambda.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/result/blueComponent.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/result/blueComponent.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/result/blur.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/result/blur.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/result/brighten-by-10.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/result/brighten-by-10.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/result/darken-by-10.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/result/darken-by-10.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/result/default.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/result/default.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/result/greenComponent.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/result/greenComponent.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/result/greyscale.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/result/greyscale.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/result/horizontal-vertical.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/result/horizontal-vertical.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/result/horizontal.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/result/horizontal.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/result/intensityComponent.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/result/intensityComponent.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/result/lumaComponent.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/result/lumaComponent.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/result/notPPM.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/result/notPPM.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/result/redComponent.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/result/redComponent.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/result/sepia.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/result/sepia.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/result/sharpen.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/result/sharpen.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/result/smallImageBMPto.bmp" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/result/smallImageBMPto.bmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/result/smallImageBMPto.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/result/smallImageBMPto.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/result/smallImageBMPto.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/result/smallImageBMPto.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/result/smallImageJPGto.bmp" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/result/smallImageJPGto.bmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/result/smallImageJPGto.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/result/smallImageJPGto.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/result/smallImageJPGto.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/result/smallImageJPGto.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/result/smallImagePNGto.bmp" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/result/smallImagePNGto.bmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/result/smallImagePNGto.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/result/smallImagePNGto.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/result/smallImagePNGto.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/result/smallImagePNGto.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/result/smallImagePPMto.bmp" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/result/smallImagePPMto.bmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/result/smallImagePPMto.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/result/smallImagePPMto.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/result/smallImagePPMto.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/result/smallImagePPMto.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/result/valueComponent.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/result/valueComponent.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/result/vertical-horizontal.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/result/vertical-horizontal.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/result/vertical.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/result/vertical.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-blue-component.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-blue-component.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-blue-grayscale.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-blue-grayscale.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-blur.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-blur.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-brighten-by-10.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-brighten-by-10.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-brighten-by-30.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-brighten-by-30.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-brighter-by-10.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-brighter-by-10.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-darken-by-10.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-darken-by-10.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-green-component.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-green-component.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-green-grayscale.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-green-grayscale.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-greyscale.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-greyscale.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-half-filter.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-half-filter.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-half-transform.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-half-transform.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-horizontal-vertical.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-horizontal-vertical.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-horizontal.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-horizontal.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-intensity-component.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-intensity-component.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-intensity-grayscale.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-intensity-grayscale.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-luma-component.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-luma-component.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-luma-grayscale.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-luma-grayscale.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-one-filter.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-one-filter.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-red-component.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-red-component.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-red-grayscale.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-red-grayscale.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-sepia.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-sepia.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-sharpen.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-sharpen.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-value-component.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-value-component.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-value-grayscale.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-value-grayscale.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-vertical-horizontal.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-vertical-horizontal.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-vertical.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-vertical.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage-zero-filter.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-zero-filter.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage.bmp" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage.bmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImage.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/smallImage/smallImageP6.pbm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImageP6.pbm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/PictureController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/IPictureController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/PictureControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/PictureControllerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/PictureControllerImplMock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/PictureControllerImplMock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ImageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ImageUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/filter/FilterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/filter/FilterImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/picture/IPicture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/picture/IPicture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/picture/PictureImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/picture/PictureImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/transformation/TransformationImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/transformation/TransformationImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/FilterImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/FilterImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/ImageUtilTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/ImageUtilTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/PictureControllerImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/PictureControllerImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/PictureImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/PictureImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/PictureModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/PictureModelTest.java" afterDir="false" />
+    </list>
+    <list id="3d595546-3dbd-40db-b182-8d63171fecb3" name="Changes by ruimingli" comment="">
+      <change beforePath="$PROJECT_DIR$/src/model/picture/IPicture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/picture/IPicture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/picture/PictureImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/picture/PictureImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/ImageUtilTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/ImageUtilTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/TransformationImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TransformationImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -176,6 +76,46 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/model/picture/PictureImpl.java">
+      <ranges>
+        <range start1="21" end1="21" start2="21" end2="27" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="38" end1="38" start2="44" end2="48" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="58" end1="59" start2="68" end2="72" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="67" end1="68" start2="80" end2="81" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="190" end1="190" start2="203" end2="204" changelist="3d595546-3dbd-40db-b182-8d63171fecb3" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/model/picture/IPicture.java">
+      <ranges>
+        <range start1="1" end1="3" start2="1" end2="1" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="26" end1="28" start2="24" end2="26" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="30" end1="31" start2="28" end2="29" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="40" end1="41" start2="38" end2="39" changelist="3d595546-3dbd-40db-b182-8d63171fecb3" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/test/ImageUtilTest.java">
+      <ranges>
+        <range start1="73" end1="75" start2="73" end2="75" changelist="3d595546-3dbd-40db-b182-8d63171fecb3" />
+        <range start1="76" end1="78" start2="76" end2="78" changelist="3d595546-3dbd-40db-b182-8d63171fecb3" />
+        <range start1="169" end1="171" start2="169" end2="171" changelist="3d595546-3dbd-40db-b182-8d63171fecb3" />
+        <range start1="178" end1="180" start2="178" end2="180" changelist="3d595546-3dbd-40db-b182-8d63171fecb3" />
+        <range start1="188" end1="190" start2="188" end2="190" changelist="3d595546-3dbd-40db-b182-8d63171fecb3" />
+        <range start1="197" end1="199" start2="197" end2="199" changelist="3d595546-3dbd-40db-b182-8d63171fecb3" />
+        <range start1="204" end1="204" start2="204" end2="210" changelist="3d595546-3dbd-40db-b182-8d63171fecb3" />
+        <range start1="214" end1="216" start2="220" end2="222" changelist="3d595546-3dbd-40db-b182-8d63171fecb3" />
+        <range start1="223" end1="225" start2="229" end2="231" changelist="3d595546-3dbd-40db-b182-8d63171fecb3" />
+        <range start1="232" end1="234" start2="238" end2="240" changelist="3d595546-3dbd-40db-b182-8d63171fecb3" />
+        <range start1="241" end1="243" start2="247" end2="249" changelist="3d595546-3dbd-40db-b182-8d63171fecb3" />
+        <range start1="248" end1="248" start2="254" end2="263" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="259" end1="261" start2="274" end2="276" changelist="3d595546-3dbd-40db-b182-8d63171fecb3" />
+        <range start1="269" end1="271" start2="284" end2="286" changelist="3d595546-3dbd-40db-b182-8d63171fecb3" />
+        <range start1="278" end1="280" start2="293" end2="295" changelist="3d595546-3dbd-40db-b182-8d63171fecb3" />
+        <range start1="288" end1="290" start2="303" end2="305" changelist="3d595546-3dbd-40db-b182-8d63171fecb3" />
+        <range start1="295" end1="295" start2="310" end2="316" changelist="3d595546-3dbd-40db-b182-8d63171fecb3" />
+      </ranges>
+    </file>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -187,19 +127,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/res" />
@@ -209,30 +151,32 @@
       <recent name="model.Pixel" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TransformationImplTest">
-    <configuration name="FilterImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ImageUtilTest.testWriteJPG">
+    <configuration name="ImageUtilTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ImageProcessing" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FilterImplTest" />
+      <option name="MAIN_CLASS_NAME" value="ImageUtilTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PictureModelTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ImageUtilTest.testWriteJPG" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ImageProcessing" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PictureModelTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="ImageUtilTest" />
+      <option name="METHOD_NAME" value="testWriteJPG" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PictureTextViewTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PictureControllerImplTest.testFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ImageProcessing" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PictureTextViewTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="PictureControllerImplTest" />
+      <option name="METHOD_NAME" value="testFile" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -257,11 +201,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ImageUtilTest" />
+        <item itemvalue="JUnit.ImageUtilTest.testWriteJPG" />
+        <item itemvalue="JUnit.PictureControllerImplTest.testFile" />
         <item itemvalue="JUnit.TransformationImplTest" />
         <item itemvalue="JUnit.PixelImplTest" />
-        <item itemvalue="JUnit.PictureTextViewTest" />
-        <item itemvalue="JUnit.PictureModelTest" />
-        <item itemvalue="JUnit.FilterImplTest" />
       </list>
     </recent_temporary>
   </component>
@@ -280,7 +224,9 @@
       <workItem from="1655043086154" duration="4330000" />
       <workItem from="1655244700373" duration="11273000" />
       <workItem from="1655405990522" duration="28915000" />
-      <workItem from="1655483377195" duration="22279000" />
+      <workItem from="1655483377195" duration="24660000" />
+      <workItem from="1655572110434" duration="3033000" />
+      <workItem from="1655575904975" duration="6203000" />
     </task>
     <servers />
   </component>
@@ -300,5 +246,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

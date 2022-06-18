@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
 
-import controller.PictureController;
+import controller.IPictureController;
 import controller.PictureControllerImpl;
 import controller.PictureControllerImplMock;
 import model.ImageUtil;
@@ -28,7 +28,7 @@ public class PictureControllerImplTest {
   private Readable rd;
   private Appendable ap;
   private ByteArrayOutputStream bytes;
-  private PictureController controller;
+  private IPictureController controller;
 
   @Before
   public void setUp() {
@@ -52,17 +52,17 @@ public class PictureControllerImplTest {
 
   @Test(expected = IllegalArgumentException.class)
   public void testConstructor() {
-    PictureController controllerFail1 = new PictureControllerImpl(null, view, rd);
+    IPictureController controllerFail1 = new PictureControllerImpl(null, view, rd);
   }
 
   @Test(expected = IllegalArgumentException.class)
   public void testConstructor2() {
-    PictureController controllerFail2 = new PictureControllerImpl(model, null, rd);
+    IPictureController controllerFail2 = new PictureControllerImpl(model, null, rd);
   }
 
   @Test(expected = IllegalArgumentException.class)
   public void testConstructor3() {
-    PictureController controllerFail3 = new PictureControllerImpl(model, view, null);
+    IPictureController controllerFail3 = new PictureControllerImpl(model, view, null);
   }
 
   @Test
@@ -70,7 +70,7 @@ public class PictureControllerImplTest {
     test(new ByteArrayInputStream(("load res/smallImage/smallImage.ppm "
             + "smallImage").getBytes()), new ByteArrayOutputStream());
     view = new PictureTextView(model, ap);
-    PictureController controllerMock = new PictureControllerImplMock(model, view, rd);
+    IPictureController controllerMock = new PictureControllerImplMock(model, view, rd);
     controllerMock.run();
 
     assertEquals("load\n"
@@ -194,8 +194,8 @@ public class PictureControllerImplTest {
 
   @Test
   public void testInvalidBrighten2() {
-    test(new ByteArrayInputStream(("load res/smallImage/smallImage.ppm smallImage " +
-            "\nbrighten 10 smallImage").getBytes()), new ByteArrayOutputStream());
+    test(new ByteArrayInputStream(("load res/smallImage/smallImage.ppm smallImage "
+            + "\nbrighten 10 smallImage").getBytes()), new ByteArrayOutputStream());
     view = new PictureTextView(model, ap);
     controller = new PictureControllerImpl(model, view, rd);
     controller.run();
@@ -209,8 +209,8 @@ public class PictureControllerImplTest {
   // all actual commands are tested with valid & invalid arguments in PictureImplTest.java
   @Test
   public void testBlur() throws IOException {
-    test(new ByteArrayInputStream(("load res/smallImage/smallImage.ppm smallImage " +
-                    "\nblur smallImage smallImageBlur").getBytes()),
+    test(new ByteArrayInputStream(("load res/smallImage/smallImage.ppm smallImage "
+                    + "\nblur smallImage smallImageBlur").getBytes()),
             new ByteArrayOutputStream());
     view = new PictureTextView(model, ap);
     controller = new PictureControllerImpl(model, view, rd);
@@ -223,8 +223,8 @@ public class PictureControllerImplTest {
   // all actual commands are tested with valid & invalid arguments in PictureImplTest.java
   @Test
   public void testSharpen() throws IOException {
-    test(new ByteArrayInputStream(("load res/smallImage/smallImage.ppm smallImage " +
-                    "\nsharpen smallImage smallImageSharpen").getBytes()),
+    test(new ByteArrayInputStream(("load res/smallImage/smallImage.ppm smallImage "
+                    + "\nsharpen smallImage smallImageSharpen").getBytes()),
             new ByteArrayOutputStream());
     view = new PictureTextView(model, ap);
     controller = new PictureControllerImpl(model, view, rd);
@@ -237,8 +237,8 @@ public class PictureControllerImplTest {
   // all actual commands are tested with valid & invalid arguments in PictureImplTest.java
   @Test
   public void testGreyscale() throws IOException {
-    test(new ByteArrayInputStream(("load res/smallImage/smallImage.ppm smallImage " +
-                    "\ngreyscale smallImage smallImageGreyscale").getBytes()),
+    test(new ByteArrayInputStream(("load res/smallImage/smallImage.ppm smallImage "
+                    + "\ngreyscale smallImage smallImageGreyscale").getBytes()),
             new ByteArrayOutputStream());
     view = new PictureTextView(model, ap);
     controller = new PictureControllerImpl(model, view, rd);
@@ -251,8 +251,8 @@ public class PictureControllerImplTest {
   // all actual commands are tested with valid & invalid arguments in PictureImplTest.java
   @Test
   public void testSepia() throws IOException {
-    test(new ByteArrayInputStream(("load res/smallImage/smallImage.ppm smallImage " +
-                    "\nsepia smallImage smallImageSepia").getBytes()),
+    test(new ByteArrayInputStream(("load res/smallImage/smallImage.ppm smallImage "
+                    + "\nsepia smallImage smallImageSepia").getBytes()),
             new ByteArrayOutputStream());
     view = new PictureTextView(model, ap);
     controller = new PictureControllerImpl(model, view, rd);
@@ -260,6 +260,21 @@ public class PictureControllerImplTest {
 
     assertCompare(model.getPicture("smallImageSepia"),
             ImageUtil.readFile("res/smallImage/smallImage-sepia.ppm"));
+  }
+
+  // This tests if the controller can handle the new -file command and load in a simple script txt
+  // file. In it, it only loads in a picture, but we verify that the program has successfully loaded
+  // the picture, which it has.
+  @Test
+  public void testFile() throws IOException {
+    test(new ByteArrayInputStream(("-file res/test-script.txt").getBytes()),
+            new ByteArrayOutputStream());
+    view = new PictureTextView(model, ap);
+    controller = new PictureControllerImpl(model, view, rd);
+    controller.run();
+
+    assertCompare(model.getPicture("smallImage-zero-filter"),
+            ImageUtil.readFile("res/smallImage/smallImage-zero-filter.ppm"));
   }
 
   // Always listens to new commands after

@@ -158,48 +158,48 @@ public class PictureImplTest {
   public void testComponent() {
     try {
       PictureImpl smallImageRedComponent = (PictureImpl) smallImagePPM.component("red");
-      PictureImpl smallImageRedComponentExpect = ImageUtil.readFile("res/smallImage" +
-              "/smallImage-red-component.ppm");
+      PictureImpl smallImageRedComponentExpect = ImageUtil.readFile("res/smallImage"
+              + "/smallImage-red-component.ppm");
       assertCompare(smallImageRedComponent, smallImageRedComponentExpect);
       // save our results
       ImageUtil.writeFile(smallImageRedComponent,
               "res/smallImage/result/redComponent.ppm");
 
       PictureImpl smallImageGreenComponent = (PictureImpl) smallImagePPM.component("green");
-      PictureImpl smallImageGreenComponentExpect = ImageUtil.readFile("res/" +
-              "smallImage/smallImage-green-component.ppm");
+      PictureImpl smallImageGreenComponentExpect = ImageUtil.readFile("res/"
+              + "smallImage/smallImage-green-component.ppm");
       assertCompare(smallImageGreenComponent, smallImageGreenComponentExpect);
       // save our results
       ImageUtil.writeFile(smallImageGreenComponent,
               "res/smallImage/result/greenComponent.ppm");
 
       PictureImpl smallImageBlueComponent = (PictureImpl) smallImagePPM.component("blue");
-      PictureImpl smallImageBlueComponentExpect = ImageUtil.readFile("res/" +
-              "smallImage/smallImage-blue-component.ppm");
+      PictureImpl smallImageBlueComponentExpect = ImageUtil.readFile("res/"
+              + "smallImage/smallImage-blue-component.ppm");
       assertCompare(smallImageBlueComponent, smallImageBlueComponentExpect);
       // save our results
       ImageUtil.writeFile(smallImageBlueComponent,
               "res/smallImage/result/blueComponent.ppm");
 
       PictureImpl smallImageValueComponent = (PictureImpl) smallImagePPM.component("value");
-      PictureImpl smallImageValueComponentExpect = ImageUtil.readFile("res/" +
-              "smallImage/smallImage-value-component.ppm");
+      PictureImpl smallImageValueComponentExpect = ImageUtil.readFile("res/"
+              + "smallImage/smallImage-value-component.ppm");
       assertCompare(smallImageValueComponent, smallImageValueComponentExpect);
       // save our results
       ImageUtil.writeFile(smallImageValueComponent,
               "res/smallImage/result/valueComponent.ppm");
 
       PictureImpl smallImageIntensityComponent = (PictureImpl) smallImagePPM.component("intensity");
-      PictureImpl smallImageIntensityComponentExpect = ImageUtil.readFile("res/" +
-              "smallImage/smallImage-intensity-component.ppm");
+      PictureImpl smallImageIntensityComponentExpect = ImageUtil.readFile("res/"
+              + "smallImage/smallImage-intensity-component.ppm");
       assertCompare(smallImageIntensityComponent, smallImageIntensityComponentExpect);
       // save our results
-      ImageUtil.writeFile(smallImageIntensityComponent, "res/" +
-              "smallImage/result/intensityComponent.ppm");
+      ImageUtil.writeFile(smallImageIntensityComponent, "res/"
+              + "smallImage/result/intensityComponent.ppm");
 
       PictureImpl smallImageLumaComponent = (PictureImpl) smallImagePPM.component("luma");
-      PictureImpl smallImageLumaComponentExpect = ImageUtil.readFile("res/" +
-              "smallImage/smallImage-luma-component.ppm");
+      PictureImpl smallImageLumaComponentExpect = ImageUtil.readFile("res/"
+              + "smallImage/smallImage-luma-component.ppm");
       assertCompare(smallImageLumaComponent, smallImageLumaComponentExpect);
       // save our results
       ImageUtil.writeFile(smallImageLumaComponent,

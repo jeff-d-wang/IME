@@ -9,6 +9,9 @@ import model.picture.IPicture;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * Test class for the FilterImpl class.
+ */
 public class FilterImplTest {
   private IPicture smallImage;
   private double[][] filterZero;
@@ -65,8 +68,8 @@ public class FilterImplTest {
   public void testInvalidApply1() {
     IPicture smallImageFilterFail = new FilterImpl().apply(smallImage,
             new double[][] {
-            {1, 1},
-            {1, 1}});
+                    {1, 1},
+                    {1, 1}});
   }
 
   @Test(expected = IllegalArgumentException.class)

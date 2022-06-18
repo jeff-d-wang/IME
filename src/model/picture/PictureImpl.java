@@ -19,6 +19,12 @@ public class PictureImpl implements IPicture {
     maxValue = 255;
   }
 
+  /**
+   * Basic constructor for this PictureImpl class.
+   * @param width    Width of this picture
+   * @param height   Height of this picture
+   * @throws IllegalArgumentException if the width or height is negative
+   */
   public PictureImpl(int width, int height) throws IllegalArgumentException {
     if (width < 0 || height < 0) {
       throw new IllegalArgumentException("Invalid " + width + " and/or " + height + " dimensions.");
@@ -36,6 +42,10 @@ public class PictureImpl implements IPicture {
     return pixels[0].length;
   }
 
+  /**
+   * Returns the max value of this picture if need be.
+   * @return the max value of this picture
+   */
   public int getMaxValue() {
     return maxValue;
   }
@@ -56,7 +66,10 @@ public class PictureImpl implements IPicture {
     pixels[r][c] = pixel;
   }
 
-  protected void resetAlteration() {
+  /**
+   * Resets the alteration object for continued use and return.
+   */
+  private void resetAlteration() {
     alteration = new PictureImpl(getWidth(), getHeight());
   }
 
@@ -65,7 +78,7 @@ public class PictureImpl implements IPicture {
    *
    * @param lambda Lambda function to be applied on a pixel
    */
-  protected void applyLambda(IPixelLambda lambda) {
+  private void applyLambda(IPixelLambda lambda) {
     resetAlteration();
     for (int r = 0; r < getHeight(); r++) {
       for (int c = 0; c < getWidth(); c++) {
@@ -188,4 +201,5 @@ public class PictureImpl implements IPicture {
             {0.272, 0.534, 0.131}};
     return new TransformationImpl().apply(this, sepiaMatrix);
   }
+
 }

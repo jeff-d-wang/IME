@@ -1,6 +1,5 @@
 package controller;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Map;
@@ -12,9 +11,9 @@ import model.picture.IPictureModel;
 import view.PictureView;
 
 /**
- * Implementation of a PictureController interface.
+ * Implementation of a IPictureController interface.
  */
-public class PictureControllerImpl implements PictureController {
+public class PictureControllerImpl implements IPictureController {
 
   private IPictureModel model;
   private PictureView view;
@@ -135,6 +134,25 @@ public class PictureControllerImpl implements PictureController {
     public void run() throws IllegalStateException {
       try {
         ImageUtil.writeFile(model.getPicture(script[2]), script[1]);
+      } catch (Exception e) {
+        message("Could not execute function. " + e.getMessage() + System.lineSeparator());
+      }
+    }
+  }
+
+  /**
+   * Runnable class for the file function.
+   */
+  private class File implements Runnable {
+
+    /**
+     * Run function for the Runnable File class.
+     *
+     * @throws IllegalStateException if it could not properly render a message.
+     */
+    public void run() throws IllegalStateException {
+      try {
+        PictureControllerImpl.this.run(new FileReader(script[1]));
       } catch (Exception e) {
         message("Could not execute function. " + e.getMessage() + System.lineSeparator());
       }
@@ -276,25 +294,6 @@ public class PictureControllerImpl implements PictureController {
     public void run() throws IllegalStateException {
       try {
         model.putPicture(script[2], model.getPicture(script[1]).sepia());
-      } catch (Exception e) {
-        message("Could not execute function. " + e.getMessage() + System.lineSeparator());
-      }
-    }
-  }
-
-  /**
-   * Runnable class for the file function.
-   */
-  private class File implements Runnable {
-
-    /**
-     * Run function for the Runnable File class.
-     *
-     * @throws IllegalStateException if it could not properly render a message.
-     */
-    public void run() throws IllegalStateException {
-      try {
-        PictureControllerImpl.this.run(new FileReader(script[1]));
       } catch (Exception e) {
         message("Could not execute function. " + e.getMessage() + System.lineSeparator());
       }

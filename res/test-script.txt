@@ -1,0 +1,1 @@
+load smallImage/smallImage-zero-filter.ppm smallImage-zero-filter

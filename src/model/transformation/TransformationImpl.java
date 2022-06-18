@@ -4,6 +4,10 @@ import model.picture.IPicture;
 import model.picture.PictureImpl;
 import model.pixel.PixelImpl;
 
+/**
+ * Implementation of a ITransformation interface. Represents a collection of transformation
+ * commands applied to Pictures.
+ */
 public class TransformationImpl implements ITransformation {
 
   @Override
@@ -33,11 +37,12 @@ public class TransformationImpl implements ITransformation {
 
   /**
    * Multiplies a given 1x3 matrix to a 3x1 matrix representative of rgb values.
+   *
    * @param rgb      3x1 of rgb values
    * @param matrix   1x3 matrix to be multiplied to a set of rgb values
    * @return the product of the two given matrix (value for any of rgb)
    * @throws IllegalArgumentException if the given matrix is not 1x3 or 3x1 according to what it
-   * represents
+   *         represents
    */
   private double multiply(int[] rgb, double[] matrix) throws IllegalArgumentException {
     if (rgb.length != 3 || matrix.length != 3 || rgb.length != matrix.length) {

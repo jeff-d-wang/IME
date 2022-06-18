@@ -71,11 +71,11 @@ public class ImageUtilTest {
   public void testWriteFile() {
     try {
       PictureImpl smallImageRedGreyscale = (PictureImpl) smallImage.component("red");
-      ImageUtil.writeFile(smallImageRedGreyscale, "res/smallImage/" +
-              "result/redComponent.ppm");
+      ImageUtil.writeFile(smallImageRedGreyscale, "res/smallImage/"
+              + "result/redComponent.ppm");
 
-      PictureImpl smallImageRedGreyscaleExpect = ImageUtil.readFile("res/" +
-              "smallImage/smallImage-red-component.ppm");
+      PictureImpl smallImageRedGreyscaleExpect = ImageUtil.readFile("res/"
+              + "smallImage/smallImage-red-component.ppm");
 
       for (int r = 0; r < smallImageRedGreyscale.getHeight(); r++) {
         for (int c = 0; c < smallImageRedGreyscale.getWidth(); c++) {
@@ -167,8 +167,8 @@ public class ImageUtilTest {
   public void testWritePNG() {
     try {
       // from ppm to png
-      ImageUtil.writeFile(smallImage, "res/smallImage/" +
-              "/result/smallImagePPMto.png");
+      ImageUtil.writeFile(smallImage, "res/smallImage/"
+              + "/result/smallImagePPMto.png");
 
       PictureImpl smallImagePPMtoPNG
               = ImageUtil.readFile("res/smallImage/result/smallImagePPMto.png");
@@ -176,8 +176,8 @@ public class ImageUtilTest {
       compareImages(smallImagePPMtoPNG, smallImagePNG);
 
       // from jpg to png
-      ImageUtil.writeFile(smallImageJPG, "res/smallImage/" +
-              "/result/smallImageJPGto.png");
+      ImageUtil.writeFile(smallImageJPG, "res/smallImage/"
+              + "/result/smallImageJPGto.png");
 
       PictureImpl smallImageJPGtoPNG
               = ImageUtil.readFile("res/smallImage/result/smallImageJPGto.png");
@@ -186,8 +186,8 @@ public class ImageUtilTest {
       compareImages(smallImageJPGtoPNG, smallImageJPG);
 
       // from bmp to png
-      ImageUtil.writeFile(smallImageBMP, "res/smallImage/" +
-              "/result/smallImageBMPto.png");
+      ImageUtil.writeFile(smallImageBMP, "res/smallImage/"
+              + "/result/smallImageBMPto.png");
 
       PictureImpl smallImageBMPtoPNG
               = ImageUtil.readFile("res/smallImage/result/smallImageBMPto.png");
@@ -195,13 +195,19 @@ public class ImageUtilTest {
       compareImages(smallImageBMPtoPNG, smallImagePNG);
 
       // from png to png
-      ImageUtil.writeFile(smallImagePNG, "res/smallImage/" +
-              "/result/smallImagePNGto.png");
+      ImageUtil.writeFile(smallImagePNG, "res/smallImage/"
+              + "/result/smallImagePNGto.png");
 
       PictureImpl smallImagePNGtoPNG
               = ImageUtil.readFile("res/smallImage/result/smallImagePNGto.png");
 
       compareImages(smallImagePNGtoPNG, smallImagePNG);
+      for (int r = 0; r < smallImagePNGtoPNG.getHeight(); r++) {
+        for (int c = 0; c < smallImagePNGtoPNG.getWidth(); c++) {
+          assertEquals(smallImagePNGtoPNG.getPixel(r, c),
+                  smallImagePNG.getPixel(r, c));
+        }
+      }
 
     } catch (IOException e) {
       System.out.println(e.getMessage());
@@ -212,8 +218,8 @@ public class ImageUtilTest {
   public void testWriteJPG() {
     try {
       // from PPM to JPG
-      ImageUtil.writeFile(smallImage, "res/smallImage/" +
-              "/result/smallImagePPMto.jpg");
+      ImageUtil.writeFile(smallImage, "res/smallImage/"
+              + "/result/smallImagePPMto.jpg");
 
       PictureImpl smallImagePPMtoJPG
               = ImageUtil.readFile("res/smallImage/result/smallImagePPMto.jpg");
@@ -221,8 +227,8 @@ public class ImageUtilTest {
       // compareImages(smallImagePPMtoJPG, smallImageJPG);
 
       // from PNG to JPG
-      ImageUtil.writeFile(smallImagePNG, "res/smallImage/" +
-              "/result/smallImagePNGto.jpg");
+      ImageUtil.writeFile(smallImagePNG, "res/smallImage/"
+              + "/result/smallImagePNGto.jpg");
 
       PictureImpl smallImagePNGtoJPG
               = ImageUtil.readFile("res/smallImage/result/smallImagePNGto.jpg");
@@ -230,8 +236,8 @@ public class ImageUtilTest {
       //compareImages(smallImagePNGtoJPG, smallImageJPG);
 
       // from BMP to JPG
-      ImageUtil.writeFile(smallImageBMP, "res/smallImage/" +
-              "/result/smallImageBMPto.jpg");
+      ImageUtil.writeFile(smallImageBMP, "res/smallImage/"
+              + "/result/smallImageBMPto.jpg");
 
       PictureImpl smallImageBMPtoJPG
               = ImageUtil.readFile("res/smallImage/result/smallImageBMPto.jpg");
@@ -239,13 +245,22 @@ public class ImageUtilTest {
       //compareImages(smallImageBMPtoJPG, smallImageJPG);
 
       // from JPG to JPG
-      ImageUtil.writeFile(smallImageJPG, "res/smallImage/" +
-              "/result/smallImageJPGto.jpg");
+      ImageUtil.writeFile(smallImageJPG, "res/smallImage/"
+              + "/result/smallImageJPGto.jpg");
 
       PictureImpl smallImageJPGtoJPG
               = ImageUtil.readFile("res/smallImage/result/smallImageJPGto.jpg");
 
       //compareImages(smallImageJPGtoJPG, smallImageJPG);
+
+      PictureImpl smallImageJPG2
+              = ImageUtil.readFile("res/smallImage/smallImage.jpeg");
+      for (int r = 0; r < smallImageJPG2.getHeight(); r++) {
+        for (int c = 0; c < smallImageJPG2.getWidth(); c++) {
+          assertEquals(smallImageJPG2.getPixel(r, c),
+                  smallImageJPG.getPixel(r, c));
+        }
+      }
 
 
     } catch (IOException e) {
@@ -257,8 +272,8 @@ public class ImageUtilTest {
   public void testWriteBMP() {
     try {
       // from ppm to bmp
-      ImageUtil.writeFile(smallImage, "res/smallImage/" +
-              "/result/smallImagePPMto.bmp");
+      ImageUtil.writeFile(smallImage, "res/smallImage/"
+              + "/result/smallImagePPMto.bmp");
 
       PictureImpl smallImagePPMtoBMP
               = ImageUtil.readFile("res/smallImage/result/smallImagePPMto.bmp");
@@ -267,8 +282,8 @@ public class ImageUtilTest {
 
 
       // from png to bmp
-      ImageUtil.writeFile(smallImagePNG, "res/smallImage/" +
-              "/result/smallImagePNGto.bmp");
+      ImageUtil.writeFile(smallImagePNG, "res/smallImage/"
+              + "/result/smallImagePNGto.bmp");
 
       PictureImpl smallImagePNGtoBMP
               = ImageUtil.readFile("res/smallImage/result/smallImagePNGto.bmp");
@@ -276,8 +291,8 @@ public class ImageUtilTest {
       compareImages(smallImagePNGtoBMP, smallImageBMP);
 
       // from jpg to bmp
-      ImageUtil.writeFile(smallImageJPG, "res/smallImage/" +
-              "/result/smallImageJPGto.bmp");
+      ImageUtil.writeFile(smallImageJPG, "res/smallImage/"
+              + "/result/smallImageJPGto.bmp");
 
       PictureImpl smallImageJPGtoBMP
               = ImageUtil.readFile("res/smallImage/result/smallImageJPGto.bmp");
@@ -286,13 +301,19 @@ public class ImageUtilTest {
       compareImages(smallImageJPGtoBMP, smallImageJPG);
 
       // from bmp to bmp
-      ImageUtil.writeFile(smallImageBMP, "res/smallImage/" +
-              "/result/smallImageBMPto.bmp");
+      ImageUtil.writeFile(smallImageBMP, "res/smallImage/"
+              + "/result/smallImageBMPto.bmp");
 
       PictureImpl smallImageBMPtoBMP
               = ImageUtil.readFile("res/smallImage/result/smallImageBMPto.bmp");
 
       compareImages(smallImageBMPtoBMP, smallImageBMP);
+      for (int r = 0; r < smallImageBMPtoBMP.getHeight(); r++) {
+        for (int c = 0; c < smallImageBMPtoBMP.getWidth(); c++) {
+          assertEquals(smallImageBMPtoBMP.getPixel(r, c),
+                  smallImageBMP.getPixel(r, c));
+        }
+      }
 
     } catch (IOException e) {
       System.out.println(e.getMessage());

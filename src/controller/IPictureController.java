@@ -5,7 +5,7 @@ import java.io.IOException;
 /**
  * Interface of a controller for the Picture class.
  */
-public interface PictureController {
+public interface IPictureController {
 
   /**
    * Method that runs the IME program by accepting user input and parsing it. This passes its own

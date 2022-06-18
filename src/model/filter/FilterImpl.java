@@ -5,6 +5,10 @@ import model.picture.PictureImpl;
 import model.pixel.IPixel;
 import model.pixel.PixelImpl;
 
+/**
+ * Implementation of a IFilter interface. Represents a collection of filter commands applied to
+ * Pictures.
+ */
 public class FilterImpl implements IFilter {
 
   @Override

@@ -1,59 +1,74 @@
 # IME
 
-OOD Assignment 5
-Update: 6/17/22 
+## OOD Assignment 5
+### Update: 6/17/22 
 
-Model: 
-In our model, it now contains a filter package, a lambda package, a picture package, a pixel 
-package, a transformation package, and the ImageUtil class. 
+## Model Package: 
+In our model, it now contains a filter package, a picture package, a pixel package, a transformation
+package, the ImageUtil class, and the IPixelLambda class. 
 
-ImageUtil class: 
+### ImageUtil class: 
 In the ImageUtil class, what was modified was the read and write methods can now read and write 
 to different image types such as png, bmp and jpg. It continues to support reading and writing 
-from file types of ppm. 
+from file types of ppm. Originally, we thought that alpha values would be used and thus causing a
+need for different types of pixels and pictures, but we realized that this was not the case in our
+situation. So now, instead of the IPicture class handling its conversion to a file format, we let
+the ImageUtil class manage such. It can now handle conversion of once ppm file pictures to now other
+supported formats.
 
-Picture Package: 
+### Picture Package: 
 The picture package was modified, and it now contains a IPicture interface, a IPictureModel 
 interface, a PictureImpl class and a PictureModel class. 
 
-IPicture now represent an interface picture class with rgb values. 
+IPicture now represent an interface picture class with rgb values. This was decided as such because
+now we know that we should only be working with RGB values and thus, all pictures share those
+qualities.
 In the IPicture interface, the new methods are: 
 - blur() which blurs a given image
 - sharpen() which sharpens a given image
 - greyscale() which applies a greyscale transformation on an image
 - sepia() which applies a sepia transformation on an image.
 
-The previous greyscale(String component) method which greyscales the picture according to a given 
+The previous greyscale(String component) method which greyscaled the picture according to a given 
 component was renamed to component(String component) because a greyscale transformation 
-is different from a componenet transformation such as a red greyscale modification. 
+is different from a component transformation such as a red greyscale modification. This causes for
+some minor alteration with naming convention across the code like in the controller (Runnable) but
+it isn't something to worry about.
+
 The toFile(String filename) method from earlier was removed because the write method in the 
-ImageUtil class can support this functionality. 
+ImageUtil class can support this functionality. The reason being was mentioned before but ultimately
+a IPicture should represent all pictures possible and the ImageUtil class should focus on converting
+a picture to file formats.
 
 The IPictureModel interface are representative of a collection of Pictures that are constantly 
-being added and retrieved by the controller. Each of those pictures handle functionality. This class
-replaces the previous PictureModel class we had in our A4 implementation. This class now has the 
+being added and retrieved by the controller. Each of those pictures handle functionality. This
+interface now gets implemented by the PictureModel class to add flexibility. This class now has the 
 methods: putPicture(String name, IPicture picture) and getPicture(String name) which puts a given 
 picture value to a new key name in pictures and returns the picture value of a given key name, 
 respectively. 
 
 The previous abstract RGBPicture class was removed because the original implementation idea was to 
 create a new class for every type of picture (png, jpg, ppm, bmp) and override the toFile() method 
-for each class. However, the writeFile() method in ImageUtils supports this functionability and 
-hence, we removed the abstract RGBPicture class and just had PPMPicture implement IPicture. 
+for each class. However, after our realization that we would only need to be working with RGB values
+and nothing more/less (like HVI or alpha values), we could bridge the gap between an implemention of
+a picture to the interface closer in a more intelligent way. Now, the writeFile() method in 
+ImageUtils supports this functionality and hence, we removed the abstract RGBPicture class and 
+just had PPMPicture implement IPicture. 
 
 The previous PPMPPicture class was renamed to PictureImpl and continues to implement IPicture. 
 Since the abstract RGBPicture class was removed, setPixel() is no longer an abstract method. 
-So PictureImpl is now what a default picture with RGB values and functions to support it.
-The flaw with the last design was that we were thinking too far and deep into what it meant to be 
-a picture and assumed that pixels could also be measured in values other than rgb. 
-Thus, operations that relied on RGB values needed to be in different sublclasses, creating layers 
-of unnecessary abstractions if we were to somehow face HEX values in the future, we could just 
-convert them into RGB values or just add more values by extending the PictureImpl class. 
+So PictureImpl is now what a default picture with RGB values and functions is. The flaw with the 
+last design was that we were thinking too far and deep into what it meant to be a picture and 
+assumed that pixels could also be measured in values other than rgb. Thus, operations that relied 
+on RGB values needed to be in different subclasses, creating layers of unnecessary abstractions. 
+If we were to somehow face HEX values in the future, we could just convert them into RGB values 
+or just add more values by extending the PictureImpl class. The overall structure of IPicture and
+its child classes makes much more sense and is easier to work with.
 
 The PictureModel class implements the IPictureModel interface. Nothing has been modified in this 
 class.
 
-Pixel Package: 
+### Pixel Package: 
 The pixel package contains a IPixel interface and a PixelImpl class. The abstract RGBPixel class was
 removed because the original implementation idea was that there would be more than one type of 
 pixels that would need to be supported such as RGB pixel and a ARGB pixel. However, since there 
@@ -84,41 +99,57 @@ all the subclasses will have RGB values.
 The previous RGBPixelImpl class was renamed to PixelImpl class and the PixelImpl class implements 
 the IPixel interface. 
 
-Filter package: 
+### Filter package: 
 The filter package contains a IFilter interface and a FilterImpl class. The IFilter interface
 represents a filter for a picture. It functions by applying a filter onto a kernel
 of the same size, achieving an ultimate value for the pixel at the center of the kernel, then
 assigns it its final RGB values. It contains the method apply(IPicture picture, double[][] filter)
-which applies the given filter onto a given picture.
+which applies the given filter onto a given picture. The overall design of this filter package
+allows for future filter methods to be made.
 
 The FilterImpl class implements the IFilter interface. 
 
-Transformation package:
+### Transformation package:
 The transformation package contains a ITransformation interface and a TransformationImpl class.
 The ITransformation interface represents a transformation for a picture. It functions by 
 multiplying a matrix to a 1x3 matrix of rgb values for a pixel, achieving an ultimate value for 
 the pixel, then assigns it its final RGB values. It contains the method 
-apply(IPicture picture, double[][] matrix) which applies the given filter onto a given picture.
+`apply(IPicture picture, double[][] matrix)` which applies the given filter onto a given picture.
+The overall design of this transformation package allows for future transformation methods to be
+made.
 
 The TransformationImpl class implements the ITransformation interface. 
 
-Lambda package: Nothing has been changed. 
-
-Controller:
+### Controller:
 The constructor continues to take in a PictureModel model, PictureView view, 
 Readable readable and puts into the variable runnables by calling the Runnable class for the 
 load function, save function, greyscale function, flip function, and brighten function. 
-This PictureControllerImpl class implemented run().
+This PictureControllerImpl class implemented `run()`.
+
 The PictureControllerImpl class now contains new Runnable classes for the blur function, sharpen 
 function, greyscale function, sepia function, and a file function.
 
-View: Nothing has been modified. 
+The `run` function also has another version of it `run(Readable readable)` which can accept a
+different Readable object. This allows for the support of the `-file` command by feeding in the 
+following text file into it. After the file has been successfully read and compiled, the program
+is then able to continue accepting user-input commands.
 
-Main Method (IME): Nothing has been modifed. 
+### Lambda:
+We deleted the package and just consolidated everything into one interface class called
+IPixelLambda since there's no need to differentiate between RGB pixels and other pixel types (since
+how we apply lambdas operate differently). Now IPixelLambda serves as the sole interface that is
+able to run a defined lambda onto a picture.
 
-Picture Package: 
+### View: Nothing has been modified. 
+
+### Main Method (IME): Nothing has been modified. 
+
+## res/ Folder:
+
+### SmallImage Folder: 
+Pictures were moved out of the src/ folder and into the more appropriate res/ folder.
 It now contains these new files: 
-In the result package inside the smallImage package: 
+In the result package where we hold results of our program: 
 - blur.ppm 
 - sepia.ppm
 - sharpen.ppm
@@ -149,19 +180,32 @@ In the smallImage package:
 - smallImage-sharpen.ppm
 - smallImage-zero-filter.ppm
 
-Inside of picture package: 
-- manhattan.png 
-- manhattan-blue.ppm 
-- manhattan-greyscale.ppm 
-- manhattan-sepia.ppm 
-- manhattan-sharpen.ppm
+### ImageProcessing.jar:
+This is the jar file that can be executed through terminal. It can also run the example-script.txt
+and test-script.txt.
 
-Example Script Txt: 
-This file (example-script.txt) is a file that can be passed in as an input command when running 
-main. 
+### Example Script Txt: 
+This file (example-script.txt) is a file that can be passed in as an input command when running the
+jar file.
 
-OOD Assignment 4
-Updated: 6/10/22
+### Test Script Txt:
+This file (test-script.txt) is a file that can be passed in as an input command when running the
+jar file. This was made to test the `-file` script command and also be included in the
+example-script.txt as an available and working command.
+
+### IMEClassDiagram.png:
+This picture details the class structure of this program in a diagram.
+
+## smallImage Usage
+The images in smallImage package is my `own` photograph created using GIMP, and I (RuiMing Li) am
+authorizing it to be used in this project. The smallImage.ppm is the original image.
+Pictures with names such as smallImage-blue-greyscale means that the original image was
+greyscaled by blue. Pictures with names such as smallImage-horizontal-vertical.ppm means that the
+original image was flipped horizontally and then vertically. The images in the result package
+are images that were saved based on scripted commands such as the ones below.
+
+## OOD Assignment 4
+### Updated: 6/10/22
 
 Model:
 The model package contains a Lambda package, a Picture package, a Pixel package, and a ImageUtil
@@ -312,7 +356,9 @@ The pictures package contains:
 - smallImage-vertical.ppm
 - smallImage-vertical-horizontal.ppm
 - smallImageP6.pbm
-The images in smallImage package is my own photograph created using GIMP, and I (RuiMing Li) am
+
+# smallImage Usage
+The images in smallImage package is my `own` photograph created using GIMP, and I (RuiMing Li) am
 authorizing it to be used in this project. The smallImage.ppm is the original image.
 Pictures with names such as smallImage-blue-greyscale means that the original image was
 greyscaled by blue. Pictures with names such as smallImage-horizontal-vertical.ppm means that the
@@ -392,10 +438,9 @@ vertical-flip smallImage smallImage-vertical
 vertical-flip smallImage-horizontal smallImage-horizontal-vertical
 save src/pictures/smallImage/smallImage-horizontal-vertical.ppm smallImage-horizontal-vertical
 
-Example script for blue grayscaling:
+Example script for blue grayscale:
 load src/pictures/smallImage/smallImage.ppm smallImage
 blue-component smallImage smallImage-blue-greyscale
 save src/pictures/smallImage/smallImage-blue-grayscale.ppm smallImage-blue-greyscale
 
-*** To see example PPM pictures that were saved navigate to the package called pictures.smallImage
-*** Inside is a package called result which is where the PPM pictures were saved. 
+*** To see example PPM pictures that were saved navigate to the res/smallImage/result folder.

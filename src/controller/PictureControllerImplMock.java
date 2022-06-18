@@ -7,9 +7,9 @@ import model.picture.IPictureModel;
 import view.PictureView;
 
 /**
- * A Mock class for PictureControllerImpl to see if it recieves inputs correctly.
+ * A Mock class for PictureControllerImpl to see if it receives inputs correctly.
  */
-public class PictureControllerImplMock implements PictureController {
+public class PictureControllerImplMock implements IPictureController {
 
   private PictureView view;
   private final Readable readable;

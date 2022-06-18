@@ -1,0 +1,88 @@
+# IME
+
+## Supported Script Commands: 
+- ### Load:
+  - Load an image from the specified path and refer it to henceforth in the program by the given
+  image name.
+  - Format: `load image-path image-name`
+  - Example: `load res/smallImage/smallImage.ppm smallImage`
+  - Conditions:
+    - `image-path` must be a valid path to an image of ppm, bpm, jpg, or png format
+    - `image-name` must not contain spaces to be assigned correctly
+    - Typically, the first command to be used in a script and used before altering new images
+- ### Save:
+  - Save the image with the given name to the specified path which should include the name of the
+  file.
+  - Format: `save image-path image-name`
+  - Example: `save res/smallImage/result/smallImage.ppm smallImage`
+  - Conditions:
+    - `image-path` must be a valid path to an image of ppm, bpm, jpg, or png format
+    - `image-name` must be a previously loaded or altered image
+- ### File:
+  - Create a sepia image with the given name, referred to henceforth by the given destination name.
+  - Format: `-file NAME-OF-SCRIPT.txt`
+  - Example: `-file test-script.txt`
+  - Conditions:
+    - `NAME-OF-SCRIPT.txt` must be a valid path to a pre-existing text file
+- ### Component:
+  - Create a greyscale image with the pre-notion component of the image with the given name, and
+  refer to it henceforth in the program by the given destination name.
+  - Format: `TYPE-component image-name dest-image-name`
+  - Example: `red-component smallImage res/smallImage/result/smallImage-red-component.ppm`
+  - Conditions:
+    - `TYPE` is any of the following supported component types:
+      - red
+      - green
+      - blue
+      - value
+      - intensity
+      - luma
+    - `image-name` must be a previously loaded or altered image
+    - `dest-image-name` must not contain spaces to be assigned correctly
+- ### Flip:
+  - Flip an image to create a new image, referred to henceforth by the given destination name.
+  - Format: `TYPE-flip image-name dest-image-name`
+  - Example: `horizontal-flip smallImage res/smallImage/result/smallImage-horizontal-flip.ppm`
+  - Conditions:
+    - `TYPE` is any of the following supported flip types:
+      - horizontal
+      - vertical
+    - `image-name` must be a previously loaded or altered image
+    - `dest-image-name` must not contain spaces to be assigned correctly
+- ### Brighten:
+    - Brighten the image by the given increment to create a new image, referred to henceforth by the
+  given destination name. The increment may be positive (brightening) or negative (darkening).
+    - Format: `brighten increment image-name dest-image-name`
+    - Example: `brighten 10 smallImage res/smallImage/result/smallImage-brighten-by-10.ppm`
+    - Conditions:
+        - `increment` must be a number
+        - `image-name` must be a previously loaded or altered image
+        - `dest-image-name` must not contain spaces to be assigned correctly
+- ### Blur:
+  - Blur an image to create a new image, referred to henceforth by the given destination name.
+  - Format: `blur image-name dest-image-name`
+  - Example: `blur smallImage res/smallImage/result/smallImage-blur.ppm`
+  - Conditions:
+    - `image-name` must be a previously loaded or altered image
+    - `dest-image-name` must not contain spaces to be assigned correctly
+- ### Sharpen:
+  - Sharpen an image to create a new image, referred to henceforth by the given destination name.
+  - Format: `sharpen image-name dest-image-name`
+  - Example: `sharpen smallImage res/smallImage/result/smallImage-sharpen.ppm`
+  - Conditions:
+    - `image-name` must be a previously loaded or altered image
+    - `dest-image-name` must not contain spaces to be assigned correctly
+- ### Greyscale:
+  - Create a greyscale image with the given name, referred to henceforth by the given destination name.
+  - Format: `greyscale image-name dest-image-name`
+  - Example: `greyscale smallImage res/smallImage/result/smallImage-greyscale.ppm`
+  - Conditions:
+    - `image-name` must be a previously loaded or altered image
+    - `dest-image-name` must not contain spaces to be assigned correctly
+- ### Sepia:
+  - Create a sepia image with the given name, referred to henceforth by the given destination name.
+  - Format: `sepia image-name dest-image-name`
+  - Example: `sepia smallImage res/smallImage/result/smallImage-sepia.ppm`
+  - Conditions:
+    - `image-name` must be a previously loaded or altered image
+    - `dest-image-name` must not contain spaces to be assigned correctly

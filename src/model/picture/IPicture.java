@@ -1,7 +1,5 @@
 package model.picture;
 
-import java.io.IOException;
-
 import model.pixel.IPixel;
 
 /**
@@ -24,11 +22,11 @@ public interface IPicture {
   /**
    * Return the Pixel object at a given row and column value.
    *
-   * @param r Row value
-   * @param c Column value
+   * @param r   Row value
+   * @param c   Column value
    * @return the Pixel object at a given row and column value
    * @throws IllegalArgumentException if the given row and/or column value is less than 0 or greater
-   * than the height or width of the picture, respectively
+   *                                  than the height or width of the picture, respectively
    */
   IPixel getPixel(int r, int c) throws IllegalArgumentException;
 
@@ -38,7 +36,7 @@ public interface IPicture {
    * @param c       Column value
    * @param pixel   Pixel object to be set
    * @throws IllegalArgumentException if the given row and/or column value is less than 0 or greater
-   *    * than the height or width of the picture, respectively
+   *      than the height or width of the picture, respectively
    */
   void setPixel(int r, int c, IPixel pixel) throws IllegalArgumentException;
 

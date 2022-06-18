@@ -4,12 +4,14 @@ import org.junit.Test;
 import java.io.IOException;
 
 import model.ImageUtil;
-import model.filter.FilterImpl;
 import model.picture.IPicture;
 import model.transformation.TransformationImpl;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * This is the testing class for transformation impl class.
+ */
 public class TransformationImplTest {
   private IPicture smallImage;
   private double[][] transformHalf;

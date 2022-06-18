@@ -30,11 +30,11 @@ public class PictureModelTest {
   @Test
   public void testPutAndGetPicture() throws IOException {
     IPicture filePicture1
-            = ImageUtil.readFile("src/pictures/smallImage/smallImage.ppm");
+            = ImageUtil.readFile("res/smallImage/smallImage.ppm");
     IPicture filePicture2
-            = ImageUtil.readFile("src/pictures/smallImage/smallImage-horizontal.ppm");
+            = ImageUtil.readFile("res/smallImage/smallImage-horizontal.ppm");
     IPicture filePicture3
-            = ImageUtil.readFile("src/pictures/smallImage/smallImage-value-component.ppm");
+            = ImageUtil.readFile("res/smallImage/smallImage-value-component.ppm");
 
     model1.putPicture("smallImage1", filePicture1);
     model1.putPicture("smallImage2", filePicture2);
@@ -67,7 +67,7 @@ public class PictureModelTest {
 
   @Test(expected = IllegalArgumentException.class)
   public void testInvalidPutPicture() throws IOException {
-    IPicture filePicture = ImageUtil.readFile("src/pictures/smallImage/smallImage.ppm");
+    IPicture filePicture = ImageUtil.readFile("res/smallImage/smallImage.ppm");
 
     model1.putPicture("smallImage", null);
     model1.putPicture(null, filePicture);

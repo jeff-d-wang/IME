@@ -17,7 +17,7 @@ public class TransformationImplTest {
   @Before
   public void setUp() {
     try {
-      smallImage = ImageUtil.readFile("src/pictures/smallImage/smallImage.ppm");
+      smallImage = ImageUtil.readFile("res/smallImage/smallImage.ppm");
       transformHalf = new double[][] {
               {0.5, 0.5, 0.5},
               {0.5, 0.5, 0.5},
@@ -40,7 +40,7 @@ public class TransformationImplTest {
 
     IPicture smallImageHalfTransform = new TransformationImpl().apply(smallImage, transformHalf);
     IPicture smallImageHalfTransformExpect =
-            ImageUtil.readFile("src/pictures/smallImage/smallImage-half-transform.ppm");
+            ImageUtil.readFile("res/smallImage/smallImage-half-transform.ppm");
     assertCompare(smallImageHalfTransform, smallImageHalfTransformExpect);
   }
 

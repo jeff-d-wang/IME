@@ -20,8 +20,8 @@ public class PictureImplTest {
   @Before
   public void setUp() {
     try {
-      smallImagePPM = ImageUtil.readFile("src/pictures/smallImage/smallImage.ppm");
-      manhattan = ImageUtil.readFile("src/pictures/manhattan.png");
+      smallImagePPM = ImageUtil.readFile("res/smallImage/smallImage.ppm");
+      // manhattan = ImageUtil.readFile("res/manhattan.png");
     } catch (IOException e) {
       e.printStackTrace();
     }
@@ -158,52 +158,52 @@ public class PictureImplTest {
   public void testComponent() {
     try {
       PictureImpl smallImageRedComponent = (PictureImpl) smallImagePPM.component("red");
-      PictureImpl smallImageRedComponentExpect = ImageUtil.readFile("src/pictures/smallImage" +
+      PictureImpl smallImageRedComponentExpect = ImageUtil.readFile("res/smallImage" +
               "/smallImage-red-component.ppm");
       assertCompare(smallImageRedComponent, smallImageRedComponentExpect);
       // save our results
       ImageUtil.writeFile(smallImageRedComponent,
-              "src/pictures/smallImage/result/redComponent.ppm");
+              "res/smallImage/result/redComponent.ppm");
 
       PictureImpl smallImageGreenComponent = (PictureImpl) smallImagePPM.component("green");
-      PictureImpl smallImageGreenComponentExpect = ImageUtil.readFile("src/pictures/" +
+      PictureImpl smallImageGreenComponentExpect = ImageUtil.readFile("res/" +
               "smallImage/smallImage-green-component.ppm");
       assertCompare(smallImageGreenComponent, smallImageGreenComponentExpect);
       // save our results
       ImageUtil.writeFile(smallImageGreenComponent,
-              "src/pictures/smallImage/result/greenComponent.ppm");
+              "res/smallImage/result/greenComponent.ppm");
 
       PictureImpl smallImageBlueComponent = (PictureImpl) smallImagePPM.component("blue");
-      PictureImpl smallImageBlueComponentExpect = ImageUtil.readFile("src/pictures/" +
+      PictureImpl smallImageBlueComponentExpect = ImageUtil.readFile("res/" +
               "smallImage/smallImage-blue-component.ppm");
       assertCompare(smallImageBlueComponent, smallImageBlueComponentExpect);
       // save our results
       ImageUtil.writeFile(smallImageBlueComponent,
-              "src/pictures/smallImage/result/blueComponent.ppm");
+              "res/smallImage/result/blueComponent.ppm");
 
       PictureImpl smallImageValueComponent = (PictureImpl) smallImagePPM.component("value");
-      PictureImpl smallImageValueComponentExpect = ImageUtil.readFile("src/pictures/" +
+      PictureImpl smallImageValueComponentExpect = ImageUtil.readFile("res/" +
               "smallImage/smallImage-value-component.ppm");
       assertCompare(smallImageValueComponent, smallImageValueComponentExpect);
       // save our results
       ImageUtil.writeFile(smallImageValueComponent,
-              "src/pictures/smallImage/result/valueComponent.ppm");
+              "res/smallImage/result/valueComponent.ppm");
 
       PictureImpl smallImageIntensityComponent = (PictureImpl) smallImagePPM.component("intensity");
-      PictureImpl smallImageIntensityComponentExpect = ImageUtil.readFile("src/pictures/" +
+      PictureImpl smallImageIntensityComponentExpect = ImageUtil.readFile("res/" +
               "smallImage/smallImage-intensity-component.ppm");
       assertCompare(smallImageIntensityComponent, smallImageIntensityComponentExpect);
       // save our results
-      ImageUtil.writeFile(smallImageIntensityComponent, "src/pictures/" +
+      ImageUtil.writeFile(smallImageIntensityComponent, "res/" +
               "smallImage/result/intensityComponent.ppm");
 
       PictureImpl smallImageLumaComponent = (PictureImpl) smallImagePPM.component("luma");
-      PictureImpl smallImageLumaComponentExpect = ImageUtil.readFile("src/pictures/" +
+      PictureImpl smallImageLumaComponentExpect = ImageUtil.readFile("res/" +
               "smallImage/smallImage-luma-component.ppm");
       assertCompare(smallImageLumaComponent, smallImageLumaComponentExpect);
       // save our results
       ImageUtil.writeFile(smallImageLumaComponent,
-              "src/pictures/smallImage/result/lumaComponent.ppm");
+              "res/smallImage/result/lumaComponent.ppm");
 
     } catch (IOException e) {
       System.out.println(e.getMessage());
@@ -225,11 +225,11 @@ public class PictureImplTest {
     try {
       PictureImpl smallImageHorizontal = (PictureImpl) smallImagePPM.flip("horizontal");
       PictureImpl smallImageHorizontalExpect =
-              ImageUtil.readFile("src/pictures/smallImage/smallImage-horizontal.ppm");
+              ImageUtil.readFile("res/smallImage/smallImage-horizontal.ppm");
       assertCompare(smallImageHorizontal, smallImageHorizontalExpect);
       // save our results
       ImageUtil.writeFile(smallImageHorizontal,
-              "src/pictures/smallImage/result/horizontal.ppm");
+              "res/smallImage/result/horizontal.ppm");
 
       // flipping horizontally smallImage twice (should be original image)
       PictureImpl smallImageHorizontalAgain =
@@ -238,11 +238,11 @@ public class PictureImplTest {
 
       PictureImpl smallImageVertical = (PictureImpl) smallImagePPM.flip("vertical");
       PictureImpl smallImageVerticalExpect =
-              ImageUtil.readFile("src/pictures/smallImage/smallImage-vertical.ppm");
+              ImageUtil.readFile("res/smallImage/smallImage-vertical.ppm");
       assertCompare(smallImageVertical, smallImageVerticalExpect);
       // save our results
       ImageUtil.writeFile(smallImageVertical,
-              "src/pictures/smallImage/result/vertical.ppm");
+              "res/smallImage/result/vertical.ppm");
 
       // flipping vertically smallImage twice (should be original image)
       PictureImpl smallImageVerticalAgain =
@@ -253,21 +253,21 @@ public class PictureImplTest {
       PictureImpl smallImageVerticalHorizontal =
               (PictureImpl) smallImagePPM.flip("vertical").flip("horizontal");
       PictureImpl smallImageVerticalHorizontalExpect = ImageUtil.readFile(
-              "src/pictures/smallImage/smallImage-vertical-horizontal.ppm");
+              "res/smallImage/smallImage-vertical-horizontal.ppm");
       assertCompare(smallImageVerticalHorizontal, smallImageVerticalHorizontalExpect);
       // save our results
       ImageUtil.writeFile(smallImageVerticalHorizontal,
-              "src/pictures/smallImage/result/vertical-horizontal.ppm");
+              "res/smallImage/result/vertical-horizontal.ppm");
 
       // flipping then horizontal and vertical for smallImage
       PictureImpl smallImageHorizontalVertical =
               (PictureImpl) smallImagePPM.flip("horizontal").flip("vertical");
       PictureImpl smallImageHorizontalVerticalExpect = ImageUtil.readFile(
-              "src/pictures/smallImage/smallImage-horizontal-vertical.ppm");
+              "res/smallImage/smallImage-horizontal-vertical.ppm");
       assertCompare(smallImageHorizontalVertical, smallImageHorizontalVerticalExpect);
       // save our results
       ImageUtil.writeFile(smallImageHorizontalVertical,
-              "src/pictures/smallImage/result/horizontal-vertical.ppm");
+              "res/smallImage/result/horizontal-vertical.ppm");
 
     } catch (IOException e) {
       System.out.println(e.getMessage());
@@ -288,20 +288,20 @@ public class PictureImplTest {
   public void testBrighten() {
     try {
       PictureImpl smallImageBrighten = (PictureImpl) smallImagePPM.brighten(10);
-      PictureImpl smallImageBrightenExpect = ImageUtil.readFile("src/pictures/" +
+      PictureImpl smallImageBrightenExpect = ImageUtil.readFile("res/" +
               "smallImage/smallImage-brighten-by-10.ppm");
       assertCompare(smallImageBrighten, smallImageBrightenExpect);
       // save our results
       ImageUtil.writeFile(smallImageBrightenExpect,
-              "src/pictures/smallImage/result/brighten-by-10.ppm");
+              "res/smallImage/result/brighten-by-10.ppm");
 
       PictureImpl smallImageDarken = (PictureImpl) smallImagePPM.brighten(-10);
-      PictureImpl smallImageDarkenExpect = ImageUtil.readFile("src/pictures/" +
+      PictureImpl smallImageDarkenExpect = ImageUtil.readFile("res/" +
               "smallImage/smallImage-darken-by-10.ppm");
       assertCompare(smallImageDarken, smallImageDarkenExpect);
       // save our results
       ImageUtil.writeFile(smallImageDarken,
-              "src/pictures/smallImage/result/darken-by-10.ppm");
+              "res/smallImage/result/darken-by-10.ppm");
 
     } catch (IOException e) {
       System.out.println(e.getMessage());
@@ -313,14 +313,14 @@ public class PictureImplTest {
     try {
       IPicture smallPictureBlur = smallImagePPM.blur();
       PictureImpl smallPictureBlurExpect =
-              ImageUtil.readFile("src/pictures/smallImage/smallImage-blur.ppm");
+              ImageUtil.readFile("res/smallImage/smallImage-blur.ppm");
       assertCompare(smallPictureBlur, smallPictureBlurExpect);
       // save our results
-      ImageUtil.writeFile(smallPictureBlur, "src/pictures/smallImage/result/blur.ppm");
+      ImageUtil.writeFile(smallPictureBlur, "res/smallImage/result/blur.ppm");
 
       // Test on manhattan works
       // IPicture manhattanBlur = manhattan.blur();
-      // ImageUtil.writeFile(manhattanBlur, "src/pictures/manhattan-blur.ppm");
+      // ImageUtil.writeFile(manhattanBlur, "res/manhattan-blur.ppm");
     } catch (IOException e) {
       System.out.println(e.getMessage());
     }
@@ -331,14 +331,14 @@ public class PictureImplTest {
     try {
       IPicture smallPictureSharpen = smallImagePPM.sharpen();
       PictureImpl smallPictureSharpenExpect =
-              ImageUtil.readFile("src/pictures/smallImage/smallImage-sharpen.ppm");
+              ImageUtil.readFile("res/smallImage/smallImage-sharpen.ppm");
       assertCompare(smallPictureSharpen, smallPictureSharpenExpect);
       // save our results
-      ImageUtil.writeFile(smallPictureSharpen, "src/pictures/smallImage/result/sharpen.ppm");
+      ImageUtil.writeFile(smallPictureSharpen, "res/smallImage/result/sharpen.ppm");
 
       // Test on manhattan works
       // IPicture manhattanSharpen = manhattan.sharpen();
-      // ImageUtil.writeFile(manhattanSharpen, "src/pictures/manhattan-sharpen.ppm");
+      // ImageUtil.writeFile(manhattanSharpen, "res/manhattan-sharpen.ppm");
     } catch (IOException e) {
       System.out.println(e.getMessage());
     }
@@ -349,14 +349,14 @@ public class PictureImplTest {
     try {
       IPicture smallPictureGreyscale = smallImagePPM.greyscale();
       PictureImpl smallPictureGreyscaleExpect =
-              ImageUtil.readFile("src/pictures/smallImage/smallImage-greyscale.ppm");
+              ImageUtil.readFile("res/smallImage/smallImage-greyscale.ppm");
       assertCompare(smallPictureGreyscale, smallPictureGreyscaleExpect);
       // save our results
-      ImageUtil.writeFile(smallPictureGreyscale, "src/pictures/smallImage/result/greyscale.ppm");
+      ImageUtil.writeFile(smallPictureGreyscale, "res/smallImage/result/greyscale.ppm");
 
       // Test on manhattan works
       // IPicture manhattanGreyscale = manhattan.greyscale();
-      // ImageUtil.writeFile(manhattanGreyscale, "src/pictures/manhattan-greyscale.ppm");
+      // ImageUtil.writeFile(manhattanGreyscale, "res/manhattan-greyscale.ppm");
     } catch (IOException e) {
       System.out.println(e.getMessage());
     }
@@ -367,14 +367,14 @@ public class PictureImplTest {
     try {
       IPicture smallPictureSepia = smallImagePPM.sepia();
       PictureImpl smallPictureSepiaExpect =
-              ImageUtil.readFile("src/pictures/smallImage/smallImage-sepia.ppm");
+              ImageUtil.readFile("res/smallImage/smallImage-sepia.ppm");
       assertCompare(smallPictureSepia, smallPictureSepiaExpect);
       // save our results
-      ImageUtil.writeFile(smallPictureSepia, "src/pictures/smallImage/result/sepia.ppm");
+      ImageUtil.writeFile(smallPictureSepia, "res/smallImage/result/sepia.ppm");
 
       // Test on manhattan works
       // IPicture manhattanSharpen = manhattan.sepia();
-      // ImageUtil.writeFile(manhattanSharpen, "src/pictures/manhattan-sepia.ppm");
+      // ImageUtil.writeFile(manhattanSharpen, "res/manhattan-sepia.ppm");
     } catch (IOException e) {
       System.out.println(e.getMessage());
     }
@@ -385,9 +385,9 @@ public class PictureImplTest {
     try {
       PictureImpl smallImageRedComponent = (PictureImpl) smallImagePPM.component("red");
       ImageUtil.writeFile(smallImageRedComponent,
-              "src/pictures/smallImage/result/redComponent.ppm");
+              "res/smallImage/result/redComponent.ppm");
 
-      PictureImpl smallImageRedComponentExpect = ImageUtil.readFile("src/pictures/" +
+      PictureImpl smallImageRedComponentExpect = ImageUtil.readFile("res/" +
               "smallImage/smallImage-red-component.ppm");
       assertCompare(smallImageRedComponent, smallImageRedComponentExpect);
 
@@ -395,7 +395,7 @@ public class PictureImplTest {
       // It still opens to the picture on my mac computer so that's cool.
       IPicture smallImageJPEG = smallImagePPM;
       ImageUtil.writeFile(smallImageJPEG,
-              "src/pictures/smallImage/result/notPPM.jpeg");
+              "res/smallImage/result/notPPM.jpeg");
 
     } catch (IOException e) {
       System.out.println(e.getMessage());

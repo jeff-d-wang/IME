@@ -7,6 +7,7 @@ import model.pixel.IPixel;
  * reduce code while add ease of code comprehension.
  */
 public interface IPixelLambda {
+
   /**
    * Run function that takes a pixel and returns a pixel applied with a lambda function.
    *

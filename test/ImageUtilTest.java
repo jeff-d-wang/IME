@@ -23,10 +23,10 @@ public class ImageUtilTest {
   @Before
   public void setUp() {
     try {
-      smallImage = ImageUtil.readFile("src/pictures/smallImage/smallImage.ppm");
-      smallImagePNG = ImageUtil.readFile("src/pictures/smallImage/smallImage.png");
-      smallImageJPG = ImageUtil.readFile("src/pictures/smallImage/smallImage.jpeg");
-      smallImageBMP = ImageUtil.readFile("src/pictures/smallImage/smallImage.bmp");
+      smallImage = ImageUtil.readFile("res/smallImage/smallImage.ppm");
+      smallImagePNG = ImageUtil.readFile("res/smallImage/smallImage.png");
+      smallImageJPG = ImageUtil.readFile("res/smallImage/smallImage.jpeg");
+      smallImageBMP = ImageUtil.readFile("res/smallImage/smallImage.bmp");
     } catch (IOException e) {
       e.printStackTrace();
     }
@@ -59,22 +59,22 @@ public class ImageUtilTest {
 
   @Test(expected = IOException.class)
   public void testInvalidReadPPM2() throws IOException {
-    ImageUtil.readFile("src/pictures/smallImage/doesNotExist.ppm");
+    ImageUtil.readFile("res/smallImage/doesNotExist.ppm");
   }
 
   @Test(expected = IOException.class)
   public void testInvalidReadPPM3() throws IOException {
-    ImageUtil.readFile("src/pictures/smallImage/doesNotExist.txt");
+    ImageUtil.readFile("res/smallImage/doesNotExist.txt");
   }
 
   @Test
   public void testWriteFile() {
     try {
       PictureImpl smallImageRedGreyscale = (PictureImpl) smallImage.component("red");
-      ImageUtil.writeFile(smallImageRedGreyscale, "src/pictures/smallImage/" +
+      ImageUtil.writeFile(smallImageRedGreyscale, "res/smallImage/" +
               "result/redComponent.ppm");
 
-      PictureImpl smallImageRedGreyscaleExpect = ImageUtil.readFile("src/pictures/" +
+      PictureImpl smallImageRedGreyscaleExpect = ImageUtil.readFile("res/" +
               "smallImage/smallImage-red-component.ppm");
 
       for (int r = 0; r < smallImageRedGreyscale.getHeight(); r++) {
@@ -87,7 +87,7 @@ public class ImageUtilTest {
       // I'm testing for the fact that the file still stores data when the file is not a PPM file.
       // It still opens to the picture on my mac computer so that's cool.
       PictureImpl smallImageJPEG = smallImage;
-      ImageUtil.writeFile(smallImageJPEG, "src/pictures/smallImage/result/notPPM.jpeg");
+      ImageUtil.writeFile(smallImageJPEG, "res/smallImage/result/notPPM.jpeg");
 
     } catch (IOException e) {
       System.out.println(e.getMessage());
@@ -102,7 +102,7 @@ public class ImageUtilTest {
 
   @Test(expected = IOException.class)
   public void testInvalidP3File() throws IOException {
-    ImageUtil.readFile("src/pictures/smallImage/smallImageP6.pbm");
+    ImageUtil.readFile("res/smallImage/smallImageP6.pbm");
   }
 
   @Test
@@ -167,39 +167,39 @@ public class ImageUtilTest {
   public void testWritePNG() {
     try {
       // from ppm to png
-      ImageUtil.writeFile(smallImage, "src/pictures/smallImage/" +
+      ImageUtil.writeFile(smallImage, "res/smallImage/" +
               "/result/smallImagePPMto.png");
 
       PictureImpl smallImagePPMtoPNG
-              = ImageUtil.readFile("src/pictures/smallImage/result/smallImagePPMto.png");
+              = ImageUtil.readFile("res/smallImage/result/smallImagePPMto.png");
 
       compareImages(smallImagePPMtoPNG, smallImagePNG);
 
       // from jpg to png
-      ImageUtil.writeFile(smallImageJPG, "src/pictures/smallImage/" +
+      ImageUtil.writeFile(smallImageJPG, "res/smallImage/" +
               "/result/smallImageJPGto.png");
 
       PictureImpl smallImageJPGtoPNG
-              = ImageUtil.readFile("src/pictures/smallImage/result/smallImageJPGto.png");
+              = ImageUtil.readFile("res/smallImage/result/smallImageJPGto.png");
 
       // image will not be same because of loosely compression, so I compared to the JPG file
       compareImages(smallImageJPGtoPNG, smallImageJPG);
 
       // from bmp to png
-      ImageUtil.writeFile(smallImageBMP, "src/pictures/smallImage/" +
+      ImageUtil.writeFile(smallImageBMP, "res/smallImage/" +
               "/result/smallImageBMPto.png");
 
       PictureImpl smallImageBMPtoPNG
-              = ImageUtil.readFile("src/pictures/smallImage/result/smallImageBMPto.png");
+              = ImageUtil.readFile("res/smallImage/result/smallImageBMPto.png");
 
       compareImages(smallImageBMPtoPNG, smallImagePNG);
 
       // from png to png
-      ImageUtil.writeFile(smallImagePNG, "src/pictures/smallImage/" +
+      ImageUtil.writeFile(smallImagePNG, "res/smallImage/" +
               "/result/smallImagePNGto.png");
 
       PictureImpl smallImagePNGtoPNG
-              = ImageUtil.readFile("src/pictures/smallImage/result/smallImagePNGto.png");
+              = ImageUtil.readFile("res/smallImage/result/smallImagePNGto.png");
 
       compareImages(smallImagePNGtoPNG, smallImagePNG);
 
@@ -212,38 +212,38 @@ public class ImageUtilTest {
   public void testWriteJPG() {
     try {
       // from PPM to JPG
-      ImageUtil.writeFile(smallImage, "src/pictures/smallImage/" +
+      ImageUtil.writeFile(smallImage, "res/smallImage/" +
               "/result/smallImagePPMto.jpg");
 
       PictureImpl smallImagePPMtoJPG
-              = ImageUtil.readFile("src/pictures/smallImage/result/smallImagePPMto.jpg");
+              = ImageUtil.readFile("res/smallImage/result/smallImagePPMto.jpg");
 
       // compareImages(smallImagePPMtoJPG, smallImageJPG);
 
       // from PNG to JPG
-      ImageUtil.writeFile(smallImagePNG, "src/pictures/smallImage/" +
+      ImageUtil.writeFile(smallImagePNG, "res/smallImage/" +
               "/result/smallImagePNGto.jpg");
 
       PictureImpl smallImagePNGtoJPG
-              = ImageUtil.readFile("src/pictures/smallImage/result/smallImagePNGto.jpg");
+              = ImageUtil.readFile("res/smallImage/result/smallImagePNGto.jpg");
 
       //compareImages(smallImagePNGtoJPG, smallImageJPG);
 
       // from BMP to JPG
-      ImageUtil.writeFile(smallImageBMP, "src/pictures/smallImage/" +
+      ImageUtil.writeFile(smallImageBMP, "res/smallImage/" +
               "/result/smallImageBMPto.jpg");
 
       PictureImpl smallImageBMPtoJPG
-              = ImageUtil.readFile("src/pictures/smallImage/result/smallImageBMPto.jpg");
+              = ImageUtil.readFile("res/smallImage/result/smallImageBMPto.jpg");
 
       //compareImages(smallImageBMPtoJPG, smallImageJPG);
 
       // from JPG to JPG
-      ImageUtil.writeFile(smallImageJPG, "src/pictures/smallImage/" +
+      ImageUtil.writeFile(smallImageJPG, "res/smallImage/" +
               "/result/smallImageJPGto.jpg");
 
       PictureImpl smallImageJPGtoJPG
-              = ImageUtil.readFile("src/pictures/smallImage/result/smallImageJPGto.jpg");
+              = ImageUtil.readFile("res/smallImage/result/smallImageJPGto.jpg");
 
       //compareImages(smallImageJPGtoJPG, smallImageJPG);
 
@@ -257,40 +257,40 @@ public class ImageUtilTest {
   public void testWriteBMP() {
     try {
       // from ppm to bmp
-      ImageUtil.writeFile(smallImage, "src/pictures/smallImage/" +
+      ImageUtil.writeFile(smallImage, "res/smallImage/" +
               "/result/smallImagePPMto.bmp");
 
       PictureImpl smallImagePPMtoBMP
-              = ImageUtil.readFile("src/pictures/smallImage/result/smallImagePPMto.bmp");
+              = ImageUtil.readFile("res/smallImage/result/smallImagePPMto.bmp");
 
       compareImages(smallImagePPMtoBMP, smallImageBMP);
 
 
       // from png to bmp
-      ImageUtil.writeFile(smallImagePNG, "src/pictures/smallImage/" +
+      ImageUtil.writeFile(smallImagePNG, "res/smallImage/" +
               "/result/smallImagePNGto.bmp");
 
       PictureImpl smallImagePNGtoBMP
-              = ImageUtil.readFile("src/pictures/smallImage/result/smallImagePNGto.bmp");
+              = ImageUtil.readFile("res/smallImage/result/smallImagePNGto.bmp");
 
       compareImages(smallImagePNGtoBMP, smallImageBMP);
 
       // from jpg to bmp
-      ImageUtil.writeFile(smallImageJPG, "src/pictures/smallImage/" +
+      ImageUtil.writeFile(smallImageJPG, "res/smallImage/" +
               "/result/smallImageJPGto.bmp");
 
       PictureImpl smallImageJPGtoBMP
-              = ImageUtil.readFile("src/pictures/smallImage/result/smallImageJPGto.bmp");
+              = ImageUtil.readFile("res/smallImage/result/smallImageJPGto.bmp");
 
       // image will not be same because of loosely compression, so I compared to the JPG file
       compareImages(smallImageJPGtoBMP, smallImageJPG);
 
       // from bmp to bmp
-      ImageUtil.writeFile(smallImageBMP, "src/pictures/smallImage/" +
+      ImageUtil.writeFile(smallImageBMP, "res/smallImage/" +
               "/result/smallImageBMPto.bmp");
 
       PictureImpl smallImageBMPtoBMP
-              = ImageUtil.readFile("src/pictures/smallImage/result/smallImageBMPto.bmp");
+              = ImageUtil.readFile("res/smallImage/result/smallImageBMPto.bmp");
 
       compareImages(smallImageBMPtoBMP, smallImageBMP);
 

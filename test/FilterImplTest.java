@@ -18,7 +18,7 @@ public class FilterImplTest {
   @Before
   public void setUp() {
     try {
-      smallImage = ImageUtil.readFile("src/pictures/smallImage/smallImage.ppm");
+      smallImage = ImageUtil.readFile("res/smallImage/smallImage.ppm");
       filterZero = new double[][] {
               {0, 0, 0},
               {0, 0, 0},
@@ -47,17 +47,17 @@ public class FilterImplTest {
 
     IPicture smallImageZeroFilter = new FilterImpl().apply(smallImage, filterZero);
     IPicture smallImageZeroFilterExpect =
-            ImageUtil.readFile("src/pictures/smallImage/smallImage-zero-filter.ppm");
+            ImageUtil.readFile("res/smallImage/smallImage-zero-filter.ppm");
     assertCompare(smallImageZeroFilter, smallImageZeroFilterExpect);
 
     IPicture smallImageHalfFilter = new FilterImpl().apply(smallImage, filterHalf);
     IPicture smallImageHalfFilterExpect =
-            ImageUtil.readFile("src/pictures/smallImage/smallImage-half-filter.ppm");
+            ImageUtil.readFile("res/smallImage/smallImage-half-filter.ppm");
     assertCompare(smallImageHalfFilter, smallImageHalfFilterExpect);
 
     IPicture smallImageOneFilter = new FilterImpl().apply(smallImage, filterOne);
     IPicture smallImageOneFilterExpect =
-            ImageUtil.readFile("src/pictures/smallImage/smallImage-one-filter.ppm");
+            ImageUtil.readFile("res/smallImage/smallImage-one-filter.ppm");
     assertCompare(smallImageOneFilter, smallImageOneFilterExpect);
   }
 

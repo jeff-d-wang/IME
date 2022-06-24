@@ -94,4 +94,19 @@ public interface IPicture {
    * @return sepia image
    */
   IPicture sepia();
+
+  /**
+   * Downscale an image by either width or height.
+   *
+   * @param scale the number to scale the image down by.
+   * @return downscaled image
+   */
+  IPicture downscale(double scale) throws IllegalArgumentException;
+
+  /**
+   * Partially manipulate an image based on a mask image.
+   * @return partially manipulated image.
+   */
+  IPicture partialImageManipulation();
+
 }

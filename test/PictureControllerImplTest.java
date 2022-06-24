@@ -14,8 +14,8 @@ import model.ImageUtil;
 import model.picture.IPicture;
 import model.picture.PictureModel;
 import model.picture.PictureImpl;
+import view.IPictureView;
 import view.PictureTextView;
-import view.PictureView;
 
 import static org.junit.Assert.assertEquals;
 
@@ -24,7 +24,7 @@ import static org.junit.Assert.assertEquals;
  */
 public class PictureControllerImplTest {
   private PictureModel model;
-  private PictureView view;
+  private IPictureView view;
   private Readable rd;
   private Appendable ap;
   private ByteArrayOutputStream bytes;
@@ -289,7 +289,7 @@ public class PictureControllerImplTest {
     String[] split = bytes.toString().split("\n", 5);
     String message = split[0];
 
-    assertEquals("Could not execute function. Index 2 out of bounds for length 2", message);
+    assertEquals("Missing inputs. ", message);
   }
 
   // Invalid functions or just random inputs should just tell the user that the function they were

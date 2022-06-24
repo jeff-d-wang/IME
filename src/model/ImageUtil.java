@@ -24,6 +24,29 @@ import model.pixel.PixelImpl;
 public class ImageUtil {
 
   /**
+   * Returns the given image to a BufferedImage. This is used for writing to a file and displaying
+   * pictures to a JFrame.
+   * @param picture   IPicture to be translated to
+   * @return a BufferedImage of the given picture
+   */
+  public static BufferedImage toBufferedImage(IPicture picture) {
+    BufferedImage bufferedImage = new BufferedImage(picture.getWidth(),
+            picture.getHeight(), BufferedImage.TYPE_INT_RGB);
+    for (int r = 0; r < picture.getHeight(); r++) {
+      for (int c = 0; c < picture.getWidth(); c++) {
+        int red = picture.getPixel(r, c).getR();
+        int green = picture.getPixel(r, c).getG();
+        int blue = picture.getPixel(r, c).getB();
+
+        int color = new Color(red, green, blue).getRGB();
+        bufferedImage.setRGB(c, r, color);
+      }
+    }
+
+    return bufferedImage;
+  }
+
+  /**
    * Write an image to a given file.
    *
    * @param filename the path of the file.
@@ -57,19 +80,7 @@ public class ImageUtil {
 
       os.close();
     } else {
-      BufferedImage output = new BufferedImage(picture.getWidth(),
-              picture.getHeight(), BufferedImage.TYPE_INT_RGB);
-      for (int r = 0; r < picture.getHeight(); r++) {
-        for (int c = 0; c < picture.getWidth(); c++) {
-          int red = picture.getPixel(r, c).getR();
-          int green = picture.getPixel(r, c).getG();
-          int blue = picture.getPixel(r, c).getB();
-
-          int color = new Color(red, green, blue).getRGB();
-          output.setRGB(c, r, color);
-        }
-      }
-      ImageIO.write(output, fileType, new File(filename));
+      ImageIO.write(toBufferedImage(picture), fileType, new File(filename));
     }
   }
 

@@ -6,7 +6,7 @@ import java.io.IOException;
  * This interface represents operations that should be offered by a view for the IME program.
  */
 
-public interface PictureView {
+public interface IPictureView {
 
   /**
    * Render a specific message to the provided data destination.

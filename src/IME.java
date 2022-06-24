@@ -5,7 +5,7 @@ import controller.PictureControllerImpl;
 import model.picture.IPictureModel;
 import model.picture.PictureModel;
 import view.PictureTextView;
-import view.PictureView;
+import view.IPictureView;
 
 /**
  * This is the main method class for IME and entry point to the program.
@@ -20,7 +20,7 @@ public class IME {
     Readable readable = new InputStreamReader(System.in);
 
     IPictureModel model = new PictureModel();
-    PictureView view = new PictureTextView(model);
+    IPictureView view = new PictureTextView(model);
     IPictureController controller = new PictureControllerImpl(model, view, readable);
     controller.run();
 

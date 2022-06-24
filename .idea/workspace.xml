@@ -7,12 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b9e1cc3-9647-4400-a190-c02fe329a94f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/USEME.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/IMEClassDiagram.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/test-script.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/submission.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IMEGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/FeaturesImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/IFeatures.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/PictureJFrameController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/PictureJFrameView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/TestView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Archive.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/IME.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/IME.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Blur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Blur.class" afterDir="false" />
@@ -21,44 +22,32 @@
       <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$File.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$File.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Flip.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Flip.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Greyscale.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Greyscale.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Load.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Load.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Save.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Save.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Sepia.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Sepia.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Sharpen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Sharpen.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImplMock.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImplMock.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/model/ImageUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/model/ImageUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/model/Picture/IPicture.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/model/Picture/IPicture.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/model/Picture/PictureImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/model/Picture/PictureImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/view/PictureTextView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/view/PictureTextView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/view/PictureView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/ImageProcessing/ImageUtilTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/ImageProcessing/ImageUtilTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/ImageProcessing/PictureControllerImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/ImageProcessing/PictureControllerImplTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/IME_Class_Diagram.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/example-script.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/example-script.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/smallImage/smallImage-blue-component.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-blue-component.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/smallImage/smallImage-blue-grayscale.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/smallImage/smallImage-blur.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-blur.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/smallImage/smallImage-green-component.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-green-component.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/smallImage/smallImage-green-grayscale.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/smallImage/smallImage-intensity-component.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-intensity-component.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/smallImage/smallImage-intensity-grayscale.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/smallImage/smallImage-luma-component.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-luma-component.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/smallImage/smallImage-luma-grayscale.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/smallImage/smallImage-red-component.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-red-component.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/smallImage/smallImage-red-grayscale.ppm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/smallImage/smallImage-value-component.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/res/smallImage/smallImage-value-component.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/smallImage/smallImage-value-grayscale.ppm" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/IME.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IME.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/PictureController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/IPictureController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/PictureControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/PictureControllerImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/PictureControllerImplMock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/PictureControllerImplMock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/ImageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ImageUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/filter/FilterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/filter/FilterImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/picture/IPicture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/picture/IPicture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/picture/PictureImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/picture/PictureImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/transformation/TransformationImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/transformation/TransformationImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/FilterImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/FilterImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/PictureTextView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PictureTextView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/PictureView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/IPictureView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/ImageUtilTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/ImageUtilTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/PictureControllerImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/PictureControllerImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/PictureImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/PictureImplTest.java" afterDir="false" />
     </list>
     <list id="3d595546-3dbd-40db-b182-8d63171fecb3" name="Changes by ruimingli" comment="">
-      <change beforePath="$PROJECT_DIR$/src/model/picture/IPicture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/picture/IPicture.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/picture/PictureImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/picture/PictureImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/ImageUtilTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/ImageUtilTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/TransformationImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TransformationImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/PictureImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/PictureImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,46 +64,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/model/picture/PictureImpl.java">
-      <ranges>
-        <range start1="21" end1="21" start2="21" end2="27" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
-        <range start1="38" end1="38" start2="44" end2="48" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
-        <range start1="58" end1="59" start2="68" end2="72" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
-        <range start1="67" end1="68" start2="80" end2="81" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
-        <range start1="190" end1="190" start2="203" end2="204" changelist="3d595546-3dbd-40db-b182-8d63171fecb3" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/model/picture/IPicture.java">
-      <ranges>
-        <range start1="1" end1="3" start2="1" end2="1" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
-        <range start1="26" end1="28" start2="24" end2="26" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
-        <range start1="30" end1="31" start2="28" end2="29" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
-        <range start1="40" end1="41" start2="38" end2="39" changelist="3d595546-3dbd-40db-b182-8d63171fecb3" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/test/ImageUtilTest.java">
-      <ranges>
-        <range start1="73" end1="75" start2="73" end2="75" changelist="3d595546-3dbd-40db-b182-8d63171fecb3" />
-        <range start1="76" end1="78" start2="76" end2="78" changelist="3d595546-3dbd-40db-b182-8d63171fecb3" />
-        <range start1="169" end1="171" start2="169" end2="171" changelist="3d595546-3dbd-40db-b182-8d63171fecb3" />
-        <range start1="178" end1="180" start2="178" end2="180" changelist="3d595546-3dbd-40db-b182-8d63171fecb3" />
-        <range start1="188" end1="190" start2="188" end2="190" changelist="3d595546-3dbd-40db-b182-8d63171fecb3" />
-        <range start1="197" end1="199" start2="197" end2="199" changelist="3d595546-3dbd-40db-b182-8d63171fecb3" />
-        <range start1="204" end1="204" start2="204" end2="210" changelist="3d595546-3dbd-40db-b182-8d63171fecb3" />
-        <range start1="214" end1="216" start2="220" end2="222" changelist="3d595546-3dbd-40db-b182-8d63171fecb3" />
-        <range start1="223" end1="225" start2="229" end2="231" changelist="3d595546-3dbd-40db-b182-8d63171fecb3" />
-        <range start1="232" end1="234" start2="238" end2="240" changelist="3d595546-3dbd-40db-b182-8d63171fecb3" />
-        <range start1="241" end1="243" start2="247" end2="249" changelist="3d595546-3dbd-40db-b182-8d63171fecb3" />
-        <range start1="248" end1="248" start2="254" end2="263" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
-        <range start1="259" end1="261" start2="274" end2="276" changelist="3d595546-3dbd-40db-b182-8d63171fecb3" />
-        <range start1="269" end1="271" start2="284" end2="286" changelist="3d595546-3dbd-40db-b182-8d63171fecb3" />
-        <range start1="278" end1="280" start2="293" end2="295" changelist="3d595546-3dbd-40db-b182-8d63171fecb3" />
-        <range start1="288" end1="290" start2="303" end2="305" changelist="3d595546-3dbd-40db-b182-8d63171fecb3" />
-        <range start1="295" end1="295" start2="310" end2="316" changelist="3d595546-3dbd-40db-b182-8d63171fecb3" />
-      </ranges>
-    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -135,6 +84,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/jeffwang/IntelliJ_Workspace/group/IME&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
@@ -151,22 +101,23 @@
       <recent name="model.Pixel" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ImageUtilTest.testWriteJPG">
-    <configuration name="ImageUtilTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.IMEGUI">
+    <configuration name="IMEGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="IMEGUI" />
       <module name="ImageProcessing" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ImageUtilTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ImageUtilTest.testWriteJPG" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="view.TestView" />
       <module name="ImageProcessing" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ImageUtilTest" />
-      <option name="METHOD_NAME" value="testWriteJPG" />
-      <option name="TEST_OBJECT" value="method" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="view.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -181,31 +132,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PixelImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PictureControllerImplTest.testTooLittleInput" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ImageProcessing" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PixelImplTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="PictureControllerImplTest" />
+      <option name="METHOD_NAME" value="testTooLittleInput" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TransformationImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PictureImplTest.testDownscale" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ImageProcessing" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TransformationImplTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="PictureImplTest" />
+      <option name="METHOD_NAME" value="testDownscale" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ImageUtilTest" />
-        <item itemvalue="JUnit.ImageUtilTest.testWriteJPG" />
+        <item itemvalue="Application.IMEGUI" />
+        <item itemvalue="JUnit.PictureImplTest.testDownscale" />
+        <item itemvalue="Application.TestView" />
         <item itemvalue="JUnit.PictureControllerImplTest.testFile" />
-        <item itemvalue="JUnit.TransformationImplTest" />
-        <item itemvalue="JUnit.PixelImplTest" />
+        <item itemvalue="JUnit.PictureControllerImplTest.testTooLittleInput" />
       </list>
     </recent_temporary>
   </component>
@@ -226,7 +179,9 @@
       <workItem from="1655405990522" duration="28915000" />
       <workItem from="1655483377195" duration="24660000" />
       <workItem from="1655572110434" duration="3033000" />
-      <workItem from="1655575904975" duration="6203000" />
+      <workItem from="1655575904975" duration="9843000" />
+      <workItem from="1655946209885" duration="1478000" />
+      <workItem from="1655947939511" duration="29198000" />
     </task>
     <servers />
   </component>

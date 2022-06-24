@@ -217,6 +217,10 @@ public class ImageUtilTest {
   @Test
   public void testWriteJPG() {
     try {
+      /*
+       CANNOT TEST JPG FILES BECAUSE OF LOOSE COMPRESSION.
+       */
+
       // from PPM to JPG
       ImageUtil.writeFile(smallImage, "res/smallImage/"
               + "/result/smallImagePPMto.jpg");

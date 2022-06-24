@@ -4,14 +4,14 @@ import java.io.IOException;
 import java.util.Scanner;
 
 import model.picture.IPictureModel;
-import view.PictureView;
+import view.IPictureView;
 
 /**
  * A Mock class for PictureControllerImpl to see if it receives inputs correctly.
  */
 public class PictureControllerImplMock implements IPictureController {
 
-  private PictureView view;
+  private IPictureView view;
   private final Readable readable;
   private String[] script;
   private String[] command;
@@ -23,7 +23,7 @@ public class PictureControllerImplMock implements IPictureController {
    * @param readable   Readable object
    * @throws IllegalArgumentException if the null is empty
    */
-  public PictureControllerImplMock(IPictureModel model, PictureView view, Readable readable)
+  public PictureControllerImplMock(IPictureModel model, IPictureView view, Readable readable)
           throws IllegalArgumentException {
     if (readable == null) {
       throw new IllegalArgumentException("Given null readable object.");

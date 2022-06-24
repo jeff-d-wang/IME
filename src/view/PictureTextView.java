@@ -6,9 +6,9 @@ import model.picture.IPicture;
 import model.picture.IPictureModel;
 
 /**
- * A PictureView using text-based messages to present views.
+ * A IPictureView using text-based messages to present views.
  */
-public class PictureTextView implements PictureView {
+public class PictureTextView implements IPictureView {
 
   private IPictureModel model;
   private Appendable appendable;

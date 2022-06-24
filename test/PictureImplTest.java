@@ -407,4 +407,16 @@ public class PictureImplTest {
     PictureImpl smallImageHorizontal = (PictureImpl) smallImagePPM.flip("horizontal");
     ImageUtil.writeFile(smallImageHorizontal,null);
   }
+
+  @Test
+  public void testDownscale() {
+    IPicture smallImageDownscale = smallImagePPM.downscale(0.3);
+    for (int r = 0; r < smallImageDownscale.getHeight(); r++) {
+      for (int c = 0; c < smallImageDownscale.getWidth(); c++) {
+        System.out.println(smallImageDownscale.getPixel(r, c) + " "
+                + smallImageDownscale.getPixel(r, c) + " "
+                + smallImageDownscale.getPixel(r, c));
+      }
+      }
+  }
 }

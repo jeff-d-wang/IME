@@ -2,6 +2,7 @@
 
 ## OOD Assignment 5
 ### Update: 6/17/22 
+Side note: All changes made are noted in this README version for assignment 5.
 
 ## Model Package: 
 In our model, it now contains a filter package, a picture package, a pixel package, a transformation

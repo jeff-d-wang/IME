@@ -1,5 +1,6 @@
 package controller;
 
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Map;
@@ -8,15 +9,13 @@ import java.util.Scanner;
 
 import model.ImageUtil;
 import model.picture.IPictureModel;
-import view.PictureView;
+import view.IPictureView;
 
 /**
  * Implementation of a IPictureController interface.
  */
-public class PictureControllerImpl implements IPictureController {
-
-  private IPictureModel model;
-  private PictureView view;
+public class PictureControllerImpl extends FeaturesImpl implements IPictureController {
+  private IPictureView view;
   private final Readable readable;
   private final Map<String, Runnable> runnables;
   private String[] script;
@@ -27,16 +26,17 @@ public class PictureControllerImpl implements IPictureController {
    * @param model      Model object
    * @param view       View object to display view-related content
    * @param readable   The Readable object for inputs
-   * @throws IllegalArgumentException if the given Readable is null
+   * @throws IllegalStateException if the given Readable is null
    */
 
-  public PictureControllerImpl(IPictureModel model, PictureView view, Readable readable)
-          throws IllegalArgumentException {
+  public PictureControllerImpl(IPictureModel model, IPictureView view, Readable readable)
+          throws IllegalStateException {
+    super(model);
+
     if (readable == null) {
       throw new IllegalArgumentException("Given null readable object.");
     }
 
-    this.model = model;
     this.view = view;
     this.readable = readable;
     this.runnables = new HashMap<>();
@@ -76,7 +76,6 @@ public class PictureControllerImpl implements IPictureController {
   public void run(Readable readable) throws IllegalStateException {
     Scanner sc = new Scanner(readable);
     String function = "";
-
     while (sc.hasNextLine()) {
       String line = sc.nextLine();
       script = line.split(" ", 4);
@@ -114,7 +113,9 @@ public class PictureControllerImpl implements IPictureController {
      */
     public void run() throws IllegalStateException {
       try {
-        model.putPicture(script[2], ImageUtil.readFile(script[1]));
+        load(script[1], script[2]);
+      } catch (IndexOutOfBoundsException e) {
+        message("Missing inputs. " + System.lineSeparator());
       } catch (Exception e) {
         message("Could not execute function. " + e.getMessage() + System.lineSeparator());
       }
@@ -133,11 +134,20 @@ public class PictureControllerImpl implements IPictureController {
      */
     public void run() throws IllegalStateException {
       try {
-        ImageUtil.writeFile(model.getPicture(script[2]), script[1]);
+        save(model.getPicture(script[2]), script[1]);
+      } catch (IndexOutOfBoundsException e) {
+        message("Missing inputs. " + System.lineSeparator());
+      } catch (NullPointerException e) {
+        message("Image " + script[2] + " does not exist. " + System.lineSeparator());
       } catch (Exception e) {
         message("Could not execute function. " + e.getMessage() + System.lineSeparator());
       }
     }
+  }
+
+  @Override
+  public void file(String filename) throws FileNotFoundException {
+    PictureControllerImpl.this.run(new FileReader(filename));
   }
 
   /**
@@ -152,7 +162,9 @@ public class PictureControllerImpl implements IPictureController {
      */
     public void run() throws IllegalStateException {
       try {
-        PictureControllerImpl.this.run(new FileReader(script[1]));
+        file(script[1]);
+      } catch (FileNotFoundException e) {
+        message("File could not be found. " + System.lineSeparator());
       } catch (Exception e) {
         message("Could not execute function. " + e.getMessage() + System.lineSeparator());
       }
@@ -172,7 +184,11 @@ public class PictureControllerImpl implements IPictureController {
     public void run() throws IllegalStateException {
 
       try {
-        model.putPicture(script[2], model.getPicture(script[1]).component(command[0]));
+        component(command[0], model.getPicture(script[1]), script[2]);
+      } catch (IndexOutOfBoundsException e) {
+        message("Missing inputs. " + System.lineSeparator());
+      } catch (NullPointerException e) {
+        message("Image " + script[2] + " does not exist. " + System.lineSeparator());
       } catch (Exception e) {
         message("Could not execute function. " + e.getMessage() + System.lineSeparator());
       }
@@ -192,7 +208,11 @@ public class PictureControllerImpl implements IPictureController {
     public void run() throws IllegalStateException {
 
       try {
-        model.putPicture(script[2], model.getPicture(script[1]).flip(command[0]));
+        flip(command[0], model.getPicture(script[1]), script[2]);
+      } catch (IndexOutOfBoundsException e) {
+        message("Missing inputs. " + System.lineSeparator());
+      } catch (NullPointerException e) {
+        message("Image " + script[2] + " does not exist. " + System.lineSeparator());
       } catch (Exception e) {
         message("Could not execute function. " + e.getMessage() + System.lineSeparator());
       }
@@ -213,11 +233,13 @@ public class PictureControllerImpl implements IPictureController {
       int increment = 0;
       try {
         increment = Integer.parseInt(script[1]);
-        model.putPicture(script[3], model.getPicture(script[2]).brighten(increment));
+        brighten(increment, model.getPicture(script[1]), script[2]);
       } catch (NumberFormatException e) {
         message("Invalid increment input. " + e.getMessage() + System.lineSeparator());
       } catch (IndexOutOfBoundsException e) {
-        message("Invalid line input. " + e.getMessage() + System.lineSeparator());
+        message("Missing inputs. " + System.lineSeparator());
+      } catch (NullPointerException e) {
+        message("Image " + script[2] + " does not exist. " + System.lineSeparator());
       } catch (Exception e) {
         message("Could not execute function. " + e.getMessage() + System.lineSeparator());
       }
@@ -236,7 +258,11 @@ public class PictureControllerImpl implements IPictureController {
      */
     public void run() throws IllegalStateException {
       try {
-        model.putPicture(script[2], model.getPicture(script[1]).blur());
+        blur(model.getPicture(script[1]), script[2]);
+      } catch (IndexOutOfBoundsException e) {
+        message("Missing inputs. " + System.lineSeparator());
+      } catch (NullPointerException e) {
+        message("Image " + script[2] + " does not exist. " + System.lineSeparator());
       } catch (Exception e) {
         message("Could not execute function. " + e.getMessage() + System.lineSeparator());
       }
@@ -255,7 +281,11 @@ public class PictureControllerImpl implements IPictureController {
      */
     public void run() throws IllegalStateException {
       try {
-        model.putPicture(script[2], model.getPicture(script[1]).sharpen());
+        sharpen(model.getPicture(script[1]), script[2]);
+      } catch (IndexOutOfBoundsException e) {
+        message("Missing inputs. " + System.lineSeparator());
+      } catch (NullPointerException e) {
+        message("Image " + script[2] + " does not exist. " + System.lineSeparator());
       } catch (Exception e) {
         message("Could not execute function. " + e.getMessage() + System.lineSeparator());
       }
@@ -274,7 +304,11 @@ public class PictureControllerImpl implements IPictureController {
      */
     public void run() throws IllegalStateException {
       try {
-        model.putPicture(script[2], model.getPicture(script[1]).greyscale());
+        greyscale(model.getPicture(script[1]), script[2]);
+      } catch (IndexOutOfBoundsException e) {
+        message("Missing inputs. " + System.lineSeparator());
+      } catch (NullPointerException e) {
+        message("Image " + script[2] + " does not exist. " + System.lineSeparator());
       } catch (Exception e) {
         message("Could not execute function. " + e.getMessage() + System.lineSeparator());
       }
@@ -293,7 +327,11 @@ public class PictureControllerImpl implements IPictureController {
      */
     public void run() throws IllegalStateException {
       try {
-        model.putPicture(script[2], model.getPicture(script[1]).sepia());
+        sepia(model.getPicture(script[1]), script[2]);
+      } catch (IndexOutOfBoundsException e) {
+        message("Missing inputs. " + System.lineSeparator());
+      } catch (NullPointerException e) {
+        message("Image " + script[2] + " does not exist. " + System.lineSeparator());
       } catch (Exception e) {
         message("Could not execute function. " + e.getMessage() + System.lineSeparator());
       }

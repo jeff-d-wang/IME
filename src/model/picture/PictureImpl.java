@@ -21,8 +21,9 @@ public class PictureImpl implements IPicture {
 
   /**
    * Basic constructor for this PictureImpl class.
-   * @param width    Width of this picture
-   * @param height   Height of this picture
+   *
+   * @param width  Width of this picture
+   * @param height Height of this picture
    * @throws IllegalArgumentException if the width or height is negative
    */
   public PictureImpl(int width, int height) throws IllegalArgumentException {
@@ -44,6 +45,7 @@ public class PictureImpl implements IPicture {
 
   /**
    * Returns the max value of this picture if need be.
+   *
    * @return the max value of this picture
    */
   public int getMaxValue() {
@@ -159,7 +161,7 @@ public class PictureImpl implements IPicture {
     resetAlteration();
     IPixelLambda componentLambda
             = (p) -> new PixelImpl(
-                    p.getR() + increment, p.getG() + increment, p.getB() + increment);
+            p.getR() + increment, p.getG() + increment, p.getB() + increment);
     applyLambda(componentLambda);
     return alteration;
   }
@@ -200,6 +202,55 @@ public class PictureImpl implements IPicture {
             {0.349, 0.686, 0.168},
             {0.272, 0.534, 0.131}};
     return new TransformationImpl().apply(this, sepiaMatrix);
+  }
+
+  @Override
+  public IPicture downscale(double scale) throws IllegalArgumentException {
+    if (scale > 1) {
+      throw new IllegalArgumentException("To downscale number must be less than 1");
+    }
+    resetAlteration();
+    System.out.println(alteration);
+    System.out.print((int) (getHeight() * scale));
+    System.out.print((int) (getWidth() * scale));
+
+    for (int r = 0; r < (int) (getHeight() * scale); r++) {
+      for (int c = 0; c < (int) (getWidth() * scale); c++) {
+
+        int rFloor = (int) Math.floor(r * scale);
+        int rCeil = (int) Math.ceil(r * scale);
+        int cFloor = (int) Math.floor(c * scale);
+        int cCeil = (int) Math.ceil(c * scale);
+
+        IPixel A = pixels[rFloor][cFloor];
+        IPixel B = pixels[rCeil][cFloor];
+        IPixel C = pixels[rFloor][cCeil];
+        IPixel D = pixels[rCeil][cCeil];
+
+        int mRed = (B.getR() * (r - rFloor)) + (A.getR() * (rCeil - r));
+        int nRed = (D.getR() * (r - rFloor)) + (C.getR() * (rCeil - r));
+        int cRed = (nRed * (c - cFloor)) + (mRed * (cCeil - c));
+
+        int mGreen = (B.getG() * (r - rFloor)) + (A.getG() * (rCeil - r));
+        int nGreen = (D.getG() * (r - rFloor)) + (C.getG() * (rCeil - r));
+        int cGreen = (nGreen * (c - cFloor)) + (mGreen * (cCeil - c));
+
+        int mBlue = (B.getB() * (r - rFloor)) + (A.getB() * (rCeil - r));
+        int nBlue = (D.getB() * (r - rFloor)) + (C.getB() * (rCeil - r));
+        int cBlue = (nBlue * (c - cFloor)) + (mBlue * (cCeil - c));
+
+        IPixel newPixel = new PixelImpl(cRed, cGreen, cBlue);
+        alteration.setPixel(r, c, newPixel);
+
+      }
+    }
+
+    return alteration;
+  }
+
+  @Override
+  public IPicture partialImageManipulation() {
+    return null;
   }
 
 }

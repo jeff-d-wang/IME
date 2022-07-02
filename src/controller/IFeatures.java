@@ -5,6 +5,9 @@ import java.io.IOException;
 
 import model.picture.IPicture;
 
+/**
+ *  Interface for features our program provides (include all functions).
+ */
 public interface IFeatures {
 
   /**
@@ -81,4 +84,15 @@ public interface IFeatures {
    * @param name      Name of the picture to be saved
    */
   void sepia(IPicture picture, String name);
+
+  /**
+   * partialImage feature function for the controller.
+   * @param picture   IPicture to be altered
+   * @param mask      Mask determining which colors to alter
+   * @param command   what type of alteration
+   * @param name      Name of the picture to be saved
+   */
+  void partialImage(IPicture picture, IPicture mask, String command, String name);
+
+
 }

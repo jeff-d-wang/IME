@@ -323,6 +323,20 @@ public class PictureControllerImplTest {
     assertEquals("", message);
   }
 
+  @Test
+  public void testPartialImage() throws IOException {
+    test(new ByteArrayInputStream(("load res/smallImage/smallImage.ppm smallImage \n"
+                    + "load res/mask.ppm mask.ppm \n"
+                    + "brighten 10 smallImage mask.ppm smallImagePartialBrighten.png").getBytes()),
+            new ByteArrayOutputStream());
+    view = new PictureTextView(model, ap);
+    controller = new PictureControllerImpl(model, view, rd);
+    controller.run();
+
+    assertCompare(model.getPicture("smallImagePartialBrighten"),
+            ImageUtil.readFile("res/smallImage/results/smallImagePartialBrighten.png"));
+  }
+
   /*
   I DID NOT MAKE ANY MOCKS FOR EACH COMMAND BECAUSE WE ALSO ASSERTEQUALS A PICTURE EQUIVALENT TO
   WHAT SHOULD HAPPEN. WE ALSO TEST ALL POSSIBLE INPUTS TO EACH FUNCTION IN A PICTURE CLASS.

@@ -1,10 +1,18 @@
 package view;
 
-import java.awt.*;
+import java.awt.FlowLayout;
+import java.awt.Button;
 
-import javax.swing.*;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
+/**
+ * Test class for the view.
+ */
 public class TestView extends JFrame {
+  /**
+   * Basic constructor for test view class.
+   */
   public TestView() {
     super();
 

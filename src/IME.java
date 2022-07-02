@@ -60,6 +60,8 @@ public class IME {
     save res/smallImage/smallImage-greyscale.ppm smallImage-greyscale
     sepia smallImage smallImage-sepia
     save res/smallImage/smallImage-sepia.ppm smallImage-sepia
+    brighten 10 smallImage mask.ppm smallImage-partialBrighten
+    save res/smallImage/smallImage-partialBrighten.png smallImage-partialBrighten
     -file res/test-script.txt
      */
   }

@@ -98,15 +98,18 @@ public interface IPicture {
   /**
    * Downscale an image by either width or height.
    *
-   * @param scale the number to scale the image down by.
+   * @param x the number to scale the image width down by.
+   * @param y the number to scale the image height down by.
    * @return downscaled image
    */
-  IPicture downscale(double scale) throws IllegalArgumentException;
+  IPicture downscale(double x, double y) throws IllegalArgumentException;
 
   /**
    * Partially manipulate an image based on a mask image.
+   * @parm pic the mask image that tells which color blocks to change.
+   * @param command the string command that tells how to change the color blocks.
    * @return partially manipulated image.
    */
-  IPicture partialImageManipulation();
+  IPicture partialImageManipulation(IPicture pic, String command);
 
 }

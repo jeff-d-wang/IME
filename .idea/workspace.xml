@@ -7,15 +7,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b9e1cc3-9647-4400-a190-c02fe329a94f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/IMEGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/FeaturesImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/IFeatures.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/PictureJFrameController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/PictureJFrameView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/TestView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/boston.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/smallImage/mask.ppm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/smallImage/result/smallImagePartialBComponent.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/smallImage/result/smallImagePartialBlur.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/smallImage/result/smallImagePartialBrighten.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/smallImage/result/smallImagePartialGComponent.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/smallImage/result/smallImagePartialGreyscale.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/smallImage/result/smallImagePartialRComponent.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/smallImage/result/smallImagePartialSepia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/smallImage/result/smallImagePartialSharpen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IMEJAR.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/HistogramPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/IME.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/IME.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/IMEGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/IMEGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/controller/FeaturesImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/controller/FeaturesImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/controller/IFeatures.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/controller/IFeatures.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Blur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Blur.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Brighten.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Brighten.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Component.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Component.class" afterDir="false" />
@@ -27,26 +36,49 @@
       <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Sepia.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Sepia.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Sharpen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl$Sharpen.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImplMock.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureControllerImplMock.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureJFrameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/controller/PictureJFrameController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/model/ImageUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/model/ImageUtil.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/model/Picture/IPicture.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/model/Picture/IPicture.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/model/Picture/IPictureModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/model/Picture/IPictureModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/model/Picture/PictureImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/model/Picture/PictureImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/view/PictureTextView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/view/PictureTextView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/view/PictureView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/model/Picture/PictureModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/model/Picture/PictureModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/view/PictureJFrameView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/view/PictureJFrameView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/view/TestView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/view/TestView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/ImageProcessing/FilterImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/ImageProcessing/FilterImplTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/ImageProcessing/ImageUtilTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/ImageProcessing/ImageUtilTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/ImageProcessing/PictureControllerImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/ImageProcessing/PictureControllerImplTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IME.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IME.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/PictureControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/PictureControllerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/PictureControllerImplMock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/PictureControllerImplMock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/ImageProcessing/PictureImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/ImageProcessing/PictureImplTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/ImageProcessing/PictureModelTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/ImageProcessing/PictureModelTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/ImageProcessing/TransformationImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/ImageProcessing/TransformationImplTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/ImageProcessing.jar" beforeDir="false" afterPath="$PROJECT_DIR$/res/ImageProcessing.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IMEGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IMEGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/IFeatures.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/IFeatures.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/IPictureController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/IPictureController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/PictureJFrameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/PictureJFrameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/ImageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ImageUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/picture/IPicture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/picture/IPicture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/PictureTextView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PictureTextView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/PictureView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/IPictureView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/picture/IPictureModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/picture/IPictureModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/picture/PictureModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/picture/PictureModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/PictureJFrameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PictureJFrameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/TestView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/TestView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/submission.zip" beforeDir="false" afterPath="$PROJECT_DIR$/submission.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/ImageUtilTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/ImageUtilTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/PictureControllerImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/PictureControllerImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/PictureImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/PictureImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/PictureModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/PictureModelTest.java" afterDir="false" />
     </list>
-    <list id="3d595546-3dbd-40db-b182-8d63171fecb3" name="Changes by ruimingli" comment="">
+    <list id="a88f0936-7c8f-4a00-82dc-43add9083bf3" name="Changes by ruimingli" comment="">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IME.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IME.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IMEGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IMEGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/FeaturesImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/FeaturesImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/IFeatures.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/IFeatures.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/PictureControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/PictureControllerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/PictureJFrameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/PictureJFrameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/picture/IPicture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/picture/IPicture.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/picture/PictureImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/picture/PictureImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/PictureJFrameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PictureJFrameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/TestView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/TestView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/PictureControllerImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/PictureControllerImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/PictureImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/PictureImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,6 +97,109 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/controller/PictureJFrameController.java">
+      <ranges>
+        <range start1="3" end1="3" start2="3" end2="4" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="4" end1="5" start2="5" end2="6" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="6" end1="7" start2="7" end2="7" changelist="a88f0936-7c8f-4a00-82dc-43add9083bf3" />
+        <range start1="9" end1="9" start2="9" end2="13" changelist="a88f0936-7c8f-4a00-82dc-43add9083bf3" />
+        <range start1="11" end1="12" start2="15" end2="16" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="18" end1="19" start2="22" end2="23" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="21" end1="21" start2="25" end2="39" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="25" end1="26" start2="43" end2="45" changelist="a88f0936-7c8f-4a00-82dc-43add9083bf3" />
+        <range start1="30" end1="31" start2="49" end2="50" changelist="a88f0936-7c8f-4a00-82dc-43add9083bf3" />
+        <range start1="35" end1="35" start2="54" end2="98" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="36" end1="36" start2="99" end2="109" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/view/TestView.java">
+      <ranges>
+        <range start1="2" end1="3" start2="2" end2="4" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="4" end1="5" start2="5" end2="7" changelist="a88f0936-7c8f-4a00-82dc-43add9083bf3" />
+        <range start1="6" end1="6" start2="8" end2="11" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="7" end1="7" start2="12" end2="15" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/controller/IFeatures.java">
+      <ranges>
+        <range start1="7" end1="7" start2="7" end2="10" changelist="a88f0936-7c8f-4a00-82dc-43add9083bf3" />
+        <range start1="83" end1="83" start2="86" end2="97" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/test/PictureImplTest.java">
+      <ranges>
+        <range start1="159" end1="161" start2="159" end2="161" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="167" end1="169" start2="167" end2="169" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="175" end1="177" start2="175" end2="177" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="183" end1="185" start2="183" end2="185" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="191" end1="193" start2="191" end2="193" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="199" end1="201" start2="199" end2="201" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="225" end1="227" start2="225" end2="227" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="238" end1="240" start2="238" end2="240" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="252" end1="255" start2="252" end2="255" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="262" end1="265" start2="262" end2="265" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="289" end1="291" start2="289" end2="291" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="297" end1="299" start2="297" end2="299" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="314" end1="315" start2="314" end2="315" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="332" end1="333" start2="332" end2="333" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="350" end1="351" start2="350" end2="351" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="368" end1="369" start2="368" end2="369" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="389" end1="390" start2="389" end2="390" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="407" end1="408" start2="407" end2="408" changelist="a88f0936-7c8f-4a00-82dc-43add9083bf3" />
+        <range start1="411" end1="420" start2="411" end2="635" changelist="a88f0936-7c8f-4a00-82dc-43add9083bf3" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/IMEGUI.java">
+      <ranges>
+        <range start1="0" end1="1" start2="0" end2="0" changelist="a88f0936-7c8f-4a00-82dc-43add9083bf3" />
+        <range start1="6" end1="7" start2="5" end2="5" changelist="a88f0936-7c8f-4a00-82dc-43add9083bf3" />
+        <range start1="9" end1="9" start2="7" end2="10" changelist="a88f0936-7c8f-4a00-82dc-43add9083bf3" />
+        <range start1="10" end1="10" start2="11" end2="17" changelist="a88f0936-7c8f-4a00-82dc-43add9083bf3" />
+        <range start1="12" end1="13" start2="19" end2="20" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/view/PictureJFrameView.java">
+      <ranges>
+        <range start1="2" end1="3" start2="2" end2="3" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="5" end1="7" start2="5" end2="6" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="10" end1="13" start2="9" end2="19" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="15" end1="15" start2="21" end2="22" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="19" end1="20" start2="26" end2="31" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="21" end1="23" start2="32" end2="35" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="24" end1="25" start2="36" end2="74" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="26" end1="28" start2="75" end2="77" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="29" end1="32" start2="78" end2="83" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="33" end1="35" start2="84" end2="89" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="36" end1="39" start2="90" end2="94" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="40" end1="41" start2="95" end2="97" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="42" end1="42" start2="98" end2="106" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="44" end1="46" start2="108" end2="110" changelist="a88f0936-7c8f-4a00-82dc-43add9083bf3" />
+        <range start1="55" end1="57" start2="119" end2="121" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="58" end1="58" start2="122" end2="123" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="59" end1="60" start2="124" end2="127" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="68" end1="69" start2="135" end2="137" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="70" end1="71" start2="138" end2="139" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="72" end1="73" start2="140" end2="140" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="77" end1="78" start2="144" end2="144" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="84" end1="87" start2="150" end2="151" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="88" end1="90" start2="152" end2="154" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="91" end1="93" start2="155" end2="159" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="94" end1="95" start2="160" end2="204" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="96" end1="98" start2="205" end2="292" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="105" end1="105" start2="299" end2="400" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="107" end1="108" start2="402" end2="404" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="110" end1="112" start2="406" end2="410" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="119" end1="119" start2="417" end2="566" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="123" end1="124" start2="570" end2="571" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="126" end1="126" start2="573" end2="658" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="127" end1="127" start2="659" end2="664" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="128" end1="128" start2="665" end2="670" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="129" end1="130" start2="671" end2="678" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+        <range start1="133" end1="145" start2="681" end2="681" changelist="4b9e1cc3-9647-4400-a190-c02fe329a94f" />
+      </ranges>
+    </file>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -76,22 +211,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/jeffwang/IntelliJ_Workspace/group/IME&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "last_opened_file_path": "/Users/jeffwang/IntelliJ_Workspace/group/IME",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/res" />
@@ -109,35 +245,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="view.TestView" />
+    <configuration name="ImageUtilTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ImageProcessing" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="view.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ImageUtilTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PictureControllerImplTest.testFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PictureControllerImplTest.testPartialImage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ImageProcessing" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="PictureControllerImplTest" />
-      <option name="METHOD_NAME" value="testFile" />
+      <option name="METHOD_NAME" value="testPartialImage" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PictureControllerImplTest.testTooLittleInput" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PictureImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ImageProcessing" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PictureControllerImplTest" />
-      <option name="METHOD_NAME" value="testTooLittleInput" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="PictureImplTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -155,10 +286,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.IMEGUI" />
+        <item itemvalue="JUnit.PictureControllerImplTest.testPartialImage" />
+        <item itemvalue="JUnit.ImageUtilTest" />
+        <item itemvalue="JUnit.PictureImplTest" />
         <item itemvalue="JUnit.PictureImplTest.testDownscale" />
-        <item itemvalue="Application.TestView" />
-        <item itemvalue="JUnit.PictureControllerImplTest.testFile" />
-        <item itemvalue="JUnit.PictureControllerImplTest.testTooLittleInput" />
       </list>
     </recent_temporary>
   </component>
@@ -181,7 +312,9 @@
       <workItem from="1655572110434" duration="3033000" />
       <workItem from="1655575904975" duration="9843000" />
       <workItem from="1655946209885" duration="1478000" />
-      <workItem from="1655947939511" duration="29198000" />
+      <workItem from="1655947939511" duration="31156000" />
+      <workItem from="1656089871714" duration="4000000" />
+      <workItem from="1656094206111" duration="64126000" />
     </task>
     <servers />
   </component>
@@ -201,6 +334,16 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -157,48 +157,48 @@ public class PictureImplTest {
   @Test
   public void testComponent() {
     try {
-      PictureImpl smallImageRedComponent = (PictureImpl) smallImagePPM.component("red");
-      PictureImpl smallImageRedComponentExpect = ImageUtil.readFile("res/smallImage"
+      IPicture smallImageRedComponent = smallImagePPM.component("red");
+      IPicture smallImageRedComponentExpect = ImageUtil.readFile("res/smallImage"
               + "/smallImage-red-component.ppm");
       assertCompare(smallImageRedComponent, smallImageRedComponentExpect);
       // save our results
       ImageUtil.writeFile(smallImageRedComponent,
               "res/smallImage/result/redComponent.ppm");
 
-      PictureImpl smallImageGreenComponent = (PictureImpl) smallImagePPM.component("green");
-      PictureImpl smallImageGreenComponentExpect = ImageUtil.readFile("res/"
+      IPicture smallImageGreenComponent = smallImagePPM.component("green");
+      IPicture smallImageGreenComponentExpect = ImageUtil.readFile("res/"
               + "smallImage/smallImage-green-component.ppm");
       assertCompare(smallImageGreenComponent, smallImageGreenComponentExpect);
       // save our results
       ImageUtil.writeFile(smallImageGreenComponent,
               "res/smallImage/result/greenComponent.ppm");
 
-      PictureImpl smallImageBlueComponent = (PictureImpl) smallImagePPM.component("blue");
-      PictureImpl smallImageBlueComponentExpect = ImageUtil.readFile("res/"
+      IPicture smallImageBlueComponent = smallImagePPM.component("blue");
+      IPicture smallImageBlueComponentExpect = ImageUtil.readFile("res/"
               + "smallImage/smallImage-blue-component.ppm");
       assertCompare(smallImageBlueComponent, smallImageBlueComponentExpect);
       // save our results
       ImageUtil.writeFile(smallImageBlueComponent,
               "res/smallImage/result/blueComponent.ppm");
 
-      PictureImpl smallImageValueComponent = (PictureImpl) smallImagePPM.component("value");
-      PictureImpl smallImageValueComponentExpect = ImageUtil.readFile("res/"
+      IPicture smallImageValueComponent = smallImagePPM.component("value");
+      IPicture smallImageValueComponentExpect = ImageUtil.readFile("res/"
               + "smallImage/smallImage-value-component.ppm");
       assertCompare(smallImageValueComponent, smallImageValueComponentExpect);
       // save our results
       ImageUtil.writeFile(smallImageValueComponent,
               "res/smallImage/result/valueComponent.ppm");
 
-      PictureImpl smallImageIntensityComponent = (PictureImpl) smallImagePPM.component("intensity");
-      PictureImpl smallImageIntensityComponentExpect = ImageUtil.readFile("res/"
+      IPicture smallImageIntensityComponent = smallImagePPM.component("intensity");
+      IPicture smallImageIntensityComponentExpect = ImageUtil.readFile("res/"
               + "smallImage/smallImage-intensity-component.ppm");
       assertCompare(smallImageIntensityComponent, smallImageIntensityComponentExpect);
       // save our results
       ImageUtil.writeFile(smallImageIntensityComponent, "res/"
               + "smallImage/result/intensityComponent.ppm");
 
-      PictureImpl smallImageLumaComponent = (PictureImpl) smallImagePPM.component("luma");
-      PictureImpl smallImageLumaComponentExpect = ImageUtil.readFile("res/"
+      IPicture smallImageLumaComponent = smallImagePPM.component("luma");
+      IPicture smallImageLumaComponentExpect = ImageUtil.readFile("res/"
               + "smallImage/smallImage-luma-component.ppm");
       assertCompare(smallImageLumaComponent, smallImageLumaComponentExpect);
       // save our results
@@ -223,8 +223,8 @@ public class PictureImplTest {
   @Test
   public void testFlip() {
     try {
-      PictureImpl smallImageHorizontal = (PictureImpl) smallImagePPM.flip("horizontal");
-      PictureImpl smallImageHorizontalExpect =
+      IPicture smallImageHorizontal = smallImagePPM.flip("horizontal");
+      IPicture smallImageHorizontalExpect =
               ImageUtil.readFile("res/smallImage/smallImage-horizontal.ppm");
       assertCompare(smallImageHorizontal, smallImageHorizontalExpect);
       // save our results
@@ -236,8 +236,8 @@ public class PictureImplTest {
               (PictureImpl) smallImageHorizontal.flip("horizontal");
       assertCompare(smallImageHorizontalAgain, smallImagePPM);
 
-      PictureImpl smallImageVertical = (PictureImpl) smallImagePPM.flip("vertical");
-      PictureImpl smallImageVerticalExpect =
+      IPicture smallImageVertical = smallImagePPM.flip("vertical");
+      IPicture smallImageVerticalExpect =
               ImageUtil.readFile("res/smallImage/smallImage-vertical.ppm");
       assertCompare(smallImageVertical, smallImageVerticalExpect);
       // save our results
@@ -250,9 +250,9 @@ public class PictureImplTest {
       assertCompare(smallImageVerticalAgain, smallImagePPM);
 
       // flipping vertically and then horizontally for smallImage
-      PictureImpl smallImageVerticalHorizontal =
-              (PictureImpl) smallImagePPM.flip("vertical").flip("horizontal");
-      PictureImpl smallImageVerticalHorizontalExpect = ImageUtil.readFile(
+      IPicture smallImageVerticalHorizontal =
+              smallImagePPM.flip("vertical").flip("horizontal");
+      IPicture smallImageVerticalHorizontalExpect = ImageUtil.readFile(
               "res/smallImage/smallImage-vertical-horizontal.ppm");
       assertCompare(smallImageVerticalHorizontal, smallImageVerticalHorizontalExpect);
       // save our results
@@ -260,9 +260,9 @@ public class PictureImplTest {
               "res/smallImage/result/vertical-horizontal.ppm");
 
       // flipping then horizontal and vertical for smallImage
-      PictureImpl smallImageHorizontalVertical =
-              (PictureImpl) smallImagePPM.flip("horizontal").flip("vertical");
-      PictureImpl smallImageHorizontalVerticalExpect = ImageUtil.readFile(
+      IPicture smallImageHorizontalVertical =
+              smallImagePPM.flip("horizontal").flip("vertical");
+      IPicture smallImageHorizontalVerticalExpect = ImageUtil.readFile(
               "res/smallImage/smallImage-horizontal-vertical.ppm");
       assertCompare(smallImageHorizontalVertical, smallImageHorizontalVerticalExpect);
       // save our results
@@ -287,16 +287,16 @@ public class PictureImplTest {
   @Test
   public void testBrighten() {
     try {
-      PictureImpl smallImageBrighten = (PictureImpl) smallImagePPM.brighten(10);
-      PictureImpl smallImageBrightenExpect = ImageUtil.readFile("res/" +
+      IPicture smallImageBrighten = smallImagePPM.brighten(10);
+      IPicture smallImageBrightenExpect = ImageUtil.readFile("res/" +
               "smallImage/smallImage-brighten-by-10.ppm");
       assertCompare(smallImageBrighten, smallImageBrightenExpect);
       // save our results
       ImageUtil.writeFile(smallImageBrightenExpect,
               "res/smallImage/result/brighten-by-10.ppm");
 
-      PictureImpl smallImageDarken = (PictureImpl) smallImagePPM.brighten(-10);
-      PictureImpl smallImageDarkenExpect = ImageUtil.readFile("res/" +
+      IPicture smallImageDarken = smallImagePPM.brighten(-10);
+      IPicture smallImageDarkenExpect = ImageUtil.readFile("res/" +
               "smallImage/smallImage-darken-by-10.ppm");
       assertCompare(smallImageDarken, smallImageDarkenExpect);
       // save our results
@@ -312,7 +312,7 @@ public class PictureImplTest {
   public void testBlur() {
     try {
       IPicture smallPictureBlur = smallImagePPM.blur();
-      PictureImpl smallPictureBlurExpect =
+      IPicture smallPictureBlurExpect =
               ImageUtil.readFile("res/smallImage/smallImage-blur.ppm");
       assertCompare(smallPictureBlur, smallPictureBlurExpect);
       // save our results
@@ -330,7 +330,7 @@ public class PictureImplTest {
   public void testSharpen() {
     try {
       IPicture smallPictureSharpen = smallImagePPM.sharpen();
-      PictureImpl smallPictureSharpenExpect =
+      IPicture smallPictureSharpenExpect =
               ImageUtil.readFile("res/smallImage/smallImage-sharpen.ppm");
       assertCompare(smallPictureSharpen, smallPictureSharpenExpect);
       // save our results
@@ -348,7 +348,7 @@ public class PictureImplTest {
   public void testGreyscale() {
     try {
       IPicture smallPictureGreyscale = smallImagePPM.greyscale();
-      PictureImpl smallPictureGreyscaleExpect =
+      IPicture smallPictureGreyscaleExpect =
               ImageUtil.readFile("res/smallImage/smallImage-greyscale.ppm");
       assertCompare(smallPictureGreyscale, smallPictureGreyscaleExpect);
       // save our results
@@ -366,7 +366,7 @@ public class PictureImplTest {
   public void testSepia() {
     try {
       IPicture smallPictureSepia = smallImagePPM.sepia();
-      PictureImpl smallPictureSepiaExpect =
+      IPicture smallPictureSepiaExpect =
               ImageUtil.readFile("res/smallImage/smallImage-sepia.ppm");
       assertCompare(smallPictureSepia, smallPictureSepiaExpect);
       // save our results
@@ -387,7 +387,7 @@ public class PictureImplTest {
       ImageUtil.writeFile(smallImageRedComponent,
               "res/smallImage/result/redComponent.ppm");
 
-      PictureImpl smallImageRedComponentExpect = ImageUtil.readFile("res/" +
+      IPicture smallImageRedComponentExpect = ImageUtil.readFile("res/" +
               "smallImage/smallImage-red-component.ppm");
       assertCompare(smallImageRedComponent, smallImageRedComponentExpect);
 
@@ -405,18 +405,233 @@ public class PictureImplTest {
   @Test(expected = IOException.class)
   public void testInvalidToFile() throws IOException {
     PictureImpl smallImageHorizontal = (PictureImpl) smallImagePPM.flip("horizontal");
-    ImageUtil.writeFile(smallImageHorizontal,null);
+    ImageUtil.writeFile(smallImageHorizontal, null);
   }
 
   @Test
-  public void testDownscale() {
-    IPicture smallImageDownscale = smallImagePPM.downscale(0.3);
-    for (int r = 0; r < smallImageDownscale.getHeight(); r++) {
-      for (int c = 0; c < smallImageDownscale.getWidth(); c++) {
-        System.out.println(smallImageDownscale.getPixel(r, c) + " "
-                + smallImageDownscale.getPixel(r, c) + " "
-                + smallImageDownscale.getPixel(r, c));
-      }
-      }
+  public void testPartialImage() throws IOException {
+    IPicture maskPPM = ImageUtil.readFile("res/smallImage/mask.ppm");
+
+    // BRIGHTEN
+    IPicture smallImagePartialBrighten
+            = smallImagePPM.partialImageManipulation(maskPPM, "brighten 10");
+
+    // change
+    assertEquals(smallImagePartialBrighten.getPixel(0, 0), new PixelImpl(255, 10, 10));
+    assertEquals(smallImagePartialBrighten.getPixel(0, 1), new PixelImpl(0, 0, 0));
+    assertEquals(smallImagePartialBrighten.getPixel(0, 2), new PixelImpl(0, 0, 255));
+    assertEquals(smallImagePartialBrighten.getPixel(1, 0), new PixelImpl(0, 255, 0));
+    //change
+    assertEquals(smallImagePartialBrighten.getPixel(1, 1), new PixelImpl(255, 10, 10));
+    assertEquals(smallImagePartialBrighten.getPixel(1, 2), new PixelImpl(0, 0, 255));
+    assertEquals(smallImagePartialBrighten.getPixel(2, 0), new PixelImpl(27, 177, 241));
+    //change
+    assertEquals(smallImagePartialBrighten.getPixel(2, 1), new PixelImpl(174, 28, 238));
+    assertEquals(smallImagePartialBrighten.getPixel(2, 2), new PixelImpl(164, 18, 228));
+    //change
+    assertEquals(smallImagePartialBrighten.getPixel(3, 0), new PixelImpl(10, 255, 10));
+    assertEquals(smallImagePartialBrighten.getPixel(3, 1), new PixelImpl(0, 0, 0));
+    assertEquals(smallImagePartialBrighten.getPixel(3, 2), new PixelImpl(242, 113, 65));
+    assertEquals(smallImagePartialBrighten.getPixel(4, 0), new PixelImpl(255, 0, 0));
+    assertEquals(smallImagePartialBrighten.getPixel(4, 1), new PixelImpl(18, 52, 86));
+    // change
+    assertEquals(smallImagePartialBrighten.getPixel(4, 2), new PixelImpl(255, 255, 255));
+
+    ImageUtil.writeFile(smallImagePartialBrighten,
+            "res/smallImage/result/smallImagePartialBrighten.png");
+
+    // RED COMPONENT
+    IPicture smallImagePartialRComponent
+            = smallImagePPM.partialImageManipulation(maskPPM, "component red");
+
+    // change
+    assertEquals(smallImagePartialRComponent.getPixel(0, 0), new PixelImpl(255, 255, 255));
+    assertEquals(smallImagePartialRComponent.getPixel(0, 1), new PixelImpl(0, 0, 0));
+    assertEquals(smallImagePartialRComponent.getPixel(0, 2), new PixelImpl(0, 0, 255));
+    assertEquals(smallImagePartialRComponent.getPixel(1, 0), new PixelImpl(0, 255, 0));
+    //change
+    assertEquals(smallImagePartialRComponent.getPixel(1, 1), new PixelImpl(255, 255, 255));
+    assertEquals(smallImagePartialRComponent.getPixel(1, 2), new PixelImpl(0, 0, 255));
+    assertEquals(smallImagePartialRComponent.getPixel(2, 0), new PixelImpl(27, 177, 241));
+    //change
+    assertEquals(smallImagePartialRComponent.getPixel(2, 1), new PixelImpl(164, 164, 164));
+    assertEquals(smallImagePartialRComponent.getPixel(2, 2), new PixelImpl(164, 18, 228));
+    //change
+    assertEquals(smallImagePartialRComponent.getPixel(3, 0), new PixelImpl(0, 0, 0));
+    assertEquals(smallImagePartialRComponent.getPixel(3, 1), new PixelImpl(0, 0, 0));
+    assertEquals(smallImagePartialRComponent.getPixel(3, 2), new PixelImpl(242, 113, 65));
+    assertEquals(smallImagePartialRComponent.getPixel(4, 0), new PixelImpl(255, 0, 0));
+    assertEquals(smallImagePartialRComponent.getPixel(4, 1), new PixelImpl(18, 52, 86));
+    // change
+    assertEquals(smallImagePartialRComponent.getPixel(4, 2), new PixelImpl(255, 255, 255));
+
+    ImageUtil.writeFile(smallImagePartialRComponent,
+            "res/smallImage/result/smallImagePartialRComponent.png");
+
+    // BLUE COMPONENT
+    IPicture smallImagePartialBComponent
+            = smallImagePPM.partialImageManipulation(maskPPM, "component blue");
+
+    // change
+    assertEquals(smallImagePartialBComponent.getPixel(0, 0), new PixelImpl(0, 0, 0));
+    assertEquals(smallImagePartialBComponent.getPixel(0, 1), new PixelImpl(0, 0, 0));
+    assertEquals(smallImagePartialBComponent.getPixel(0, 2), new PixelImpl(0, 0, 255));
+    assertEquals(smallImagePartialBComponent.getPixel(1, 0), new PixelImpl(0, 255, 0));
+    //change
+    assertEquals(smallImagePartialBComponent.getPixel(1, 1), new PixelImpl(0, 0, 0));
+    assertEquals(smallImagePartialBComponent.getPixel(1, 2), new PixelImpl(0, 0, 255));
+    assertEquals(smallImagePartialBComponent.getPixel(2, 0), new PixelImpl(27, 177, 241));
+    //change
+    assertEquals(smallImagePartialBComponent.getPixel(2, 1), new PixelImpl(228, 228, 228));
+    assertEquals(smallImagePartialBComponent.getPixel(2, 2), new PixelImpl(164, 18, 228));
+    //change
+    assertEquals(smallImagePartialBComponent.getPixel(3, 0), new PixelImpl(0, 0, 0));
+    assertEquals(smallImagePartialBComponent.getPixel(3, 1), new PixelImpl(0, 0, 0));
+    assertEquals(smallImagePartialBComponent.getPixel(3, 2), new PixelImpl(242, 113, 65));
+    assertEquals(smallImagePartialBComponent.getPixel(4, 0), new PixelImpl(255, 0, 0));
+    assertEquals(smallImagePartialBComponent.getPixel(4, 1), new PixelImpl(18, 52, 86));
+    // change
+    assertEquals(smallImagePartialBComponent.getPixel(4, 2), new PixelImpl(255, 255, 255));
+
+    ImageUtil.writeFile(smallImagePartialBComponent,
+            "res/smallImage/result/smallImagePartialBComponent.png");
+
+    // GREEN COMPONENT
+    IPicture smallImagePartialGComponent
+            = smallImagePPM.partialImageManipulation(maskPPM, "component green");
+
+    // change
+    assertEquals(smallImagePartialGComponent.getPixel(0, 0), new PixelImpl(0, 0, 0));
+    assertEquals(smallImagePartialGComponent.getPixel(0, 1), new PixelImpl(0, 0, 0));
+    assertEquals(smallImagePartialGComponent.getPixel(0, 2), new PixelImpl(0, 0, 255));
+    assertEquals(smallImagePartialGComponent.getPixel(1, 0), new PixelImpl(0, 255, 0));
+    //change
+    assertEquals(smallImagePartialGComponent.getPixel(1, 1), new PixelImpl(0, 0, 0));
+    assertEquals(smallImagePartialGComponent.getPixel(1, 2), new PixelImpl(0, 0, 255));
+    assertEquals(smallImagePartialGComponent.getPixel(2, 0), new PixelImpl(27, 177, 241));
+    //change
+    assertEquals(smallImagePartialGComponent.getPixel(2, 1), new PixelImpl(18, 18, 18));
+    assertEquals(smallImagePartialGComponent.getPixel(2, 2), new PixelImpl(164, 18, 228));
+    //change
+    assertEquals(smallImagePartialGComponent.getPixel(3, 0), new PixelImpl(255, 255, 255));
+    assertEquals(smallImagePartialGComponent.getPixel(3, 1), new PixelImpl(0, 0, 0));
+    assertEquals(smallImagePartialGComponent.getPixel(3, 2), new PixelImpl(242, 113, 65));
+    assertEquals(smallImagePartialGComponent.getPixel(4, 0), new PixelImpl(255, 0, 0));
+    assertEquals(smallImagePartialGComponent.getPixel(4, 1), new PixelImpl(18, 52, 86));
+    // change
+    assertEquals(smallImagePartialGComponent.getPixel(4, 2), new PixelImpl(255, 255, 255));
+
+    ImageUtil.writeFile(smallImagePartialGComponent,
+            "res/smallImage/result/smallImagePartialGComponent.png");
+
+    // BLUR
+    IPicture smallImagePartialBlur
+            = smallImagePPM.partialImageManipulation(maskPPM, "blur");
+
+    // change
+    assertEquals(smallImagePartialBlur.getPixel(0, 0), new PixelImpl(78, 31, 0));
+    assertEquals(smallImagePartialBlur.getPixel(0, 1), new PixelImpl(0, 0, 0));
+    assertEquals(smallImagePartialBlur.getPixel(0, 2), new PixelImpl(0, 0, 255));
+    assertEquals(smallImagePartialBlur.getPixel(1, 0), new PixelImpl(0, 255, 0));
+    //change
+    assertEquals(smallImagePartialBlur.getPixel(1, 1), new PixelImpl(109, 45, 103));
+    assertEquals(smallImagePartialBlur.getPixel(1, 2), new PixelImpl(0, 0, 255));
+    assertEquals(smallImagePartialBlur.getPixel(2, 0), new PixelImpl(27, 177, 241));
+    //change
+    assertEquals(smallImagePartialBlur.getPixel(2, 1), new PixelImpl(110, 65, 134));
+    assertEquals(smallImagePartialBlur.getPixel(2, 2), new PixelImpl(164, 18, 228));
+    //change
+    assertEquals(smallImagePartialBlur.getPixel(3, 0), new PixelImpl(45, 89, 49));
+    assertEquals(smallImagePartialBlur.getPixel(3, 1), new PixelImpl(0, 0, 0));
+    assertEquals(smallImagePartialBlur.getPixel(3, 2), new PixelImpl(242, 113, 65));
+    assertEquals(smallImagePartialBlur.getPixel(4, 0), new PixelImpl(255, 0, 0));
+    assertEquals(smallImagePartialBlur.getPixel(4, 1), new PixelImpl(18, 52, 86));
+    // change
+    assertEquals(smallImagePartialBlur.getPixel(4, 2), new PixelImpl(95, 83, 81));
+
+    ImageUtil.writeFile(smallImagePartialBlur,
+            "res/smallImage/result/smallImagePartialBlur.png");
+
+    // SHARPEN
+    IPicture smallImagePartialSharpen
+            = smallImagePPM.partialImageManipulation(maskPPM, "sharpen");
+    // change
+    assertEquals(smallImagePartialSharpen.getPixel(0, 0), new PixelImpl(255, 37, 0));
+    assertEquals(smallImagePartialSharpen.getPixel(0, 1), new PixelImpl(0, 0, 0));
+    assertEquals(smallImagePartialSharpen.getPixel(0, 2), new PixelImpl(0, 0, 255));
+    assertEquals(smallImagePartialSharpen.getPixel(1, 0), new PixelImpl(0, 255, 0));
+    //change
+    assertEquals(smallImagePartialSharpen.getPixel(1, 1), new PixelImpl(255, 70, 255));
+    assertEquals(smallImagePartialSharpen.getPixel(1, 2), new PixelImpl(0, 0, 255));
+    assertEquals(smallImagePartialSharpen.getPixel(2, 0), new PixelImpl(27, 177, 241));
+    //change
+    assertEquals(smallImagePartialSharpen.getPixel(2, 1), new PixelImpl(239, 183, 255));
+    assertEquals(smallImagePartialSharpen.getPixel(2, 2), new PixelImpl(164, 18, 228));
+    //change
+    assertEquals(smallImagePartialSharpen.getPixel(3, 0), new PixelImpl(2, 238, 40));
+    assertEquals(smallImagePartialSharpen.getPixel(3, 1), new PixelImpl(0, 0, 0));
+    assertEquals(smallImagePartialSharpen.getPixel(3, 2), new PixelImpl(242, 113, 65));
+    assertEquals(smallImagePartialSharpen.getPixel(4, 0), new PixelImpl(255, 0, 0));
+    assertEquals(smallImagePartialSharpen.getPixel(4, 1), new PixelImpl(18, 52, 86));
+    // change
+    assertEquals(smallImagePartialSharpen.getPixel(4, 2), new PixelImpl(245, 239, 206));
+
+    ImageUtil.writeFile(smallImagePartialSharpen,
+            "res/smallImage/result/smallImagePartialSharpen.png");
+
+    // GREYSCALE
+    IPicture smallImagePartialGreyscale
+            = smallImagePPM.partialImageManipulation(maskPPM, "greyscale");
+    // change
+    assertEquals(smallImagePartialGreyscale.getPixel(0, 0), new PixelImpl(54, 54, 54));
+    assertEquals(smallImagePartialGreyscale.getPixel(0, 1), new PixelImpl(0, 0, 0));
+    assertEquals(smallImagePartialGreyscale.getPixel(0, 2), new PixelImpl(0, 0, 255));
+    assertEquals(smallImagePartialGreyscale.getPixel(1, 0), new PixelImpl(0, 255, 0));
+    //change
+    assertEquals(smallImagePartialGreyscale.getPixel(1, 1), new PixelImpl(54, 54, 54));
+    assertEquals(smallImagePartialGreyscale.getPixel(1, 2), new PixelImpl(0, 0, 255));
+    assertEquals(smallImagePartialGreyscale.getPixel(2, 0), new PixelImpl(27, 177, 241));
+    //change
+    assertEquals(smallImagePartialGreyscale.getPixel(2, 1), new PixelImpl(64, 64, 64));
+    assertEquals(smallImagePartialGreyscale.getPixel(2, 2), new PixelImpl(164, 18, 228));
+    //change
+    assertEquals(smallImagePartialGreyscale.getPixel(3, 0), new PixelImpl(182, 182, 182));
+    assertEquals(smallImagePartialGreyscale.getPixel(3, 1), new PixelImpl(0, 0, 0));
+    assertEquals(smallImagePartialGreyscale.getPixel(3, 2), new PixelImpl(242, 113, 65));
+    assertEquals(smallImagePartialGreyscale.getPixel(4, 0), new PixelImpl(255, 0, 0));
+    assertEquals(smallImagePartialGreyscale.getPixel(4, 1), new PixelImpl(18, 52, 86));
+    // change
+    assertEquals(smallImagePartialGreyscale.getPixel(4, 2), new PixelImpl(254, 254, 254));
+
+    ImageUtil.writeFile(smallImagePartialGreyscale,
+            "res/smallImage/result/smallImagePartialGreyscale.png");
+
+    // SEPIA
+    IPicture smallImagePartialSepia
+            = smallImagePPM.partialImageManipulation(maskPPM, "sepia");
+
+    // change
+    assertEquals(smallImagePartialSepia.getPixel(0, 0), new PixelImpl(100, 88, 69));
+    assertEquals(smallImagePartialSepia.getPixel(0, 1), new PixelImpl(0, 0, 0));
+    assertEquals(smallImagePartialSepia.getPixel(0, 2), new PixelImpl(0, 0, 255));
+    assertEquals(smallImagePartialSepia.getPixel(1, 0), new PixelImpl(0, 255, 0));
+    //change
+    assertEquals(smallImagePartialSepia.getPixel(1, 1), new PixelImpl(100, 88, 69));
+    assertEquals(smallImagePartialSepia.getPixel(1, 2), new PixelImpl(0, 0, 255));
+    assertEquals(smallImagePartialSepia.getPixel(2, 0), new PixelImpl(27, 177, 241));
+    //change
+    assertEquals(smallImagePartialSepia.getPixel(2, 1), new PixelImpl(121, 107, 84));
+    assertEquals(smallImagePartialSepia.getPixel(2, 2), new PixelImpl(164, 18, 228));
+    //change
+    assertEquals(smallImagePartialSepia.getPixel(3, 0), new PixelImpl(196, 174, 136));
+    assertEquals(smallImagePartialSepia.getPixel(3, 1), new PixelImpl(0, 0, 0));
+    assertEquals(smallImagePartialSepia.getPixel(3, 2), new PixelImpl(242, 113, 65));
+    assertEquals(smallImagePartialSepia.getPixel(4, 0), new PixelImpl(255, 0, 0));
+    assertEquals(smallImagePartialSepia.getPixel(4, 1), new PixelImpl(18, 52, 86));
+    // change
+    assertEquals(smallImagePartialSepia.getPixel(4, 2), new PixelImpl(255, 255, 238));
+
+    ImageUtil.writeFile(smallImagePartialSepia,
+            "res/smallImage/result/smallImagePartialSepia.png");
   }
 }

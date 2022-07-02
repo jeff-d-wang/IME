@@ -46,4 +46,9 @@ public class PictureModel implements IPictureModel {
 
     return pictures.get(name);
   }
+
+  @Override
+  public String[] pictureNames() {
+    return pictures.keySet().toArray(new String[0]);
+  }
 }

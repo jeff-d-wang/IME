@@ -7,7 +7,6 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.Scanner;
 
-import model.ImageUtil;
 import model.picture.IPictureModel;
 import view.IPictureView;
 
@@ -23,9 +22,10 @@ public class PictureControllerImpl extends FeaturesImpl implements IPictureContr
 
   /**
    * Basic constructor for the controller.
-   * @param model      Model object
-   * @param view       View object to display view-related content
-   * @param readable   The Readable object for inputs
+   *
+   * @param model    Model object
+   * @param view     View object to display view-related content
+   * @param readable The Readable object for inputs
    * @throws IllegalStateException if the given Readable is null
    */
 
@@ -52,10 +52,13 @@ public class PictureControllerImpl extends FeaturesImpl implements IPictureContr
     this.runnables.put("greyscale", new Greyscale());
     this.runnables.put("sepia", new Sepia());
     this.runnables.put("file", new File());
+    this.runnables.put("partialimage", new PartialImageManipulation());
+
   }
 
   /**
    * Sends this controller's view to render a given message.
+   *
    * @param message to be rendered.
    * @throws IllegalStateException if the given message could not be rendered
    */
@@ -93,7 +96,9 @@ public class PictureControllerImpl extends FeaturesImpl implements IPictureContr
           break;
       }
 
-      if (runnables.containsKey(function)) {
+      if (script.length == 5) {
+        runnables.get("partialimage").run();
+      } else if (runnables.containsKey(function)) {
         runnables.get(function).run();
       } else {
         message("Invalid function." + System.lineSeparator());
@@ -337,4 +342,23 @@ public class PictureControllerImpl extends FeaturesImpl implements IPictureContr
       }
     }
   }
+
+  private class PartialImageManipulation implements Runnable {
+    /**
+     * Run function for the Runnable PartialImageManipulation class.
+     *
+     * @throws IllegalStateException if it could not properly render a message.
+     */
+    public void run() throws IllegalStateException {
+      try {
+        partialImage(model.getPicture(script[1]), model.getPicture(script[2]), command[0],
+                script[3]);
+        // brighten 10 smallImage mask.ppm smallImage-partialBrighten
+
+      } catch (Exception e) {
+        message("Could not execute function. " + e.getMessage() + System.lineSeparator());
+      }
+    }
+  }
+
 }

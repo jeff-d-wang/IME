@@ -1,4 +1,42 @@
 # IME
+## OOD Assignment 6 
+### Update 6/25/22
+
+## Model Package: 
+In our model package, PictureImpl now contains two new methods: 
+- downscale(double x, double y) which downscales an image by either width or height
+- partialImageManipulation(IPicture pic, String command) which partially manipulates an image 
+based on a mask image.
+
+### Controller: 
+The controller now contains IFeatures Interface, FeatureImpl, and a PictureJFrameController. 
+The IFeatures Interface contains:
+- load(String filename, String name) which is the load feature function for the controller.
+- save(IPicture picture, String filename) which is the save feature function for the controller.
+- file(String filename) which is the file feature function for the controller.
+- component(String component, IPicture picture, String name) which is the component feature 
+function for the controller.
+- flip(String direction, IPicture picture, String name) which is the flip feature function for the
+controller.
+- brighten(int increment, IPicture picture, String name) which is the Brighten feature function 
+for the controller. 
+- blur(IPicture picture, String name) which is the Blur feature function for the controller.
+- sharpen(IPicture picture, String name) which is the Sharpen feature function for the controller.
+- greyscale(IPicture picture, String name) which is the Greyscale feature function for the 
+controller.
+- sepia(IPicture picture, String name) which is the Sepia feature function for the controller.
+- partialImage(IPicture picture, IPicture mask, String command, String name) which is the
+  partialImage feature function for the controller.
+
+The FeaturesImpl abstract class implements the IFeature interface.
+
+### View: 
+The view has a new PictureJFrameView class and a HistogramPanel class which allows the user to see 
+the histogram with rgb colors.
+
+
+### IMEJAR: 
+This new main method allows the user to open the program with a jar file frm terminal. 
 
 ## OOD Assignment 5
 ### Update: 6/17/22 

@@ -21,4 +21,10 @@ public interface IPictureModel {
    * @throws IllegalArgumentException if the given name is null
    */
   IPicture getPicture(String name) throws IllegalArgumentException;
+
+  /**
+   * Returns a list of names in the pictures list as a String[].
+   * @return a list of names in the pictures list as a String[]
+   */
+  String[] pictureNames();
 }

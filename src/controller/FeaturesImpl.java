@@ -6,6 +6,10 @@ import model.ImageUtil;
 import model.picture.IPicture;
 import model.picture.IPictureModel;
 
+/**
+ * This is an abstract class called FeaturesImpl which is the implementation of all features.
+ * It takes in a model, so it handles asking the model to add new pictures from there.
+ */
 public abstract class FeaturesImpl implements IFeatures {
 
   protected IPictureModel model;
@@ -61,5 +65,10 @@ public abstract class FeaturesImpl implements IFeatures {
   @Override
   public void sepia(IPicture picture, String name) {
     model.putPicture(name, picture.sepia());
+  }
+
+  @Override
+  public void partialImage(IPicture picture, IPicture mask, String command, String name) {
+    model.putPicture(name, picture.partialImageManipulation(mask, command));
   }
 }

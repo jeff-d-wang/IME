@@ -90,7 +90,7 @@ public class ImageUtil {
    * @param filename the file name to be read from
    * @throws IOException if it encounters an error reading/accessing from the file
    */
-  public static PictureImpl readFile(String filename) throws IOException {
+  public static IPicture readFile(String filename) throws IOException {
     if (filename == null) {
       throw new IOException("Null filename.");
     }

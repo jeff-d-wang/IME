@@ -14,7 +14,7 @@ public interface IPictureController {
    *
    * @throws IOException if the program runs into an error reading a file
    */
-  public void run() throws IllegalStateException;
+  void run() throws IllegalStateException;
 
   /**
    * Method that runs the IME program by accepting user input and parsing it. This method version
@@ -23,5 +23,5 @@ public interface IPictureController {
    * @param readable   A readable to extract user inputs from (could be from a txt file)
    * @throws IOException if the program runs into an error reading a file
    */
-  public void run(Readable readable) throws IllegalStateException;
+  void run(Readable readable) throws IllegalStateException;
 }

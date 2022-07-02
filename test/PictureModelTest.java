@@ -77,4 +77,31 @@ public class PictureModelTest {
   public void testInvalidGetPicture() throws IOException {
     model1.getPicture(null);
   }
+
+  @Test
+  public void testPictureNames() throws IOException {
+    IPicture filePicture1
+            = ImageUtil.readFile("res/smallImage/smallImage.ppm");
+    IPicture filePicture2
+            = ImageUtil.readFile("res/smallImage/smallImage-horizontal.ppm");
+    IPicture filePicture3
+            = ImageUtil.readFile("res/smallImage/smallImage-value-component.ppm");
+
+    assertEquals(model1.pictureNames().length, 0);
+
+    model1.putPicture("smallImage1", filePicture1);
+    assertEquals(model1.pictureNames().length, 1);
+    assertEquals(model1.pictureNames()[0], "smallImage1");
+
+    model1.putPicture("smallImage2", filePicture2);
+    assertEquals(model1.pictureNames().length, 2);
+    assertEquals(model1.pictureNames()[0], "smallImage2");
+    assertEquals(model1.pictureNames()[1], "smallImage1");
+
+    model1.putPicture("smallImage3", filePicture3);
+    assertEquals(model1.pictureNames().length, 3);
+    assertEquals(model1.pictureNames()[0], "smallImage2");
+    assertEquals(model1.pictureNames()[1], "smallImage3");
+    assertEquals(model1.pictureNames()[2], "smallImage1");
+  }
 }
